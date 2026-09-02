@@ -8,7 +8,7 @@ Competitive intel usually shows up as noise: a pricing page change someone notic
 
 A weekly-cadence skill that takes in raw, unstructured signals (pricing page snapshots, release notes, review site excerpts, sales call mentions) and produces one structured brief: what changed, why it matters for our positioning, and what — if anything — sales or product marketing should do about it. The goal is a brief a sales leader will actually read in three minutes, not a wall of bullet points.
 
-Two constraints I built in on purpose:
+Two constraints are built in on purpose:
 - **No unverified claims.** If a signal is ambiguous (e.g. a pricing page number without context), the skill flags it as "needs confirmation" rather than asserting it.
 - **"So what" is mandatory.** Every item must end with an implication, not just an observation — otherwise it's just news, not intelligence.
 
@@ -16,8 +16,8 @@ Two constraints I built in on purpose:
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — the same logic adapted as a ChatGPT custom GPT
-- [`example/sample-output.md`](./example/sample-output.md) — a fictional weekly brief run against [Sundial Analytics](../knowledge-base.md)'s fictional competitors
+- [`example/sample-output.md`](./example/sample-output.md) — a weekly brief run against [Sundial Analytics](../knowledge-base.md)'s competitors
 
-## What's simplified from the real version
+## Current limitations
 
-The production version pulls from a Slack channel where the team drops raw links/screenshots and a shared doc of past briefs (for trend continuity week over week). Here it takes plain pasted text instead, to keep the example self-contained.
+Right now this takes plain pasted text. Pulling from the Slack channel where the team drops raw links/screenshots, and referencing the shared doc of past briefs for trend continuity week over week, is next.

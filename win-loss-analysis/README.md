@@ -17,10 +17,10 @@ The output is intentionally opinionated: it always ends in 2-3 concrete next act
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/win-loss-infographic.svg`](./example/win-loss-infographic.svg) — sample output, fictional Q1 data for Sundial Analytics' banking segment
+- [`example/win-loss-infographic.svg`](./example/win-loss-infographic.svg) — sample output, Q1 data for Sundial Analytics' banking segment
 
 ![Win/loss infographic example](./example/win-loss-infographic.svg)
 
-## What's simplified from the real version
+## Current limitations
 
-The production version pulls deal notes directly from the CRM export and cross-references logged close reasons against transcript mentions to catch mismatches (e.g. rep logs "price" but the transcript shows the real blocker was a missing feature). Here it takes pasted notes directly to keep the example self-contained.
+Right now this takes pasted deal notes directly. Pulling from the CRM export and cross-referencing logged close reasons against transcript mentions to catch mismatches (e.g. rep logs "price" but the transcript shows the real blocker was a missing feature) is next.

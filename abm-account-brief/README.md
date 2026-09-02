@@ -16,6 +16,6 @@ This example continues the account flagged by [`icp-buying-signal-monitor`](../i
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
 - [`example/sample-output.md`](./example/sample-output.md) — the Nordkredit brief
 
-## What's simplified from the real version
+## Current limitations
 
-The production version also pulls firmographic data from an enrichment tool and past CRM activity for the account automatically. Here the account facts are given directly in the prompt, to keep the example self-contained.
+Right now account facts are given directly in the prompt. Pulling firmographic data from an enrichment tool and past CRM activity automatically is next.

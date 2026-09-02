@@ -14,8 +14,8 @@ The core judgment call it makes every time: **order and emphasis change based on
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/sample-deck-outline.md`](./example/sample-deck-outline.md) — outline generated for a fictional Sundial Analytics deal
+- [`example/sample-deck-outline.md`](./example/sample-deck-outline.md) — outline generated for a Sundial Analytics deal
 
-## What's simplified from the real version
+## Current limitations
 
-The production version pulls approved slide inventory from a shared deck library so the outline references actual existing slides where possible, rather than describing slides from scratch. Here it generates a from-scratch outline to keep the example self-contained.
+Right now this generates a from-scratch outline. Pulling approved slide inventory from the shared deck library, so the outline can reference actual existing slides where possible, is next.

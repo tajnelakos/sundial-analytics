@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional account brief, continuing the Nordkredit signal from [`icp-buying-signal-monitor`](../../icp-buying-signal-monitor/example/sample-output.md). Feeds [`personalized-outbound`](../../personalized-outbound).
+Continuing the Nordkredit signal from [`icp-buying-signal-monitor`](../../icp-buying-signal-monitor/example/sample-output.md). Feeds [`personalized-outbound`](../../personalized-outbound).
 
 ---
 

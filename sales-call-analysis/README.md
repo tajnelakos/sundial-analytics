@@ -17,8 +17,8 @@ A skill that takes a single call transcript and extracts four things, every time
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/sample-output.md`](./example/sample-output.md) — run against a fictional discovery call transcript
+- [`example/sample-output.md`](./example/sample-output.md) — run against a discovery call transcript
 
-## What's simplified from the real version
+## Current limitations
 
-The production version is fed transcripts directly from our call recording tool's API and writes structured output into a shared tracker so objection/competitor frequency can be tallied automatically across weeks. Here it takes one pasted transcript and returns one analysis, to keep the example self-contained.
+Right now this takes one pasted transcript and returns one analysis. Feeding transcripts directly from the call recording tool's API and writing structured output into a shared tracker — so objection/competitor frequency can be tallied automatically across weeks — is next.

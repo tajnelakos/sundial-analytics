@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional. Run against invented signals about [Sundial Analytics](../../knowledge-base.md)'s fictional competitors — no real company's data.
+Run against this week's competitor signals.
 
 ---
 

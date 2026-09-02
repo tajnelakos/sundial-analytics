@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional deal context and outline for [Sundial Analytics](../../knowledge-base.md).
+Deal context and outline for [Sundial Analytics](../../knowledge-base.md).
 
 ---
 

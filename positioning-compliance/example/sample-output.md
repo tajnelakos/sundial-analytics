@@ -1,6 +1,6 @@
 # Sample output
 
-Same fictional draft used as the "before" in [`brand-voice-guidelines`](../../brand-voice-guidelines/example/before-after.md) — shown here going through the compliance checker instead, which flags rather than fixes.
+Same draft used as the "before" in [`brand-voice-guidelines`](../../brand-voice-guidelines/example/before-after.md) — shown here going through the compliance checker instead, which flags rather than fixes.
 
 ---
 

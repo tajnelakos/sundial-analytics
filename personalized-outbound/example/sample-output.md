@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional outreach, closing the loop from [`icp-buying-signal-monitor`](../../icp-buying-signal-monitor) → [`abm-account-brief`](../../abm-account-brief) → this.
+Outreach closing the loop from [`icp-buying-signal-monitor`](../../icp-buying-signal-monitor) → [`abm-account-brief`](../../abm-account-brief) → this.
 
 ---
 

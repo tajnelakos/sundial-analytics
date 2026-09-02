@@ -13,8 +13,8 @@ A skill that takes a pile of raw competitive inputs about one competitor and pro
 ## Files
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`example/sample-output.md`](./example/sample-output.md) — a battlecard built from raw notes about a fictional competitor
+- [`example/sample-output.md`](./example/sample-output.md) — a battlecard built from raw notes about a competitor
 
-## What's simplified from the real version
+## Current limitations
 
-The production version cross-references new input against the existing battlecard automatically and flags contradictions (e.g. new win/loss data suggesting a "weakness" entry may no longer hold). Here it's a single generation pass, to keep the example self-contained.
+Right now this runs as a single generation pass. Automatically cross-referencing new input against the existing battlecard and flagging contradictions (e.g. new win/loss data suggesting a weakness entry no longer holds) is next.

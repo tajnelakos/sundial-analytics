@@ -16,6 +16,6 @@ Closes the loop on the pipeline demonstrated across three use cases: [`icp-buyin
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
 - [`example/sample-output.md`](./example/sample-output.md) — the Nordkredit outreach message
 
-## What's simplified from the real version
+## Current limitations
 
-The production version pulls the account brief directly from the CRM record rather than pasted in, and logs the sent message back to the account timeline. Here the brief is pasted directly, to keep the example self-contained.
+Right now the account brief is pasted in manually. Pulling it directly from the CRM record, and logging the sent message back to the account timeline, is next.

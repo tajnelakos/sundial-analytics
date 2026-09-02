@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional transcript excerpt and analysis. No real prospect, rep, or company.
+Transcript excerpt and analysis.
 
 ---
 
@@ -19,7 +19,7 @@ Fictional transcript excerpt and analysis. No real prospect, rep, or company.
 ## Output
 
 ```
-## Call Analysis — Regional bank prospect (fictional) — discovery call
+## Call Analysis — Regional bank prospect — discovery call
 
 **Participants:** Anna (rep) / Marcus, Head of Credit Risk
 

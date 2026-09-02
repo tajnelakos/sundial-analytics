@@ -1,6 +1,6 @@
-# Ideal Customer Profile — Sundial Analytics (fictional)
+# Ideal Customer Profile — Sundial Analytics
 
-Reference context for [Sundial Analytics](./knowledge-base.md). Used by prompts/skills that need to reason about fit or in-market signals rather than have it re-explained inline every time.
+Used by prompts/skills that need to reason about fit or in-market signals rather than have it re-explained inline every time. See [`knowledge-base.md`](./knowledge-base.md) for the company overview.
 
 ## Tiered customer profiles
 

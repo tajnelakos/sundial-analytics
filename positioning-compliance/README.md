@@ -13,6 +13,6 @@ A skill that checks a draft against [`voice-guide.md`](../voice-guide.md) (prohi
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`example/sample-output.md`](./example/sample-output.md) — a draft checked and flagged
 
-## What's simplified from the real version
+## Current limitations
 
-The production version runs as a required check in the content publishing workflow (can't publish without a pass or an explicit override). Here it's a standalone check the user runs manually, to keep the example self-contained.
+Right now this is a standalone check run manually. Wiring it in as a required check in the content publishing workflow (can't publish without a pass or an explicit override) is next.

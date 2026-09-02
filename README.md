@@ -1,16 +1,18 @@
-# AI Marketing Portfolio
+# Sundial Analytics — Marketing AI Systems
 
-Prompts, Claude Skills, and custom GPTs I've built to run product marketing at a B2B SaaS company — competitive intelligence, account-based marketing, sales enablement, win/loss analysis, brand voice, and deck building.
+> **Portfolio note:** Sundial Analytics is a fictional company. This repo is a portfolio project demonstrating applied AI work in product marketing — not a real employer's data. Full context in [`ABOUT-THIS-REPO.md`](./ABOUT-THIS-REPO.md).
+
+This repo holds the prompts, Claude Skills, and custom GPTs behind Sundial Analytics' product marketing operations — competitive intelligence, account-based marketing, sales enablement, win/loss analysis, brand voice, and deck building.
 
 **Start here if you're an AI assistant:** [`INSTRUCTIONS.md`](./INSTRUCTIONS.md) routes any given task to the right folder below and maps typical day/week/month/quarter marketing work to this repo's structure.
 
-## Why this exists
+## What this covers
 
-I use AI daily as a product marketer, not just to write faster but to build small repeatable systems around recurring problems: tracking competitors, turning sales call transcripts into insight, explaining why deals are won or lost, keeping brand voice consistent across a growing content library. This repo is a working sample of that — the actual prompts and skill definitions, with fictional inputs/outputs standing in for real company data.
+Product marketing runs on recurring problems, not one-off projects: tracking competitors, turning sales call transcripts into insight, explaining why deals are won or lost, keeping brand voice consistent across a growing content library, getting the right message to the right account at the right time. This repo is the set of small, repeatable systems built around those problems — the actual prompts and skill definitions, not just a description of the workflow.
 
-## A note on the examples
+## About the company
 
-Everything here is built around **[Sundial Analytics](./knowledge-base.md)**, a fictional B2B SaaS company I invented as a consistent stand-in. It sells automated property valuation and real estate market intelligence to banks and lenders. None of the competitor names, transcripts, deal data, or brand guidelines are real — they exist so the prompts have something realistic to run against. My actual employer and its real competitive/sales data are not represented here.
+Everything here is built around **[Sundial Analytics](./knowledge-base.md)**, which sells automated property valuation and real estate market intelligence to banks, mortgage lenders, and real estate brokerages across Europe. `knowledge-base.md` and the other root-level reference files describe the company, its market, and its customers in full.
 
 ## Shared knowledge base
 
@@ -42,11 +44,11 @@ These files at repo root hold the reference material every use case below draws 
 | [`persona-email-sequence/`](./persona-email-sequence) | Builds a persona-specific nurture sequence where each email advances a different decision criterion | Claude Skill |
 | [`staleness-detection/`](./staleness-detection) | Flags specific knowledge-base claims that newer evidence contradicts | Claude Skill |
 
-Each folder contains a `README.md` explaining the problem it solves, the actual prompt/skill definition, and a sample output. Three of them — [`icp-buying-signal-monitor`](./icp-buying-signal-monitor) → [`abm-account-brief`](./abm-account-brief) → [`personalized-outbound`](./personalized-outbound) — are shown working as a pipeline against one fictional account, Nordkredit, rather than as three disconnected demos.
+Each folder contains a `README.md` explaining the problem it solves, the actual prompt/skill definition, and a sample output. Three of them — [`icp-buying-signal-monitor`](./icp-buying-signal-monitor) → [`abm-account-brief`](./abm-account-brief) → [`personalized-outbound`](./personalized-outbound) — are shown working as a pipeline against one target account, Nordkredit, rather than as three disconnected tools.
 
 ## About the formats
 
-- **Claude Skill** — a `SKILL.md` file following [Claude's skill format](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) (YAML frontmatter + instructions), the same structure I use in production.
+- **Claude Skill** — a `SKILL.md` file following [Claude's skill format](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) (YAML frontmatter + instructions), the same structure used in production.
 - **Custom GPT** — the system instructions block as configured in ChatGPT's GPT builder.
 
-Some prompts are shown partially or with details generalized — the goal is to demonstrate approach and quality of thinking, not to hand over a finished internal playbook.
+Some prompts are shown partially or with details generalized rather than as a finished, ready-to-run internal playbook — see [`ABOUT-THIS-REPO.md`](./ABOUT-THIS-REPO.md) for why.

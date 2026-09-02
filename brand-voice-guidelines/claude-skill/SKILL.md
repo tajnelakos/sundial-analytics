@@ -3,7 +3,7 @@ name: brand-voice-rewrite
 description: Rewrites a marketing draft to match a documented brand voice, and explains the reasoning behind each significant change rather than returning a silent rewrite. Use when the user has a draft (blog post, email, one-pager, social copy) and wants it brought in line with brand voice.
 ---
 
-# Brand Voice Rewrite — Sundial Analytics (fictional reference voice)
+# Brand Voice Rewrite — Sundial Analytics
 
 ## Voice rules
 

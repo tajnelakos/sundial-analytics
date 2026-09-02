@@ -3,7 +3,7 @@
 
   <!-- Header -->
   <text x="32" y="46" font-size="20" font-weight="700" fill="#0b0b0b">Win/Loss Analysis — Banks &amp; Lenders segment</text>
-  <text x="32" y="68" font-size="13" fill="#52514e">Sundial Analytics (fictional data) · Q1 2026 · 61 closed deals</text>
+  <text x="32" y="68" font-size="13" fill="#52514e">Sundial Analytics · Q1 2026 · 61 closed deals</text>
 
   <!-- Stat tiles -->
   <g>

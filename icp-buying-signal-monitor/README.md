@@ -13,8 +13,8 @@ This is the first step in a small pipeline demonstrated across three use cases: 
 ## Files
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`example/sample-output.md`](./example/sample-output.md) — fictional signals scored for a fictional target account, Nordkredit
+- [`example/sample-output.md`](./example/sample-output.md) — signals scored for a target account, Nordkredit
 
-## What's simplified from the real version
+## Current limitations
 
-The production version pulls from a job-posting scraper and a news/LinkedIn monitoring tool on a weekly cron, and writes flagged accounts into the CRM as a task for the account's owner. Here it takes pasted signals and returns a scored list, to keep the example self-contained.
+Right now this takes pasted signals and returns a scored list. Pulling directly from a job-posting scraper and a news/LinkedIn monitoring tool on a weekly cron, and writing flagged accounts into the CRM as a task for the account owner, is next.

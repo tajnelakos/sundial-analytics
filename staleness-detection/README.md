@@ -13,6 +13,6 @@ A skill that checks knowledge-base documents against more recent inputs (competi
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`example/sample-output.md`](./example/sample-output.md) — a staleness check against the competitive-landscape doc
 
-## What's simplified from the real version
+## Current limitations
 
-The production version runs on a schedule against the actual doc history (so it can tell how long a claim has gone unverified) and against a live feed of competitor-monitoring briefs. Here it takes a pasted set of newer signals and one document to check, to keep the example self-contained.
+Right now this takes a pasted set of newer signals and one document to check. Running on a schedule against the actual doc history (so it can tell how long a claim has gone unverified) and against a live feed of competitor-monitoring briefs is next.

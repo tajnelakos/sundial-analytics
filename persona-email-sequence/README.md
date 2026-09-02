@@ -15,6 +15,6 @@ A skill that takes a persona (from `personas.md`) and a starting context (e.g. "
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`example/sample-output.md`](./example/sample-output.md) — a 3-email sequence for the Head of Credit Risk persona
 
-## What's simplified from the real version
+## Current limitations
 
-The production version is tied into the marketing automation platform's trigger/branch logic (e.g. stop the sequence if the contact books a call). Here it outputs the email content only, to keep the example self-contained.
+Right now this outputs email content only. Wiring it into the marketing automation platform's trigger/branch logic (e.g. stop the sequence if the contact books a call) is next.

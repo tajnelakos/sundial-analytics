@@ -1,6 +1,6 @@
 # Before / after
 
-Fictional draft for Sundial Analytics, rewritten per the [voice skill](../claude-skill/SKILL.md).
+Draft for Sundial Analytics, rewritten per the [voice skill](../claude-skill/SKILL.md).
 
 ---
 

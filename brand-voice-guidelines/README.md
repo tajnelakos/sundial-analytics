@@ -13,6 +13,6 @@ A skill that encodes the voice as **rules with a reason**, not just adjectives (
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition, including the actual voice rules
 - [`example/before-after.md`](./example/before-after.md) — a sample rewrite for [Sundial Analytics](../knowledge-base.md), with the reasoning shown
 
-## What's simplified from the real version
+## Current limitations
 
-The real version references a longer internal doc with terminology rules (approved/banned product terms, how we refer to our own AI use) and examples pulled from top-performing published content. Here the rule set is condensed to the ones that generalize.
+Right now the rule set is condensed to what generalizes across content types. The fuller internal terminology doc (approved/banned product terms, how we refer to our own AI use) and a running library of examples pulled from top-performing published content are next to fold in.

@@ -1,8 +1,6 @@
-# Knowledge Base — Sundial Analytics (fictional)
+# Knowledge Base — Sundial Analytics
 
 Master source of truth for every prompt, skill, and example in this repo. Every other knowledge-base file alongside this one is a derived, deeper view of one section of this doc — kept separate so a skill can reference just the piece it needs (voice rules, competitor detail, persona psychology) instead of the whole thing.
-
-All examples in this repo are built around one consistent fictional company, so the prompts and outputs read as a coherent body of work rather than disconnected demos. **None of this is real** — no real competitor, customer, or deal data is represented anywhere in this repo.
 
 ## Company
 
@@ -12,7 +10,7 @@ All examples in this repo are built around one consistent fictional company, so 
 - **Pricing**: usage-based API pricing (per valuation call) for banks, seat-based for the brokerage web app.
 - **Positioning**: "valuations you can defend to a regulator," i.e. accuracy + explainability, not just speed.
 
-## Fictional competitors
+## Competitors
 
 | Competitor | Angle |
 |---|---|
@@ -23,7 +21,7 @@ All examples in this repo are built around one consistent fictional company, so 
 
 Derived: full battlecards, positioning gaps, and objection handling → [`competitive-landscape.md`](./competitive-landscape.md)
 
-## Fictional buyer personas
+## Buyer personas
 
 - **Head of Credit Risk** (bank buyer) — cares about model accuracy, audit trail, regulatory defensibility. Skeptical of "black box AI" claims.
 - **VP of Mortgage Lending** — cares about speed-to-decision and integration effort.
@@ -41,4 +39,4 @@ This doc is the quick summary. Everything below expands one section of it into t
 - [`voice-guide.md`](./voice-guide.md) — tone, style rules, anti-patterns, prohibited terms
 - [`competitive-landscape.md`](./competitive-landscape.md) — full battlecards and positioning gaps
 
-Use this file and the ones above as the reference for names, roles, and competitive angles whenever a prompt or example needs a stand-in for real data.
+Use this file and the ones above as the reference for names, roles, and competitive angles across every skill in this repo.
