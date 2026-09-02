@@ -1,0 +1,87 @@
+<svg viewBox="0 0 920 620" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="920" height="620" rx="12" fill="#fcfcfb" stroke="#e1e0d9" stroke-width="1"/>
+
+  <!-- Header -->
+  <text x="32" y="46" font-size="20" font-weight="700" fill="#0b0b0b">Win/Loss Analysis — Banks &amp; Lenders segment</text>
+  <text x="32" y="68" font-size="13" fill="#52514e">Sundial Analytics (fictional data) · Q1 2026 · 61 closed deals</text>
+
+  <!-- Stat tiles -->
+  <g>
+    <rect x="32" y="88" width="260" height="84" rx="8" fill="#f9f9f7" stroke="#e1e0d9"/>
+    <text x="52" y="122" font-size="30" font-weight="700" fill="#2a78d6">42%</text>
+    <text x="52" y="145" font-size="12" fill="#52514e">Win rate this quarter</text>
+    <text x="180" y="122" font-size="13" fill="#006300">▲ 6pts</text>
+    <text x="180" y="145" font-size="11" fill="#898781">vs. Q4 2025 (36%)</text>
+  </g>
+  <g>
+    <rect x="308" y="88" width="260" height="84" rx="8" fill="#f9f9f7" stroke="#e1e0d9"/>
+    <text x="328" y="122" font-size="30" font-weight="700" fill="#0b0b0b">61</text>
+    <text x="328" y="145" font-size="12" fill="#52514e">Closed deals analyzed</text>
+    <text x="450" y="145" font-size="11" fill="#898781">26 won / 35 lost</text>
+  </g>
+  <g>
+    <rect x="584" y="88" width="304" height="84" rx="8" fill="#f9f9f7" stroke="#e1e0d9"/>
+    <text x="604" y="122" font-size="18" font-weight="700" fill="#0b0b0b">Bricklane Data</text>
+    <text x="604" y="145" font-size="12" fill="#52514e">Most frequent losing competitor (13 deals)</text>
+  </g>
+
+  <!-- Why we won -->
+  <text x="32" y="212" font-size="15" font-weight="700" fill="#0b0b0b">Why we won (n=26)</text>
+
+  <!-- bar template: track then fill -->
+  <g font-size="12" fill="#0b0b0b">
+    <text x="32" y="240" fill="#52514e">Explainability / audit trail</text>
+    <rect x="32" y="248" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="32" y="248" width="129" height="16" rx="4" fill="#2a78d6"/>
+    <text x="372" y="260" font-weight="700" fill="#0b0b0b">34%</text>
+
+    <text x="32" y="286" fill="#52514e">Model accuracy in blind test</text>
+    <rect x="32" y="294" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="32" y="294" width="110" height="16" rx="4" fill="#2a78d6"/>
+    <text x="353" y="306" font-weight="700" fill="#0b0b0b">29%</text>
+
+    <text x="32" y="332" fill="#52514e">Faster implementation than incumbent</text>
+    <rect x="32" y="340" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="32" y="340" width="84" height="16" rx="4" fill="#2a78d6"/>
+    <text x="327" y="352" font-weight="700" fill="#0b0b0b">22%</text>
+
+    <text x="32" y="378" fill="#52514e">Existing relationship / referral</text>
+    <rect x="32" y="386" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="32" y="386" width="57" height="16" rx="4" fill="#2a78d6"/>
+    <text x="300" y="398" font-weight="700" fill="#0b0b0b">15%</text>
+  </g>
+
+  <!-- Why we lost -->
+  <text x="488" y="212" font-size="15" font-weight="700" fill="#0b0b0b">Why we lost (n=35)</text>
+
+  <g font-size="12" fill="#0b0b0b">
+    <text x="488" y="240" fill="#52514e">Price</text>
+    <rect x="488" y="248" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="488" y="248" width="144" height="16" rx="4" fill="#eb6834"/>
+    <text x="838" y="260" font-weight="700" fill="#0b0b0b">38%</text>
+
+    <text x="488" y="286" fill="#52514e">No on-prem deployment option</text>
+    <rect x="488" y="294" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="488" y="294" width="91" height="16" rx="4" fill="#eb6834"/>
+    <text x="785" y="306" font-weight="700" fill="#0b0b0b">24%</text>
+
+    <text x="488" y="332" fill="#52514e">Longer implementation timeline</text>
+    <rect x="488" y="340" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="488" y="340" width="72" height="16" rx="4" fill="#eb6834"/>
+    <text x="766" y="352" font-weight="700" fill="#0b0b0b">19%</text>
+
+    <text x="488" y="378" fill="#52514e">Missing regulatory certification</text>
+    <rect x="488" y="386" width="380" height="16" rx="4" fill="#e1e0d9"/>
+    <rect x="488" y="386" width="46" height="16" rx="4" fill="#eb6834"/>
+    <text x="740" y="398" font-weight="700" fill="#0b0b0b">12%</text>
+  </g>
+
+  <!-- Takeaway strip -->
+  <rect x="32" y="440" width="856" height="140" rx="8" fill="#f9f9f7" stroke="#e1e0d9"/>
+  <text x="52" y="466" font-size="13" font-weight="700" fill="#0b0b0b">What this means for product marketing</text>
+  <text x="52" y="492" font-size="12" fill="#52514e">1. Price objections (38% of losses) cluster in deals against Bricklane — sales needs an ROI/TCO framing, not a price-match, since</text>
+  <text x="52" y="510" font-size="12" fill="#52514e">    matching their price undercuts our accuracy positioning.</text>
+  <text x="52" y="532" font-size="12" fill="#52514e">2. "No on-prem option" is newly the #2 loss reason (was #4 last quarter) — worth flagging to product as a recurring blocker,</text>
+  <text x="52" y="550" font-size="12" fill="#52514e">    not a one-off request.</text>
+  <text x="52" y="572" font-size="12" fill="#52514e">3. Explainability keeps winning deals — this is the throughline for the next case study and battlecard refresh.</text>
+</svg>
