@@ -10,20 +10,20 @@ I use AI daily as a product marketer, not just to write faster but to build smal
 
 ## A note on the examples
 
-Everything here is built around **[Sundial Analytics](./strategy/knowledge-base.md)**, a fictional B2B SaaS company I invented as a consistent stand-in. It sells automated property valuation and real estate market intelligence to banks and lenders. None of the competitor names, transcripts, deal data, or brand guidelines are real — they exist so the prompts have something realistic to run against. My actual employer and its real competitive/sales data are not represented here.
+Everything here is built around **[Sundial Analytics](./knowledge-base.md)**, a fictional B2B SaaS company I invented as a consistent stand-in. It sells automated property valuation and real estate market intelligence to banks and lenders. None of the competitor names, transcripts, deal data, or brand guidelines are real — they exist so the prompts have something realistic to run against. My actual employer and its real competitive/sales data are not represented here.
 
 ## Shared knowledge base
 
-[`strategy/`](./strategy) holds the reference docs every use case below draws on, so each skill reasons from shared, consistent truth instead of re-explaining the customer each time:
+These files at repo root hold the reference material every use case below draws on, so each skill reasons from shared, consistent truth instead of re-explaining the customer each time:
 
 | File | Contents |
 |---|---|
-| [`knowledge-base.md`](./strategy/knowledge-base.md) | Master summary — company, competitors, personas at a glance |
-| [`icp.md`](./strategy/icp.md) | Firmographics, tiering, buying committee, in-market signals |
-| [`personas.md`](./strategy/personas.md) | Per-persona buying psychology, objections, content preferences |
-| [`positioning.md`](./strategy/positioning.md) | Strategic narrative, differentiators, value props by segment |
-| [`voice-guide.md`](./strategy/voice-guide.md) | Tone, style rules, anti-patterns, prohibited terms |
-| [`competitive-landscape.md`](./strategy/competitive-landscape.md) | Full battlecards and positioning gaps |
+| [`knowledge-base.md`](./knowledge-base.md) | Master summary — company, competitors, personas at a glance |
+| [`icp.md`](./icp.md) | Firmographics, tiering, buying committee, in-market signals |
+| [`personas.md`](./personas.md) | Per-persona buying psychology, objections, content preferences |
+| [`positioning.md`](./positioning.md) | Strategic narrative, differentiators, value props by segment |
+| [`voice-guide.md`](./voice-guide.md) | Tone, style rules, anti-patterns, prohibited terms |
+| [`competitive-landscape.md`](./competitive-landscape.md) | Full battlecards and positioning gaps |
 
 ## What's inside
 

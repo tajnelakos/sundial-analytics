@@ -2,11 +2,11 @@
 
 ## The problem
 
-A knowledge base like `strategy/` only stays useful if it's current, and nothing forces that automatically — a battlecard entry can quietly reference a competitor's old pricing for two quarters after it changed, and nobody notices until a rep repeats it on a call and gets corrected by the prospect.
+A knowledge base like this one only stays useful if it's current, and nothing forces that automatically — a battlecard entry can quietly reference a competitor's old pricing for two quarters after it changed, and nobody notices until a rep repeats it on a call and gets corrected by the prospect.
 
 ## The approach
 
-A skill that checks `strategy/` documents against more recent inputs (competitor-monitoring briefs, win-loss data, new signals) and flags specific claims that may no longer hold — not a general "this doc is old" warning, but a pointed "this specific line may now be wrong, here's the newer evidence" flag.
+A skill that checks knowledge-base documents against more recent inputs (competitor-monitoring briefs, win-loss data, new signals) and flags specific claims that may no longer hold — not a general "this doc is old" warning, but a pointed "this specific line may now be wrong, here's the newer evidence" flag.
 
 ## Files
 

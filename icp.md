@@ -24,7 +24,7 @@ Tier 1 is the focus for outbound and content strategy — best combination of pa
 | End user | Underwriter / Loan officer | Uses the tool daily, cares about speed and workflow fit |
 | Procurement / blocker | Vendor risk / Compliance | Gates the deal on data handling, SLAs, certifications — usually enters late |
 
-A deal without early technical evaluator buy-in tends to stall at the procurement gate later, even if the economic buyer is enthusiastic — worth surfacing this in deck/outline prompts (see [`sales-deck-builder`](../sales-deck-builder)).
+A deal without early technical evaluator buy-in tends to stall at the procurement gate later, even if the economic buyer is enthusiastic — worth surfacing this in deck/outline prompts (see [`sales-deck-builder`](./sales-deck-builder)).
 
 ## External signals that indicate a company is in-market
 
@@ -34,4 +34,4 @@ A deal without early technical evaluator buy-in tends to stall at the procuremen
 - LOS (loan origination system) migration announced or underway — valuation tooling often gets revisited alongside it
 - Executive turnover at a competitor's existing customer (new leadership frequently re-evaluates inherited vendor choices)
 
-These signals feed the [`competitor-monitoring`](../competitor-monitoring) brief and outbound targeting — not a hard qualification checklist, but a prioritization signal.
+These signals feed the [`competitor-monitoring`](./competitor-monitoring) brief and outbound targeting — not a hard qualification checklist, but a prioritization signal.

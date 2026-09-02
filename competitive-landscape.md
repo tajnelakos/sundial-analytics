@@ -1,6 +1,6 @@
 # Competitive Landscape — Sundial Analytics (fictional)
 
-Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledge-base.md) is the quick version; this is what [`competitor-monitoring`](../competitor-monitoring) and [`win-loss-analysis`](../win-loss-analysis) draw on for deeper context.
+Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledge-base.md) is the quick version; this is what [`competitor-monitoring`](./competitor-monitoring) and [`win-loss-analysis`](./win-loss-analysis) draw on for deeper context.
 
 ## Market map
 
@@ -35,7 +35,7 @@ Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledg
 
 **Strengths:** Long-standing customer relationships, large historical dataset, strong brand recognition in Benelux specifically.
 
-**Weaknesses:** Dated UI, slow release cadence, publicly documented support responsiveness issues (see [`competitor-monitoring/example`](../competitor-monitoring/example/sample-output.md)).
+**Weaknesses:** Dated UI, slow release cadence, publicly documented support responsiveness issues (see [`competitor-monitoring/example`](./competitor-monitoring/example/sample-output.md)).
 
 **How we win:** Modern integration experience and faster implementation timeline; strongest against Estemate when the buying committee includes someone frustrated with the current tool's UX or support.
 
@@ -53,7 +53,7 @@ Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledg
 
 **Strengths:** Strong initial sales narrative, modern-feeling product demo, aggressive marketing presence.
 
-**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up (see the [sales call example](../sales-call-analysis/example/sample-output.md)); thin on regulatory-specific features.
+**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up (see the [sales call example](./sales-call-analysis/example/sample-output.md)); thin on regulatory-specific features.
 
 **How we win:** This is our clearest differentiation lane — let the buyer's own follow-up questions expose the gap rather than attacking ValuAI directly; offer to show our audit trail live on their own data as the resolution.
 

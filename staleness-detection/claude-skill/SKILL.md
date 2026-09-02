@@ -1,6 +1,6 @@
 ---
 name: staleness-detection
-description: Checks a strategy/ knowledge base document against more recent inputs (competitor-monitoring briefs, win-loss data, new signals) and flags specific claims that may no longer be accurate, with the newer evidence cited. Use when the user wants to know if a reference doc needs a refresh, not a general content audit.
+description: Checks a knowledge-base document against more recent inputs (competitor-monitoring briefs, win-loss data, new signals) and flags specific claims that may no longer be accurate, with the newer evidence cited. Use when the user wants to know if a reference doc needs a refresh, not a general content audit.
 ---
 
 # Staleness Detection
@@ -15,7 +15,7 @@ Flag specific, potentially-outdated claims with their contradicting evidence —
 2. **Compare each claim against the newer inputs provided.** Only flag a claim if a newer input actually contradicts or updates it — don't flag a claim just because it's old if nothing newer speaks to it either way.
 3. **Distinguish "contradicted" from "unverified but plausibly still true."** A claim with direct newer evidence against it is a hard flag. A claim that simply hasn't been re-confirmed recently, with no evidence either way, is a soft flag — worth a periodic recheck, not urgent.
 4. **Cite the specific newer input** that triggers each flag — a rep or writer needs to see the evidence, not just trust the flag.
-5. **Do not rewrite the flagged claim.** Route hard flags to the appropriate generator skill instead (e.g. a stale competitor claim → `battle-card-generator`; a stale persona claim → note it for `strategy/personas.md`'s owner) — this skill's job is detection, not correction.
+5. **Do not rewrite the flagged claim.** Route hard flags to the appropriate generator skill instead (e.g. a stale competitor claim → `battle-card-generator`; a stale persona claim → note it for `personas.md`'s owner) — this skill's job is detection, not correction.
 6. **If nothing is flagged, say so plainly** — don't manufacture a soft flag just to show the check did something.
 
 ## What to avoid

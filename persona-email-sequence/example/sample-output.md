@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional sequence for the Head of Credit Risk persona ([`strategy/personas.md`](../../strategy/personas.md)).
+Fictional sequence for the Head of Credit Risk persona ([`personas.md`](../../personas.md)).
 
 ---
 
@@ -29,4 +29,4 @@ Integration effort is real but usually smaller than teams expect going in — ha
 Decision criterion this advances: vendor stability / integration effort (3rd/4th-ranked criteria) — closes the loop on the remaining lower-ranked concerns without urgency tactics.
 ```
 
-Note: no 4th email pushing "last chance" urgency — this persona is described in `strategy/personas.md` as more skeptical, not less, of pressure tactics, so the sequence ends on a low-pressure, real-effort answer instead.
+Note: no 4th email pushing "last chance" urgency — this persona is described in `personas.md` as more skeptical, not less, of pressure tactics, so the sequence ends on a low-pressure, real-effort answer instead.

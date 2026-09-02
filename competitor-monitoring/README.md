@@ -16,7 +16,7 @@ Two constraints I built in on purpose:
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — the same logic adapted as a ChatGPT custom GPT
-- [`example/sample-output.md`](./example/sample-output.md) — a fictional weekly brief run against [Sundial Analytics](../strategy/knowledge-base.md)'s fictional competitors
+- [`example/sample-output.md`](./example/sample-output.md) — a fictional weekly brief run against [Sundial Analytics](../knowledge-base.md)'s fictional competitors
 
 ## What's simplified from the real version
 

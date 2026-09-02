@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional signals about fictional accounts. Scored against [`strategy/icp.md`](../../strategy/icp.md). This example's flagged account, Nordkredit, is carried through to [`abm-account-brief`](../../abm-account-brief) and [`personalized-outbound`](../../personalized-outbound).
+Fictional signals about fictional accounts. Scored against [`icp.md`](../../icp.md). This example's flagged account, Nordkredit, is carried through to [`abm-account-brief`](../../abm-account-brief) and [`personalized-outbound`](../../personalized-outbound).
 
 ---
 
@@ -27,4 +27,4 @@ Fictional signals about fictional accounts. Scored against [`strategy/icp.md`](.
 Out-of-segment (signal present, doesn't fit ICP): Meridian Savings — signal is a generic hiring post with no risk/credit-specific hire or tooling mention; doesn't meet the Strong or Medium bar as defined, and general headcount growth isn't itself an ICP signal.
 ```
 
-Note: Court Street Lending is Tier 2, not Tier 1 (per `strategy/icp.md`, €5B+ origination volume moves it into the longer-cycle, more-procurement-layers tier) — it's still worth tracking, just not with the same urgency as a Tier 1 account showing the same signal strength.
+Note: Court Street Lending is Tier 2, not Tier 1 (per `icp.md`, €5B+ origination volume moves it into the longer-cycle, more-procurement-layers tier) — it's still worth tracking, just not with the same urgency as a Tier 1 account showing the same signal strength.

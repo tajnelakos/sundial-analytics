@@ -1,6 +1,6 @@
 # Knowledge Base — Sundial Analytics (fictional)
 
-Master source of truth for every prompt, skill, and example in this repo. Every other file in `strategy/` is a derived, deeper view of one section of this doc — kept separate so a skill can reference just the piece it needs (voice rules, competitor detail, persona psychology) instead of the whole thing.
+Master source of truth for every prompt, skill, and example in this repo. Every other knowledge-base file alongside this one is a derived, deeper view of one section of this doc — kept separate so a skill can reference just the piece it needs (voice rules, competitor detail, persona psychology) instead of the whole thing.
 
 All examples in this repo are built around one consistent fictional company, so the prompts and outputs read as a coherent body of work rather than disconnected demos. **None of this is real** — no real competitor, customer, or deal data is represented anywhere in this repo.
 

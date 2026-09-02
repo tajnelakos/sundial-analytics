@@ -1,6 +1,6 @@
 ---
 name: positioning-compliance
-description: Checks a marketing draft against strategy/voice-guide.md (prohibited terms, anti-patterns) and strategy/positioning.md (claims that overstate or contradict our actual positioning), returning a pass/fail with specific citations. Never rewrites — flags for the owner to fix. Use as a pre-publish gate, not as an editing tool.
+description: Checks a marketing draft against voice-guide.md (prohibited terms, anti-patterns) and positioning.md (claims that overstate or contradict our actual positioning), returning a pass/fail with specific citations. Never rewrites — flags for the owner to fix. Use as a pre-publish gate, not as an editing tool.
 ---
 
 # Positioning Compliance Checker
@@ -11,10 +11,10 @@ A fast, specific pass/fail check before a piece ships — distinct from a rewrit
 
 ## Instructions
 
-1. **Scan for prohibited terms** from `strategy/voice-guide.md` — exact matches and close variants (e.g. "seamlessly" counts as "seamless"). Quote the exact sentence each occurs in.
+1. **Scan for prohibited terms** from `voice-guide.md` — exact matches and close variants (e.g. "seamlessly" counts as "seamless"). Quote the exact sentence each occurs in.
 2. **Scan for banned constructions** (e.g. "it's not X, it's Y") — same treatment, quote the instance.
-3. **Check every quantitative or comparative claim against what's actually supported** — a claim like "3x faster" needs to be traceable to something in `strategy/positioning.md` or flagged as unverifiable, not assumed fine because it sounds plausible.
-4. **Check for overclaims against `strategy/positioning.md`'s "what this is not" section** — e.g. any claim of superior raw accuracy over all competitors should be flagged, since positioning deliberately avoids that claim.
+3. **Check every quantitative or comparative claim against what's actually supported** — a claim like "3x faster" needs to be traceable to something in `positioning.md` or flagged as unverifiable, not assumed fine because it sounds plausible.
+4. **Check for overclaims against `positioning.md`'s "what this is not" section** — e.g. any claim of superior raw accuracy over all competitors should be flagged, since positioning deliberately avoids that claim.
 5. **Do not rewrite anything.** For each finding, cite the exact text and the specific rule/doc section it violates. If the draft is clean, say so plainly — don't invent minor nitpicks to justify the check having run.
 6. **Separate hard fails from soft flags.** A prohibited term or an unsupported quantitative claim is a hard fail (blocks publish). A stylistic anti-pattern that isn't explicitly banned but drifts from tone is a soft flag (reviewer's call).
 

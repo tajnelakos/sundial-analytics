@@ -7,11 +7,11 @@ description: Scores raw signals about named accounts (exec hires, job postings, 
 
 ## Purpose
 
-Turn raw, per-account signals into a ranked watch list, using the tiering and signal definitions already established in `strategy/icp.md` rather than judging fit ad hoc each time.
+Turn raw, per-account signals into a ranked watch list, using the tiering and signal definitions already established in `icp.md` rather than judging fit ad hoc each time.
 
 ## Instructions
 
-1. **Reference the ICP tiering criteria** (firmographics, technographics, geography — see `strategy/icp.md`) to first sanity-check the account is even in-segment. Don't score a signal for an account that doesn't fit the ICP at all — flag it as out-of-segment instead.
+1. **Reference the ICP tiering criteria** (firmographics, technographics, geography — see `icp.md`) to first sanity-check the account is even in-segment. Don't score a signal for an account that doesn't fit the ICP at all — flag it as out-of-segment instead.
 2. **Classify each signal by strength**, not just presence:
    - **Strong**: new risk/credit leadership hire, an announced audit finding, a job posting naming a specific legacy competitor tool
    - **Medium**: LOS/core system migration announced, executive turnover at a company using a competitor

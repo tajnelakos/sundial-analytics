@@ -7,15 +7,15 @@ description: Builds a one-page account brief for a named target account by apply
 
 ## Purpose
 
-Apply the general knowledge base (`strategy/icp.md`, `personas.md`, `positioning.md`, `competitive-landscape.md`) to one specific account, so the output is account-specific reasoning, not a restatement of the generic docs with the account's name inserted.
+Apply the general knowledge base (`icp.md`, `personas.md`, `positioning.md`, `competitive-landscape.md`) to one specific account, so the output is account-specific reasoning, not a restatement of the generic docs with the account's name inserted.
 
 ## Instructions
 
-1. **Place the account in the ICP tiering** (`strategy/icp.md`) using whatever firmographic detail is given. State the tier and why — this determines expected sales cycle length and how much procurement friction to expect.
+1. **Place the account in the ICP tiering** (`icp.md`) using whatever firmographic detail is given. State the tier and why — this determines expected sales cycle length and how much procurement friction to expect.
 2. **Infer the likely buying committee** for this account from the standard committee structure in `icp.md`, adjusted for anything account-specific that's known (e.g. a named hire fills a specific role).
-3. **Select the 1-2 most relevant personas** (`strategy/personas.md`) based on what's actually known about this account, not all three by default — a brief that tries to speak to every persona equally speaks to none of them well.
-4. **Pick the positioning angle** (`strategy/positioning.md`) that best matches this account's apparent situation, not the general pitch — if a specific pain or trigger signal is known, lead with the value proposition that maps to it.
-5. **Assess competitive risk** using `strategy/competitive-landscape.md` — is there a specific competitor likely to already be in this deal (based on account profile, geography, or a known evaluation), and what's the specific play against them for this account.
+3. **Select the 1-2 most relevant personas** (`personas.md`) based on what's actually known about this account, not all three by default — a brief that tries to speak to every persona equally speaks to none of them well.
+4. **Pick the positioning angle** (`positioning.md`) that best matches this account's apparent situation, not the general pitch — if a specific pain or trigger signal is known, lead with the value proposition that maps to it.
+5. **Assess competitive risk** using `competitive-landscape.md` — is there a specific competitor likely to already be in this deal (based on account profile, geography, or a known evaluation), and what's the specific play against them for this account.
 6. **If a buying signal is provided** (e.g. from `icp-buying-signal-monitor`), the brief must reference it directly as the reason for the account's current priority and timing — don't produce a generic brief that ignores why this account is being looked at right now.
 7. **Keep it to one page.** This is meant to be read before a call, not studied — cut detail that doesn't change what the rep would say or do differently.
 

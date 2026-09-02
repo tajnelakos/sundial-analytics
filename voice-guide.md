@@ -1,6 +1,6 @@
 # Voice Guide — Sundial Analytics (fictional)
 
-Canonical voice reference. [`brand-voice-guidelines/claude-skill/SKILL.md`](../brand-voice-guidelines/claude-skill/SKILL.md) applies these rules as a rewrite pass — this file is the source of truth they point back to, so the rules exist once, not duplicated per skill.
+Canonical voice reference. [`brand-voice-guidelines/claude-skill/SKILL.md`](./brand-voice-guidelines/claude-skill/SKILL.md) applies these rules as a rewrite pass — this file is the source of truth they point back to, so the rules exist once, not duplicated per skill.
 
 ## Tone
 
@@ -38,4 +38,4 @@ Words to avoid outright — they're either meaningless through overuse or specif
 
 ## Applying this guide
 
-A rewrite pass should flag, not silently fix, any claim it can't verify from the source material (a specific stat, a comparison) — see the [`brand-voice-guidelines`](../brand-voice-guidelines) skill for how this gets operationalized.
+A rewrite pass should flag, not silently fix, any claim it can't verify from the source material (a specific stat, a comparison) — see the [`brand-voice-guidelines`](./brand-voice-guidelines) skill for how this gets operationalized.

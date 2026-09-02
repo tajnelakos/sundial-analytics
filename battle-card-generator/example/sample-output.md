@@ -1,6 +1,6 @@
 # Sample output
 
-Fictional raw notes, run as an **update** to the existing ValuAI section of [`strategy/competitive-landscape.md`](../../strategy/competitive-landscape.md) — demonstrating the "output only what changed" instruction rather than a full regeneration.
+Fictional raw notes, run as an **update** to the existing ValuAI section of [`competitive-landscape.md`](../../competitive-landscape.md) — demonstrating the "output only what changed" instruction rather than a full regeneration.
 
 ---
 

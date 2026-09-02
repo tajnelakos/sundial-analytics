@@ -15,7 +15,7 @@ Turn an account-specific brief into one outbound message that could only have be
 2. **Lead with the account's situation, not our product.** The first line should establish that this message is about them specifically — the product enters after that, as the response to their situation, not the subject of the message.
 3. **Use the positioning angle already selected in the brief** — don't default to a generic pitch if the brief specifies a particular angle (e.g. defensibility over speed).
 4. **One clear, low-friction ask.** Not "let's set up a call to discuss our platform" — something specific and small enough to say yes to (e.g. "worth a 15-minute conversation about how you're thinking about explainability requirements for the new tooling?").
-5. **Follow `strategy/voice-guide.md`** — no hype language, no banned terms, second person and direct.
+5. **Follow `voice-guide.md`** — no hype language, no banned terms, second person and direct.
 6. **Keep it short.** Cold/warm outbound that requires scrolling doesn't get read; aim for under 120 words for email, shorter for LinkedIn.
 7. **If the input brief doesn't contain a specific enough trigger to personalize against, say so** rather than producing generic outbound dressed up as personalized — a message with no real hook shouldn't ship under this skill's output.
 

@@ -7,7 +7,7 @@ description: Synthesizes raw competitive research (win/loss notes, call mentions
 
 ## Purpose
 
-Produce a battlecard section in the same structure as `strategy/competitive-landscape.md`, so a new or updated competitor entry is immediately usable by a rep, not just a research summary someone else has to restructure later.
+Produce a battlecard section in the same structure as `competitive-landscape.md`, so a new or updated competitor entry is immediately usable by a rep, not just a research summary someone else has to restructure later.
 
 ## Instructions
 
@@ -26,4 +26,4 @@ Produce a battlecard section in the same structure as `strategy/competitive-land
 
 ## Output format
 
-Match the structure used in `strategy/competitive-landscape.md`: Positioning / Strengths / Weaknesses / How we win / How we lose / Objection handling / Trigger signals — each claim tagged with its source type.
+Match the structure used in `competitive-landscape.md`: Positioning / Strengths / Weaknesses / How we win / How we lose / Objection handling / Trigger signals — each claim tagged with its source type.

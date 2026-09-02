@@ -4,11 +4,11 @@ If you're an AI assistant (Claude, ChatGPT, or otherwise) and someone has just p
 
 ## What this repo is
 
-A working set of prompts, Claude Skills, and custom GPTs for recurring growth/product marketing tasks at a B2B SaaS company, built around one fictional company ([`strategy/knowledge-base.md`](./strategy/knowledge-base.md), Sundial Analytics) so the examples are coherent rather than disconnected snippets. Full context: [`README.md`](./README.md).
+A working set of prompts, Claude Skills, and custom GPTs for recurring growth/product marketing tasks at a B2B SaaS company, built around one fictional company ([`knowledge-base.md`](./knowledge-base.md), Sundial Analytics) so the examples are coherent rather than disconnected snippets. Full context: [`README.md`](./README.md).
 
 ## Two kinds of folder
 
-- **`strategy/`** — the shared knowledge base (ICP, personas, positioning, voice, competitive landscape). Not a task tool — read the relevant file(s) here first when a task needs customer, competitor, or voice context. Every use-case folder below assumes this exists rather than re-explaining the customer each time.
+- **The knowledge-base files at repo root** (`knowledge-base.md`, `icp.md`, `personas.md`, `positioning.md`, `voice-guide.md`, `competitive-landscape.md`) — not a task tool, read the relevant file(s) here first when a task needs customer, competitor, or voice context. Every use-case folder below assumes these exist rather than re-explaining the customer each time.
 - **Everything else at root** — one folder per recurring task, each with a `claude-skill/SKILL.md` (and a `custom-gpt/INSTRUCTIONS.md` where relevant) plus a worked example.
 
 ## Routing: if the request is about... use this folder
@@ -47,12 +47,12 @@ This is here so an AI assistant (or a reader unfamiliar with the role) can see w
 **Monthly**
 - Refresh a battlecard with the past month's accumulated competitive intel → [`battle-card-generator`](./battle-card-generator)
 - Build or refresh a nurture sequence tied to a new piece of content → [`persona-email-sequence`](./persona-email-sequence)
-- Spot-check whether the `strategy/` knowledge base itself has drifted → [`staleness-detection`](./staleness-detection)
+- Spot-check whether the knowledge-base files themselves have drifted → [`staleness-detection`](./staleness-detection)
 
 **Quarterly**
 - Full win/loss analysis and infographic for the exec team → [`win-loss-analysis`](./win-loss-analysis)
-- Revisit `strategy/positioning.md` and `strategy/personas.md` against what win/loss and call analysis surfaced that quarter (manual review — no dedicated tool for this on purpose, since positioning shifts deserve human judgment, not automated rewriting)
+- Revisit `positioning.md` and `personas.md` against what win/loss and call analysis surfaced that quarter (manual review — no dedicated tool for this on purpose, since positioning shifts deserve human judgment, not automated rewriting)
 
 ## A note on the examples
 
-Every worked example across this repo uses the same fictional company and competitors defined in [`strategy/knowledge-base.md`](./strategy/knowledge-base.md). No real company, deal, or customer data appears anywhere in this repository.
+Every worked example across this repo uses the same fictional company and competitors defined in [`knowledge-base.md`](./knowledge-base.md). No real company, deal, or customer data appears anywhere in this repository.

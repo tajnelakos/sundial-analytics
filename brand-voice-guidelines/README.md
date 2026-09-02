@@ -11,7 +11,7 @@ A skill that encodes the voice as **rules with a reason**, not just adjectives (
 ## Files
 
 - [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition, including the actual voice rules
-- [`example/before-after.md`](./example/before-after.md) — a sample rewrite for [Sundial Analytics](../strategy/knowledge-base.md), with the reasoning shown
+- [`example/before-after.md`](./example/before-after.md) — a sample rewrite for [Sundial Analytics](../knowledge-base.md), with the reasoning shown
 
 ## What's simplified from the real version
 
