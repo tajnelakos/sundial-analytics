@@ -1,6 +1,6 @@
 # Custom GPT: "Competitor Weekly Brief"
 
-System instructions as configured in ChatGPT's GPT builder. Same logic as the [Claude Skill](../claude-skill/SKILL.md), adapted to a conversational GPT that can be used ad hoc rather than run as a defined skill.
+System instructions as configured in ChatGPT's GPT builder. Same logic as the [Claude Skill](./weekly-brief-skill.md), adapted to a conversational GPT that can be used ad hoc rather than run as a defined skill.
 
 ## Instructions field
 

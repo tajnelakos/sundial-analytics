@@ -12,9 +12,9 @@ The core judgment call it makes every time: **order and emphasis change based on
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/sample-deck-outline.md`](./example/sample-deck-outline.md) — outline generated for a Sundial Analytics deal
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`gpt.md`](./gpt.md) — ChatGPT custom GPT version
+- [`sample-deck-outline.md`](./sample-deck-outline.md) — outline generated for a Sundial Analytics deal
 
 ## Current limitations
 

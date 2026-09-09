@@ -12,13 +12,19 @@ Two constraints are built in on purpose:
 - **No unverified claims.** If a signal is ambiguous (e.g. a pricing page number without context), the skill flags it as "needs confirmation" rather than asserting it.
 - **"So what" is mandatory.** Every item must end with an implication, not just an observation — otherwise it's just news, not intelligence.
 
-## Files
+## Files — weekly brief
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — the same logic adapted as a ChatGPT custom GPT
-- [`example/sample-output.md`](./example/sample-output.md) — a weekly brief run against [Sundial Analytics](../knowledge-base.md)'s competitors
+- [`weekly-brief-skill.md`](./weekly-brief-skill.md) — the Claude Skill definition
+- [`weekly-brief-gpt.md`](./weekly-brief-gpt.md) — the same logic adapted as a ChatGPT custom GPT
+- [`weekly-brief-example.md`](./weekly-brief-example.md) — a weekly brief run against [Sundial Analytics](../knowledge-base.md)'s competitors
 
-There's also a slower, deeper cadence for the same competitor set — see [`bi-monthly-analysis/`](./bi-monthly-analysis), a sourced, comparable-over-time report rather than a fast weekly synthesis.
+## Files — bi-monthly deep-dive
+
+A slower, deeper cadence for the same competitor set — sourced and comparable-over-time rather than a fast weekly synthesis (see [`bi-monthly-report-skill.md`](./bi-monthly-report-skill.md) for how and why it differs from the brief above).
+
+- [`bi-monthly-report-skill.md`](./bi-monthly-report-skill.md) — the skill definition
+- [`bi-monthly-report-2026-07-08.md`](./bi-monthly-report-2026-07-08.md) — the July–August 2026 report, written up
+- [`bi-monthly-report-2026-07-08.html`](./bi-monthly-report-2026-07-08.html) — the same report as a designed, one-page HTML version
 
 ## Current limitations
 

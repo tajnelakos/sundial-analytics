@@ -1,6 +1,6 @@
 # Sample output
 
-Sequence for the Head of Credit Risk persona ([`personas.md`](../../personas.md)).
+Sequence for the Head of Credit Risk persona ([`personas.md`](../personas.md)).
 
 ---
 

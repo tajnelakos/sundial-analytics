@@ -1,6 +1,6 @@
 # Custom GPT: "Sales Call Analyst"
 
-System instructions as configured in ChatGPT's GPT builder. Same structure as the [Claude Skill](../claude-skill/SKILL.md).
+System instructions as configured in ChatGPT's GPT builder. Same structure as the [Claude Skill](./skill.md).
 
 ## Instructions field
 

@@ -9,14 +9,14 @@ A working set of prompts, Claude Skills, and custom GPTs for recurring growth/pr
 ## Two kinds of folder
 
 - **The knowledge-base files at repo root** (`knowledge-base.md`, `icp.md`, `personas.md`, `positioning.md`, `voice-guide.md`, `competitive-landscape.md`) — not a task tool, read the relevant file(s) here first when a task needs customer, competitor, or voice context. Every use-case folder below assumes these exist rather than re-explaining the customer each time.
-- **Everything else at root** — one folder per recurring task, each with a `claude-skill/SKILL.md` (and a `custom-gpt/INSTRUCTIONS.md` where relevant) plus a worked example.
+- **Everything else at root** — one folder per recurring task, each holding a flat set of files: `skill.md` (and `gpt.md` where relevant) plus a worked example — no nested subfolders.
 
 ## Routing: if the request is about... use this folder
 
 | Request sounds like | Folder |
 |---|---|
 | "What's changed with [competitor] lately?" / weekly competitive roundup | [`competitor-monitoring`](./competitor-monitoring) |
-| "Give me the full sourced competitive report for this period" | [`competitor-monitoring/bi-monthly-analysis`](./competitor-monitoring/bi-monthly-analysis) |
+| "Give me the full sourced competitive report for this period" | [`competitor-monitoring/bi-monthly-report-skill.md`](./competitor-monitoring/bi-monthly-report-skill.md) |
 | "Build/refresh the full battlecard for [competitor]" | [`battle-card-generator`](./battle-card-generator) |
 | "Break down this sales call" / objections, competitor mentions from a transcript | [`sales-call-analysis`](./sales-call-analysis) |
 | "Why are we winning/losing deals this quarter?" | [`win-loss-analysis`](./win-loss-analysis) |
@@ -47,7 +47,7 @@ This is here so an AI assistant (or a reader unfamiliar with the role) can see w
 
 **Monthly**
 - Refresh a battlecard with the past month's accumulated competitive intel → [`battle-card-generator`](./battle-card-generator)
-- Every other month: the deeper, sourced competitive report → [`competitor-monitoring/bi-monthly-analysis`](./competitor-monitoring/bi-monthly-analysis)
+- Every other month: the deeper, sourced competitive report → [`competitor-monitoring/bi-monthly-report-skill.md`](./competitor-monitoring/bi-monthly-report-skill.md)
 - Build or refresh a nurture sequence tied to a new piece of content → [`persona-email-sequence`](./persona-email-sequence)
 - Spot-check whether the knowledge-base files themselves have drifted → [`staleness-detection`](./staleness-detection)
 

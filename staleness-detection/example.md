@@ -1,6 +1,6 @@
 # Sample output
 
-Checking [`competitive-landscape.md`](../../competitive-landscape.md) against a fictional newer signal — continuing the ValuAI thread from [`battle-card-generator`](../../battle-card-generator/example/sample-output.md).
+Checking [`competitive-landscape.md`](../competitive-landscape.md) against a fictional newer signal — continuing the ValuAI thread from [`battle-card-generator`](../battle-card-generator/example.md).
 
 ---
 

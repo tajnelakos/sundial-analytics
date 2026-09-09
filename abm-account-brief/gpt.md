@@ -1,6 +1,6 @@
 # Custom GPT: "ABM Account Brief Builder"
 
-System instructions as configured in ChatGPT's GPT builder. Same logic as the [Claude Skill](../claude-skill/SKILL.md). In production this GPT would have the four reference docs (`icp.md`, `personas.md`, `positioning.md`, `competitive-landscape.md`) uploaded as knowledge files; the instructions below assume that context is available to the model.
+System instructions as configured in ChatGPT's GPT builder. Same logic as the [Claude Skill](./skill.md). In production this GPT would have the four reference docs (`icp.md`, `personas.md`, `positioning.md`, `competitive-landscape.md`) uploaded as knowledge files; the instructions below assume that context is available to the model.
 
 ## Instructions field
 

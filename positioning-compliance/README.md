@@ -10,8 +10,8 @@ A skill that checks a draft against [`voice-guide.md`](../voice-guide.md) (prohi
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`example/sample-output.md`](./example/sample-output.md) — a draft checked and flagged
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`example.md`](./example.md) — a draft checked and flagged
 
 ## Current limitations
 

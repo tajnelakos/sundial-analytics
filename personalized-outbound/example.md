@@ -1,12 +1,12 @@
 # Sample output
 
-Outreach closing the loop from [`icp-buying-signal-monitor`](../../icp-buying-signal-monitor) → [`abm-account-brief`](../../abm-account-brief) → this.
+Outreach closing the loop from [`icp-buying-signal-monitor`](../icp-buying-signal-monitor) → [`abm-account-brief`](../abm-account-brief) → this.
 
 ---
 
 ## Input
 
-The [Nordkredit account brief](../../abm-account-brief/example/sample-output.md), pasted in full.
+The [Nordkredit account brief](../abm-account-brief/example.md), pasted in full.
 
 ## Output
 

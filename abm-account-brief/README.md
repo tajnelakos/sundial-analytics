@@ -12,9 +12,9 @@ This example continues the account flagged by [`icp-buying-signal-monitor`](../i
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/sample-output.md`](./example/sample-output.md) — the Nordkredit brief
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`gpt.md`](./gpt.md) — ChatGPT custom GPT version
+- [`example.md`](./example.md) — the Nordkredit brief
 
 ## Current limitations
 

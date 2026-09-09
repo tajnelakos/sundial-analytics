@@ -1,6 +1,6 @@
 # Custom GPT: "Sales Deck Outline Builder"
 
-System instructions as configured in ChatGPT's GPT builder. Same logic as the [Claude Skill](../claude-skill/SKILL.md).
+System instructions as configured in ChatGPT's GPT builder. Same logic as the [Claude Skill](./skill.md).
 
 ## Instructions field
 

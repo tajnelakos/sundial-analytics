@@ -15,9 +15,9 @@ A skill that takes a single call transcript and extracts four things, every time
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/sample-output.md`](./example/sample-output.md) — run against a discovery call transcript
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`gpt.md`](./gpt.md) — ChatGPT custom GPT version
+- [`example.md`](./example.md) — run against a discovery call transcript
 
 ## Current limitations
 

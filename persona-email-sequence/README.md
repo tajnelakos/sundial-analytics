@@ -12,8 +12,8 @@ A skill that takes a persona (from `personas.md`) and a starting context (e.g. "
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`example/sample-output.md`](./example/sample-output.md) — a 3-email sequence for the Head of Credit Risk persona
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`example.md`](./example.md) — a 3-email sequence for the Head of Credit Risk persona
 
 ## Current limitations
 

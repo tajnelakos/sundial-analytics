@@ -10,8 +10,8 @@ A skill that checks knowledge-base documents against more recent inputs (competi
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`example/sample-output.md`](./example/sample-output.md) — a staleness check against the competitive-landscape doc
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`example.md`](./example.md) — a staleness check against the competitive-landscape doc
 
 ## Current limitations
 

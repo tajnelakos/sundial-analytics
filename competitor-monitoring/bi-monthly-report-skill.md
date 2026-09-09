@@ -35,4 +35,4 @@ A real competitive intelligence report circulated inside a company is usually ke
 
 ## Output format
 
-Two deliverables: the structured write-up (Markdown, for the record) and, given the report's actual audience, a designed one-page HTML version meant to be opened and skimmed rather than read as a document — see [`example/`](../example) for both.
+Two deliverables: the structured write-up (Markdown, for the record) and, given the report's actual audience, a designed one-page HTML version meant to be opened and skimmed rather than read as a document — see [`bi-monthly-report-2026-07-08.md`](./bi-monthly-report-2026-07-08.md) and [`bi-monthly-report-2026-07-08.html`](./bi-monthly-report-2026-07-08.html) for both.

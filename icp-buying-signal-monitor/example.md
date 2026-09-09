@@ -1,6 +1,6 @@
 # Sample output
 
-Signals scored against [`icp.md`](../../icp.md). This example's flagged account, Nordkredit, is carried through to [`abm-account-brief`](../../abm-account-brief) and [`personalized-outbound`](../../personalized-outbound).
+Signals scored against [`icp.md`](../icp.md). This example's flagged account, Nordkredit, is carried through to [`abm-account-brief`](../abm-account-brief) and [`personalized-outbound`](../personalized-outbound).
 
 ---
 

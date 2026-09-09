@@ -15,11 +15,11 @@ The output is intentionally opinionated: it always ends in 2-3 concrete next act
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — ChatGPT custom GPT version
-- [`example/win-loss-infographic.svg`](./example/win-loss-infographic.svg) — sample output, Q1 data for Sundial Analytics' banking segment
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`gpt.md`](./gpt.md) — ChatGPT custom GPT version
+- [`win-loss-infographic.svg`](./win-loss-infographic.svg) — sample output, Q1 data for Sundial Analytics' banking segment
 
-![Win/loss infographic example](./example/win-loss-infographic.svg)
+![Win/loss infographic example](./win-loss-infographic.svg)
 
 ## Current limitations
 

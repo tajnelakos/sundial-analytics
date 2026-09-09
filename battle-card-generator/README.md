@@ -12,8 +12,8 @@ A skill that takes a pile of raw competitive inputs about one competitor and pro
 
 ## Files
 
-- [`claude-skill/SKILL.md`](./claude-skill/SKILL.md) — the Claude Skill definition
-- [`example/sample-output.md`](./example/sample-output.md) — a battlecard built from raw notes about a competitor
+- [`skill.md`](./skill.md) — the Claude Skill definition
+- [`example.md`](./example.md) — a battlecard built from raw notes about a competitor
 
 ## Current limitations
 

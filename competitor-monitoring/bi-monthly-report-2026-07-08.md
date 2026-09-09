@@ -1,8 +1,8 @@
 # Competitive Intelligence Report — July–August 2026
 
-Prepared September 2026. Tracks Bricklane Data, Estemate, ValuAI, and PropIQ (see [`competitive-landscape.md`](../../../competitive-landscape.md)). Region-agnostic — no regional cut this period.
+Prepared September 2026. Tracks Bricklane Data, Estemate, ValuAI, and PropIQ (see [`competitive-landscape.md`](../competitive-landscape.md)). Region-agnostic — no regional cut this period.
 
-A designed, one-page version of this same report is at [`report-2026-07-08.html`](./report-2026-07-08.html).
+A designed, one-page version of this same report is at [`bi-monthly-report-2026-07-08.html`](./bi-monthly-report-2026-07-08.html).
 
 ---
 
@@ -68,9 +68,9 @@ A designed, one-page version of this same report is at [`report-2026-07-08.html`
 
 ## Strategic Signals for Sundial Analytics
 
-*(This section, and Market Patterns above, are additions beyond the neutral report format — see the note in [`../claude-skill/SKILL.md`](../claude-skill/SKILL.md) on why.)*
+*(This section, and Market Patterns above, are additions beyond the neutral report format — see the note in [`bi-monthly-report-skill.md`](./bi-monthly-report-skill.md) on why.)*
 
-- **ValuAI's GA announcement is the most consequential development this period.** It targets our primary differentiation lane directly. Recommend running [`battle-card-generator`](../../../battle-card-generator) against this update, and checking any live sales content with [`positioning-compliance`](../../../positioning-compliance) for stale "not yet GA" claims.
+- **ValuAI's GA announcement is the most consequential development this period.** It targets our primary differentiation lane directly. Recommend running [`battle-card-generator`](../battle-card-generator) against this update, and checking any live sales content with [`positioning-compliance`](../positioning-compliance) for stale "not yet GA" claims.
 - **The convergence on "audit-ready" language across two competitors suggests the market is treating defensibility as a category expectation, not a differentiator, faster than expected.** Worth revisiting whether "we're explainable" alone is still a strong enough wedge, or whether the differentiation needs to shift toward *proof* — a public benchmark, a named reference customer speaking specifically to the audit trail, not just the capability.
 - **Estemate's quiet period is consistent with its established pattern** — not a signal to act on, but also not a reason to deprioritize a competitor that still holds a large installed base.
-- Recommend re-running [`staleness-detection`](../../../staleness-detection) against `competitive-landscape.md`'s ValuAI section given this period's GA announcement — that section already flagged this exact claim as volatile.
+- Recommend re-running [`staleness-detection`](../staleness-detection) against `competitive-landscape.md`'s ValuAI section given this period's GA announcement — that section already flagged this exact claim as volatile.

@@ -34,9 +34,9 @@ Illustrative — not a substitute for a live demo comparison.
 
 | | Sundial | Bricklane Data | Estemate | ValuAI |
 |---|---|---|---|---|
-| Comparable-level audit trail | ✅ Yes | ❌ Confidence score only | ⚠️ Partial, dated format | ⚠️ Claimed, not verified GA (see [call example](./sales-call-analysis/example/sample-output.md)) |
+| Comparable-level audit trail | ✅ Yes | ❌ Confidence score only | ⚠️ Partial, dated format | ⚠️ Claimed, not verified GA (see [call example](./sales-call-analysis/example.md)) |
 | Accuracy methodology disclosed | ✅ Yes | ❌ Not published | ✅ Yes, established track record | ❌ Claimed, not disclosed |
-| On-prem deployment | ❌ No — current gap, see [win-loss data](./win-loss-analysis/example/win-loss-infographic.svg) | ❌ Cloud only | ✅ Yes (legacy architecture) | ❌ Cloud only |
+| On-prem deployment | ❌ No — current gap, see [win-loss data](./win-loss-analysis/win-loss-infographic.svg) | ❌ Cloud only | ✅ Yes (legacy architecture) | ❌ Cloud only |
 | Implementation timeline | Weeks | Fastest — self-serve | Slowest — legacy integration | Medium |
 | Pricing model | Usage-based (per-call) | Usage-based, ~15% below Sundial | Enterprise/negotiated, typically higher | Not publicly disclosed |
 
@@ -66,7 +66,7 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 | Competitor | Rating | Praise | Complaint |
 |---|---|---|---|
 | Bricklane Data | ~4.3/5 (G2, ~40 reviews) | Speed, easy self-serve setup | Support "felt automated"; accuracy questioned in edge cases |
-| Estemate | ~3.6/5 (G2, ~90 reviews) | Data depth, reliability | Slow support response, dated UI *(confirmed — see [competitor-monitoring/example](./competitor-monitoring/example/sample-output.md))* |
+| Estemate | ~3.6/5 (G2, ~90 reviews) | Data depth, reliability | Slow support response, dated UI *(confirmed — see [competitor-monitoring/example](./competitor-monitoring/weekly-brief-example.md))* |
 | ValuAI | ~4.1/5 (G2, ~25 reviews — newer product) | Modern UI, strong demo experience | A few reviews mention promised features not yet available |
 | PropIQ | ~4.5/5 (Capterra) | Easy agent adoption | Limited to brokerage use case, not built for lenders |
 
@@ -76,7 +76,7 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 ## Bricklane Data
 
-**Quick facts:** Threat level 🔴 High · Bank/lender segment · 13 of 35 Q1 losses · Last verified: March 2026 (per [win-loss-analysis](./win-loss-analysis/example/win-loss-infographic.svg))
+**Quick facts:** Threat level 🔴 High · Bank/lender segment · 13 of 35 Q1 losses · Last verified: March 2026 (per [win-loss-analysis](./win-loss-analysis/win-loss-infographic.svg))
 
 **Positioning:** Speed and price. Their pitch is "valuations in seconds, at the lowest per-call cost in the market."
 
@@ -98,13 +98,13 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 ## Estemate
 
-**Quick facts:** Threat level 🟡 Medium · Bank/lender segment, Benelux-heavy · Last verified: March 2026 (per [competitor-monitoring](./competitor-monitoring/example/sample-output.md))
+**Quick facts:** Threat level 🟡 Medium · Bank/lender segment, Benelux-heavy · Last verified: March 2026 (per [competitor-monitoring](./competitor-monitoring/weekly-brief-example.md))
 
 **Positioning:** Legacy incumbent, especially entrenched in France/Benelux. Sells on relationship tenure and breadth of historical data.
 
 **Strengths:** Long-standing customer relationships, large historical dataset, strong brand recognition in Benelux specifically. On-prem deployment available, which we currently can't match. *(Source: general market knowledge — worth reconfirming against a specific deal)*
 
-**Weaknesses:** Dated UI, slow release cadence, publicly documented support responsiveness issues. *(Source: 2 public G2 reviews, confirmed — see [competitor-monitoring/example](./competitor-monitoring/example/sample-output.md))*
+**Weaknesses:** Dated UI, slow release cadence, publicly documented support responsiveness issues. *(Source: 2 public G2 reviews, confirmed — see [competitor-monitoring/example](./competitor-monitoring/weekly-brief-example.md))*
 
 **How we win:** Modern integration experience and faster implementation timeline; strongest against Estemate when the buying committee includes someone frustrated with the current tool's UX or support.
 
@@ -120,13 +120,13 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 ## ValuAI
 
-**Quick facts:** Threat level 🟠 Medium-High · Bank/lender segment · Last verified: March 2026 (per [sales-call-analysis](./sales-call-analysis/example/sample-output.md)) — **check** [`staleness-detection`](./staleness-detection) **before citing the "audit trail not GA" weakness; this claim has moved before**
+**Quick facts:** Threat level 🟠 Medium-High · Bank/lender segment · Last verified: March 2026 (per [sales-call-analysis](./sales-call-analysis/example.md)) — **check** [`staleness-detection`](./staleness-detection) **before citing the "audit trail not GA" weakness; this claim has moved before**
 
 **Positioning:** "AI-native" challenger, well-funded, leads with technology-forward messaging.
 
 **Strengths:** Strong initial sales narrative, modern-feeling product demo, aggressive marketing presence. *(Source: market observation)*
 
-**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up. *(Source: 1 sales call transcript reference, plus lost-deal pattern — see [battle-card-generator's update example](./battle-card-generator/example/sample-output.md) for how this claim has already been revised once and may move again)*
+**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up. *(Source: 1 sales call transcript reference, plus lost-deal pattern — see [battle-card-generator's update example](./battle-card-generator/example.md) for how this claim has already been revised once and may move again)*
 
 **How we win:** This is our clearest differentiation lane — let the buyer's own follow-up questions expose the gap rather than attacking ValuAI directly; offer to show our audit trail live on their own data as the resolution.
 
@@ -158,4 +158,4 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 ## Known gap working against us
 
-**On-prem deployment** is not currently offered and was the #2 reason for lost deals in Q1 (24% of losses, up from #4 the prior quarter — see [win-loss-analysis](./win-loss-analysis/example/win-loss-infographic.svg)). Estemate can meet this requirement; Bricklane and ValuAI likely can't either, but that hasn't been confirmed. Surface this limitation proactively with any prospect with a known on-prem requirement rather than letting it surface late — it's a case for product, not something a battlecard talk track can talk around.
+**On-prem deployment** is not currently offered and was the #2 reason for lost deals in Q1 (24% of losses, up from #4 the prior quarter — see [win-loss-analysis](./win-loss-analysis/win-loss-infographic.svg)). Estemate can meet this requirement; Bricklane and ValuAI likely can't either, but that hasn't been confirmed. Surface this limitation proactively with any prospect with a known on-prem requirement rather than letting it surface late — it's a case for product, not something a battlecard talk track can talk around.

@@ -1,6 +1,6 @@
 # Voice Guide — Sundial Analytics
 
-Canonical voice reference. [`brand-voice-guidelines/claude-skill/SKILL.md`](./brand-voice-guidelines/claude-skill/SKILL.md) applies these rules as a rewrite pass — this file is the source of truth they point back to, so the rules exist once, not duplicated per skill.
+Canonical voice reference. [`brand-voice-guidelines/skill.md`](./brand-voice-guidelines/skill.md) applies these rules as a rewrite pass — this file is the source of truth they point back to, so the rules exist once, not duplicated per skill.
 
 ## Tone
 
