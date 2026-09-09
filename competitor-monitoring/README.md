@@ -18,6 +18,8 @@ Two constraints are built in on purpose:
 - [`custom-gpt/INSTRUCTIONS.md`](./custom-gpt/INSTRUCTIONS.md) — the same logic adapted as a ChatGPT custom GPT
 - [`example/sample-output.md`](./example/sample-output.md) — a weekly brief run against [Sundial Analytics](../knowledge-base.md)'s competitors
 
+There's also a slower, deeper cadence for the same competitor set — see [`bi-monthly-analysis/`](./bi-monthly-analysis), a sourced, comparable-over-time report rather than a fast weekly synthesis.
+
 ## Current limitations
 
 Right now this takes plain pasted text. Pulling from the Slack channel where the team drops raw links/screenshots, and referencing the shared doc of past briefs for trend continuity week over week, is next.

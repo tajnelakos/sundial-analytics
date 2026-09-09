@@ -1,0 +1,341 @@
+<title>Competitive Pulse</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#ECEEEA;
+    --surface:#FFFFFF;
+    --surface-2:#F6F7F3;
+    --ink:#1A2420;
+    --ink-soft:#55635C;
+    --ink-faint:#8B948C;
+    --line:#D7DAD1;
+    --accent:#A8791F;
+    --accent-deep:#7C5914;
+    --accent-bg:#FBF3E3;
+    --sev-high:#8C4A3B;
+    --sev-med:#A8791F;
+    --sev-low:#8B948C;
+    --c-bricklane:#3B6E8C;
+    --c-estemate:#7A6A4E;
+    --c-valuai:#8C4A3B;
+    --c-propiq:#47795A;
+    --font-display:'Source Serif 4', Georgia, serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#14181A;
+      --surface:#1B211F;
+      --surface-2:#202623;
+      --ink:#E9ECE7;
+      --ink-soft:#A9B2AB;
+      --ink-faint:#6E766F;
+      --line:#333B37;
+      --accent:#D6A648;
+      --accent-deep:#E8B860;
+      --accent-bg:#26210F;
+      --sev-high:#C77E68;
+      --sev-med:#D6A648;
+      --sev-low:#6E766F;
+      --c-bricklane:#6FA3C4;
+      --c-estemate:#A99872;
+      --c-valuai:#C77E68;
+      --c-propiq:#7CB38F;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#14181A;
+    --surface:#1B211F;
+    --surface-2:#202623;
+    --ink:#E9ECE7;
+    --ink-soft:#A9B2AB;
+    --ink-faint:#6E766F;
+    --line:#333B37;
+    --accent:#D6A648;
+    --accent-deep:#E8B860;
+    --accent-bg:#26210F;
+    --sev-high:#C77E68;
+    --sev-med:#D6A648;
+    --sev-low:#6E766F;
+    --c-bricklane:#6FA3C4;
+    --c-estemate:#A99872;
+    --c-valuai:#C77E68;
+    --c-propiq:#7CB38F;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    margin:0;
+    padding:56px 20px 90px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:44px; }
+
+  h1,h2,h3{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+  a{ color:inherit; }
+
+  /* Masthead */
+  .masthead{ display:flex; flex-direction:column; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:22px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-deep); }
+  .masthead h1{ font-size:clamp(30px,5vw,42px); font-weight:600; line-height:1.05; }
+  .meta-row{ display:flex; gap:28px; flex-wrap:wrap; font-family:var(--font-mono); font-size:13px; color:var(--ink-soft); }
+  .meta-row span b{ color:var(--ink); font-weight:500; }
+
+  /* Stat strip */
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .stat{ background:var(--surface); padding:20px 18px; display:flex; flex-direction:column; gap:6px; }
+  .stat-value{ font-family:var(--font-mono); font-size:30px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .stat-label{ font-size:12.5px; color:var(--ink-soft); line-height:1.35; }
+
+  /* Timeline ledger */
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:16px; }
+  .section-head h2{ font-size:22px; font-weight:600; }
+  .section-note{ font-size:12.5px; color:var(--ink-faint); font-style:italic; }
+  .timeline{ display:grid; grid-template-columns:1fr 1fr; gap:0 36px; }
+  .timeline-col{ display:flex; flex-direction:column; }
+  .timeline-col h3{
+    font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.1em;
+    color:var(--ink-soft); padding-bottom:8px; border-bottom:1px solid var(--ink); margin-bottom:4px;
+  }
+  .t-row{ display:grid; grid-template-columns:52px 10px 1fr; gap:10px; align-items:start; padding:10px 0; border-bottom:1px solid var(--line); }
+  .t-row:last-child{ border-bottom:none; }
+  .t-date{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); padding-top:2px; }
+  .swatch{ width:10px; height:10px; margin-top:5px; flex:none; }
+  .t-desc{ font-size:14px; line-height:1.45; }
+  .t-desc b{ font-weight:600; }
+
+  /* Competitor sections */
+  .competitor{ border-top:1px solid var(--ink); padding-top:26px; display:flex; flex-direction:column; gap:18px; }
+  .competitor-head{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .competitor-swatch{ width:16px; height:16px; flex:none; }
+  .competitor-name{ font-size:25px; font-weight:600; }
+  .threat-tag{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    padding:4px 9px; border:1px solid; white-space:nowrap;
+  }
+  .threat-high{ color:var(--sev-high); border-color:var(--sev-high); }
+  .threat-medhigh{ color:var(--sev-med); border-color:var(--sev-med); }
+  .threat-med{ color:var(--ink-soft); border-color:var(--ink-soft); }
+  .threat-low{ color:var(--ink-faint); border-color:var(--ink-faint); }
+
+  .sub{ display:flex; flex-direction:column; gap:8px; }
+  .sub-label{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); }
+  .dev-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .dev-list li{ font-size:15px; line-height:1.55; padding-left:16px; position:relative; }
+  .dev-list li::before{ content:"–"; position:absolute; left:0; color:var(--ink-faint); }
+  .none{ font-size:14px; color:var(--ink-faint); font-style:italic; padding-left:16px; }
+  .source-tag{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); }
+
+  /* Patterns + Strategic panels */
+  .panel{ background:var(--surface-2); border:1px solid var(--line); padding:22px 24px; display:flex; flex-direction:column; gap:12px; }
+  .panel h2{ font-size:19px; font-weight:600; }
+  .panel ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .panel li{ font-size:14.5px; line-height:1.55; padding-left:16px; position:relative; }
+  .panel li::before{ content:"–"; position:absolute; left:0; color:var(--ink-faint); }
+
+  .panel-strategic{
+    background:var(--accent-bg); border:1px solid var(--accent); border-top:3px solid var(--accent);
+  }
+  .panel-strategic .eyebrow{ margin-bottom:2px; }
+  .panel-strategic h2{ color:var(--accent-deep); }
+
+  footer{ border-top:1px solid var(--line); padding-top:18px; font-size:12.5px; color:var(--ink-faint); display:flex; flex-direction:column; gap:4px; }
+  footer b{ color:var(--ink-soft); font-weight:500; }
+
+  @media (max-width:640px){
+    .stats{ grid-template-columns:repeat(2,1fr); }
+    .timeline{ grid-template-columns:1fr; gap:28px; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="eyebrow">Competitive Intelligence · Sundial Analytics</div>
+    <h1>Competitive Pulse — July–August 2026</h1>
+    <div class="meta-row">
+      <span>Period: <b>Jul 1 – Aug 31, 2026</b></span>
+      <span>Prepared: <b>September 2026</b></span>
+      <span>Coverage: <b>Region-agnostic</b></span>
+      <span>Full write-up: <b>report-2026-07-08.md</b></span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-value">4</div><div class="stat-label">Competitors tracked</div></div>
+    <div class="stat"><div class="stat-value">9</div><div class="stat-label">Developments logged</div></div>
+    <div class="stat"><div class="stat-value">2</div><div class="stat-label">Messaging shifts observed</div></div>
+    <div class="stat"><div class="stat-value">1</div><div class="stat-label">GA launch — ValuAI audit trail</div></div>
+  </div>
+
+  <div>
+    <div class="section-head">
+      <h2>Timeline</h2>
+      <div class="section-note">Dated, sourced developments — see each competitor's section below for detail</div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-col">
+        <h3>July</h3>
+        <div class="t-row"><div class="t-date">Jul 8</div><div class="swatch" style="background:var(--c-bricklane)"></div><div class="t-desc"><b>Bricklane Data</b> — $22M Series&nbsp;A extension</div></div>
+        <div class="t-row"><div class="t-date">Jul 10</div><div class="swatch" style="background:var(--c-valuai)"></div><div class="t-desc"><b>ValuAI</b> — Audit trail reaches general availability</div></div>
+        <div class="t-row"><div class="t-date">Jul 15</div><div class="swatch" style="background:var(--c-estemate)"></div><div class="t-desc"><b>Estemate</b> — Land registry partnership renewed</div></div>
+        <div class="t-row"><div class="t-date">Jul 22</div><div class="swatch" style="background:var(--c-bricklane)"></div><div class="t-desc"><b>Bricklane Data</b> — LOS integration announced</div></div>
+        <div class="t-row"><div class="t-date">Jul 25</div><div class="swatch" style="background:var(--c-propiq)"></div><div class="t-desc"><b>PropIQ</b> — Property management module launches</div></div>
+      </div>
+      <div class="timeline-col">
+        <h3>August</h3>
+        <div class="t-row"><div class="t-date">Aug 3</div><div class="swatch" style="background:var(--c-bricklane)"></div><div class="t-desc"><b>Bricklane Data</b> — First VP of Compliance hired</div></div>
+        <div class="t-row"><div class="t-date">Aug 5</div><div class="swatch" style="background:var(--c-propiq)"></div><div class="t-desc"><b>PropIQ</b> — Brokerage CRM integration announced</div></div>
+        <div class="t-row"><div class="t-date">Aug 12</div><div class="swatch" style="background:var(--c-valuai)"></div><div class="t-desc"><b>ValuAI</b> — Second regional office opens</div></div>
+        <div class="t-row"><div class="t-date">Aug 20</div><div class="swatch" style="background:var(--c-valuai)"></div><div class="t-desc"><b>ValuAI</b> — Credit-data partnership signed</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bricklane Data -->
+  <div class="competitor">
+    <div class="competitor-head">
+      <div class="competitor-swatch" style="background:var(--c-bricklane)"></div>
+      <h3 class="competitor-name">Bricklane Data</h3>
+      <span class="threat-tag threat-high">High threat</span>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Recent Developments</div>
+      <ul class="dev-list">
+        <li>Closed a $22M Series A extension to fund expansion into new European markets. <span class="source-tag">— Company press release</span></li>
+        <li>Appointed a first-ever VP of Compliance ahead of an enterprise push. <span class="source-tag">— LinkedIn post</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Partnerships &amp; Ecosystem Moves</div>
+      <ul class="dev-list">
+        <li>Announced an integration with a mid-market loan origination system provider, embedding valuations directly into the loan workflow. <span class="source-tag">— Company blog</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Messaging &amp; Positioning</div>
+      <ul class="dev-list">
+        <li>Homepage and sales messaging added an "audit-ready" claim for the first time this period, alongside the existing speed/price positioning — a departure from purely price-led messaging at the start of the year. <span class="source-tag">— Company website</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Estemate -->
+  <div class="competitor">
+    <div class="competitor-head">
+      <div class="competitor-swatch" style="background:var(--c-estemate)"></div>
+      <h3 class="competitor-name">Estemate</h3>
+      <span class="threat-tag threat-med">Medium threat</span>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Recent Developments</div>
+      <div class="none">No significant developments found in this period.</div>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Partnerships &amp; Ecosystem Moves</div>
+      <ul class="dev-list">
+        <li>Renewed an existing multi-year data-sharing agreement with a regional land registry. <span class="source-tag">— Industry news</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Messaging &amp; Positioning</div>
+      <div class="none">No significant developments found in this period.</div>
+    </div>
+  </div>
+
+  <!-- ValuAI -->
+  <div class="competitor">
+    <div class="competitor-head">
+      <div class="competitor-swatch" style="background:var(--c-valuai)"></div>
+      <h3 class="competitor-name">ValuAI</h3>
+      <span class="threat-tag threat-medhigh">Medium-high threat</span>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Recent Developments</div>
+      <ul class="dev-list">
+        <li>Announced general availability of its "regulatory audit trail" feature, previously in beta, with one named enterprise customer reference. <span class="source-tag">— Company press release</span></li>
+        <li>Opened a second regional office, its first outside its home market. <span class="source-tag">— Company blog</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Partnerships &amp; Ecosystem Moves</div>
+      <ul class="dev-list">
+        <li>Signed a data-sharing partnership with an alternative credit-data provider to expand model inputs. <span class="source-tag">— Company blog</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Messaging &amp; Positioning</div>
+      <ul class="dev-list">
+        <li>Public messaging expanded beyond "AI-native" to include "regulatory-ready" language, appearing on the homepage for the first time this period. <span class="source-tag">— Company website</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PropIQ -->
+  <div class="competitor">
+    <div class="competitor-head">
+      <div class="competitor-swatch" style="background:var(--c-propiq)"></div>
+      <h3 class="competitor-name">PropIQ</h3>
+      <span class="threat-tag threat-low">Low threat</span>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Recent Developments</div>
+      <ul class="dev-list">
+        <li>Launched a new module for property management analytics, extending beyond its original brokerage-agent focus. <span class="source-tag">— Company blog</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Partnerships &amp; Ecosystem Moves</div>
+      <ul class="dev-list">
+        <li>Integrated with a widely used brokerage CRM platform. <span class="source-tag">— Company blog</span></li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <div class="sub-label">Messaging &amp; Positioning</div>
+      <div class="none">No significant developments found in this period.</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Market Patterns</h2>
+    <ul>
+      <li>Two of four tracked competitors (Bricklane Data, ValuAI) shifted messaging toward "audit-ready" / "regulatory-ready" language this period, despite neither having a verified, comparable-level audit trail on record before this period began.</li>
+    </ul>
+  </div>
+
+  <div class="panel panel-strategic">
+    <div class="eyebrow">Portfolio note — not part of the neutral report format</div>
+    <h2>Strategic Signals for Sundial Analytics</h2>
+    <ul>
+      <li><b>ValuAI's GA announcement is the most consequential development this period</b> — it targets our primary differentiation lane directly. Run <code>battle-card-generator</code> against this update, and check live sales content with <code>positioning-compliance</code> for stale "not yet GA" claims.</li>
+      <li><b>The convergence on "audit-ready" language across two competitors suggests the market is treating defensibility as a category expectation faster than expected.</b> Worth revisiting whether "we're explainable" alone is still a strong enough wedge, or whether differentiation needs to shift toward proof — a public benchmark, a named reference customer speaking specifically to the audit trail.</li>
+      <li><b>Estemate's quiet period fits its established pattern</b> — not a signal to act on, but not a reason to deprioritize a competitor with a large installed base.</li>
+      <li>Re-run <code>staleness-detection</code> against <code>competitive-landscape.md</code>'s ValuAI section given this period's GA announcement — that section already flagged this exact claim as volatile.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div><b>Sources</b> are short labels, not raw URLs, per the reporting standard this format follows.</div>
+    <div>Related: competitive-landscape.md · battle-card-generator · staleness-detection</div>
+  </footer>
+
+</div>

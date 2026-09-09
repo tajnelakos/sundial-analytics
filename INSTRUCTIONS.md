@@ -16,6 +16,7 @@ A working set of prompts, Claude Skills, and custom GPTs for recurring growth/pr
 | Request sounds like | Folder |
 |---|---|
 | "What's changed with [competitor] lately?" / weekly competitive roundup | [`competitor-monitoring`](./competitor-monitoring) |
+| "Give me the full sourced competitive report for this period" | [`competitor-monitoring/bi-monthly-analysis`](./competitor-monitoring/bi-monthly-analysis) |
 | "Build/refresh the full battlecard for [competitor]" | [`battle-card-generator`](./battle-card-generator) |
 | "Break down this sales call" / objections, competitor mentions from a transcript | [`sales-call-analysis`](./sales-call-analysis) |
 | "Why are we winning/losing deals this quarter?" | [`win-loss-analysis`](./win-loss-analysis) |
@@ -46,6 +47,7 @@ This is here so an AI assistant (or a reader unfamiliar with the role) can see w
 
 **Monthly**
 - Refresh a battlecard with the past month's accumulated competitive intel → [`battle-card-generator`](./battle-card-generator)
+- Every other month: the deeper, sourced competitive report → [`competitor-monitoring/bi-monthly-analysis`](./competitor-monitoring/bi-monthly-analysis)
 - Build or refresh a nurture sequence tied to a new piece of content → [`persona-email-sequence`](./persona-email-sequence)
 - Spot-check whether the knowledge-base files themselves have drifted → [`staleness-detection`](./staleness-detection)
 
