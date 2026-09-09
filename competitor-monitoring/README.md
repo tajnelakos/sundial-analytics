@@ -24,7 +24,7 @@ A slower, deeper cadence for the same competitor set — sourced and comparable-
 
 - [`bi-monthly-report-skill.md`](./bi-monthly-report-skill.md) — the skill definition
 - [`bi-monthly-report-2026-07-08.md`](./bi-monthly-report-2026-07-08.md) — the July–August 2026 report, written up
-- [`bi-monthly-report-2026-07-08.html`](./bi-monthly-report-2026-07-08.html) — the same report as a designed, one-page HTML version
+- [`bi-monthly-report-2026-07-08.html`](./bi-monthly-report-2026-07-08.html) — the same report as a designed, one-page HTML version ([view live ↗](https://tajnelakos.github.io/sundial-analytics/competitor-monitoring/bi-monthly-report-2026-07-08.html))
 
 ## Current limitations
 
