@@ -34,7 +34,7 @@ These files at repo root hold the reference material every use case below draws 
 | [`competitor-monitoring/`](./competitor-monitoring) | Turns scattered competitor signals into a structured weekly brief, plus a sourced [bi-monthly deep-dive](./competitor-monitoring/bi-monthly-report-skill.md) ([live report ↗](https://tajnelakos.github.io/sundial-analytics/competitor-monitoring/bi-monthly-report-2026-07-08.html)) | Claude Skill, Custom GPT |
 | [`battlecard/`](./battlecard) | A designed, rep-facing HTML battlecard per tracked competitor, generated from `competitive-landscape.md` | Claude Skill |
 | [`win-loss-analysis/`](./win-loss-analysis) | Extracts patterns from closed-won/closed-lost deals and renders them as an exec-readable infographic | Claude Skill, Custom GPT |
-| [`sales-call-analysis/`](./sales-call-analysis) | Analyzes a call transcript for objections, competitor mentions, and buying signals | Claude Skill, Custom GPT |
+| [`sales-call-analysis/`](./sales-call-analysis) | Analyzes a call transcript for objections, competitor mentions, and buying signals, plus a [15-call aggregate rollup](./sales-call-analysis/call-analysis-summary.html) | Claude Skill, Custom GPT |
 | [`brand-voice-guidelines/`](./brand-voice-guidelines) | Rewrites drafts to match a documented brand voice, with before/after examples | Claude Skill |
 | [`positioning-compliance/`](./positioning-compliance) | Pre-publish pass/fail check against voice and positioning rules — flags, never rewrites | Claude Skill |
 | [`sales-deck-builder/`](./sales-deck-builder) | Turns a one-line deal context into a structured sales deck outline tailored to buyer persona | Claude Skill, Custom GPT |

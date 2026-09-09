@@ -1,6 +1,6 @@
 ---
 name: sales-call-analysis
-description: Extracts objections, competitor mentions, buying signals, and one coachable moment from a sales call transcript, in a consistent structure so output is comparable across many calls. Use when the user pastes a call transcript (discovery, demo, or negotiation call) and wants it analyzed, not just summarized.
+description: Extracts objections, competitor mentions, buying signals, and one coachable moment from a sales call transcript, in a consistent structure so output is comparable across many calls. Use when the user pastes a call transcript (discovery, demo, or negotiation call) and wants it analyzed, not just summarized. Also supports an aggregate mode that rolls many calls into one pattern-and-findings view — see the Aggregate mode section below.
 ---
 
 # Sales Call Analysis
@@ -42,3 +42,15 @@ Produce the same four-part breakdown from every transcript, so that running this
 
 - Don't infer objections or signals that aren't actually in the transcript — if the call is thin on one category, say so rather than padding it.
 - Don't editorialize about whether the deal will close — this tool extracts signal, it doesn't forecast.
+
+## Aggregate mode — rolling many calls into one view
+
+Run the per-call breakdown above against every transcript first — the aggregate view is only as good as the individual extractions underneath it. Then:
+
+1. **Count competitor mentions and objection types across the batch**, not just within one call — a single call's objection is an anecdote; the same objection across a third of the batch is a pattern worth a battlecard update.
+2. **Separate "new information" from "confirmation of what's already documented."** A call restating a known competitor weakness is a data point; a call surfacing something not in `competitive-landscape.md`, `icp.md`, or any battlecard is the actually valuable output of this exercise, and deserves its own escalation, not a footnote.
+3. **Tag each new finding with where it should go next** — product, compliance, data team, customer success, or a specific battlecard file — a finding with no owner tends to get read once and forgotten.
+4. **Track open commitments across calls as their own list.** A rep's unfulfilled "I'll send that over" is a credibility risk at the account level, and it's invisible if each call is only ever read in isolation.
+5. **Don't force a pattern that isn't there.** A recurring theme needs to show up independently across multiple accounts, not be inferred from one vivid call — see [`call-analysis-summary.html`](./call-analysis-summary.html) for the bar this needs to clear before something is presented as a pattern rather than an anecdote.
+
+See [`call-analysis-summary.html`](./call-analysis-summary.html) for this mode applied to 15 real transcripts.

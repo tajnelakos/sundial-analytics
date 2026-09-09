@@ -1,0 +1,295 @@
+<title>Call Intelligence Rollup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F0F3F2; --surface:#FFFFFF; --surface-2:#F5F7F6;
+    --ink:#10201D; --ink-soft:#4A5C58; --ink-faint:#93A19D; --line:#DCE3E1;
+    --accent:#0F6E64; --accent-deep:#0B4F48; --accent-bg:#E3F1EE;
+    --c-bricklane:#3B6E8C; --c-estemate:#7A6A4E; --c-valuai:#8C4A3B; --c-propiq:#47795A; --c-none:#B7BFBC;
+    --sig-strong:#1F7A4D; --sig-medium:#C17F1A; --sig-weak:#8A928E; --sig-risk:#B33A2E;
+    --sig-strong-bg:#E9F5EE; --sig-medium-bg:#FCF3E3; --sig-weak-bg:#F1F2F1; --sig-risk-bg:#FBEAE8;
+    --font-display:'Archivo', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#12181A; --surface:#1A2124; --surface-2:#1F2729;
+      --ink:#E7EEEC; --ink-soft:#A9B6B2; --ink-faint:#697875; --line:#2B3436;
+      --accent:#4BB3A4; --accent-deep:#6FC9BB; --accent-bg:#182927;
+      --c-bricklane:#6FA3C4; --c-estemate:#A99872; --c-valuai:#C77E68; --c-propiq:#7CB38F; --c-none:#5C6663;
+      --sig-strong:#4CAF7D; --sig-medium:#E0A94A; --sig-weak:#7C8582; --sig-risk:#E0796C;
+      --sig-strong-bg:#14261C; --sig-medium-bg:#2A2015; --sig-weak-bg:#20272A; --sig-risk-bg:#2A1917;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#12181A; --surface:#1A2124; --surface-2:#1F2729;
+    --ink:#E7EEEC; --ink-soft:#A9B6B2; --ink-faint:#697875; --line:#2B3436;
+    --accent:#4BB3A4; --accent-deep:#6FC9BB; --accent-bg:#182927;
+    --c-bricklane:#6FA3C4; --c-estemate:#A99872; --c-valuai:#C77E68; --c-propiq:#7CB38F; --c-none:#5C6663;
+    --sig-strong:#4CAF7D; --sig-medium:#E0A94A; --sig-weak:#7C8582; --sig-risk:#E0796C;
+    --sig-strong-bg:#14261C; --sig-medium-bg:#2A2015; --sig-weak-bg:#20272A; --sig-risk-bg:#2A1917;
+  }
+
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-body); margin:0; padding:44px 20px 90px; -webkit-font-smoothing:antialiased; }
+  .page{ max-width:940px; margin:0 auto; display:flex; flex-direction:column; gap:36px; }
+  h1,h2,h3{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+  a{ color:inherit; }
+  code{ font-family:var(--font-mono); background:var(--surface-2); padding:1px 6px; border-radius:3px; font-size:.9em; }
+
+  .masthead{ display:flex; flex-direction:column; gap:12px; border-bottom:2px solid var(--ink); padding-bottom:20px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.12em; color:var(--accent-deep); }
+  .masthead h1{ font-size:clamp(26px,4.4vw,38px); font-weight:800; }
+  .meta-row{ display:flex; gap:24px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); }
+  .meta-row b{ color:var(--ink); font-weight:500; }
+
+  .kpis{ display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .kpi{ background:var(--surface); padding:18px 14px; display:flex; flex-direction:column; gap:5px; }
+  .kpi-value{ font-family:var(--font-mono); font-size:26px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .kpi-label{ font-size:11.5px; color:var(--ink-soft); line-height:1.3; }
+
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+
+  section.panel{ background:var(--surface); border:1px solid var(--line); padding:22px 24px; display:flex; flex-direction:column; gap:16px; }
+  .panel h2{ font-size:18px; font-weight:700; }
+  .panel .sub{ font-size:12.5px; color:var(--ink-faint); margin-top:-10px; }
+
+  /* Bar rows */
+  .bar-row{ display:grid; grid-template-columns:150px 1fr 34px; gap:10px; align-items:center; }
+  .bar-label{ font-size:13px; }
+  .bar-track{ background:var(--surface-2); height:14px; border-radius:7px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:7px; }
+  .bar-count{ font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); text-align:right; font-variant-numeric:tabular-nums; }
+
+  /* Signal distribution */
+  .signal-strip{ display:flex; height:34px; border-radius:6px; overflow:hidden; }
+  .signal-seg{ display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:12px; color:#fff; font-weight:500; }
+  .legend{ display:flex; gap:16px; flex-wrap:wrap; font-size:12.5px; color:var(--ink-soft); }
+  .legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .dot{ width:9px; height:9px; border-radius:2px; display:inline-block; }
+
+  /* Findings */
+  .findings{ display:flex; flex-direction:column; gap:0; }
+  .finding{ display:grid; grid-template-columns:90px 1fr; gap:16px; padding:16px 0; border-top:1px solid var(--line); }
+  .findings .finding:first-child{ border-top:none; }
+  .finding-tag{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; padding:4px 8px; border-radius:4px; height:fit-content; text-align:center; }
+  .tag-product{ background:var(--accent-bg); color:var(--accent-deep); }
+  .tag-compliance{ background:var(--sig-risk-bg); color:var(--sig-risk); }
+  .tag-data{ background:var(--sig-medium-bg); color:var(--sig-medium); }
+  .tag-cs{ background:var(--surface-2); color:var(--ink-soft); }
+  .tag-battlecard{ background:var(--sig-strong-bg); color:var(--sig-strong); }
+  .finding-head{ font-weight:600; font-size:15px; margin-bottom:4px; }
+  .finding-body{ font-size:14px; line-height:1.55; color:var(--ink-soft); }
+  .finding-source{ font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); margin-top:6px; }
+  .finding-source a{ text-decoration:underline; }
+
+  /* Call index table */
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th,td{ text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); font-weight:500; }
+  .sig-pill{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; padding:3px 8px; border-radius:20px; white-space:nowrap; }
+  .sig-strong{ background:var(--sig-strong-bg); color:var(--sig-strong); }
+  .sig-medium{ background:var(--sig-medium-bg); color:var(--sig-medium); }
+  .sig-weak{ background:var(--sig-weak-bg); color:var(--sig-weak); }
+  .sig-risk{ background:var(--sig-risk-bg); color:var(--sig-risk); }
+  .comp-swatch{ display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:6px; }
+  table a{ text-decoration:underline; }
+
+  /* Commitments */
+  .commitments{ display:flex; flex-direction:column; gap:0; }
+  .commitment{ display:grid; grid-template-columns:170px 1fr; gap:14px; padding:11px 0; border-top:1px solid var(--line); font-size:13.5px; }
+  .commitments .commitment:first-child{ border-top:none; }
+  .commitment-who{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); }
+
+  footer{ border-top:1px solid var(--line); padding-top:18px; font-size:12.5px; color:var(--ink-faint); font-family:var(--font-mono); }
+
+  @media (max-width:760px){
+    .kpis{ grid-template-columns:repeat(2,1fr); }
+    .grid2{ grid-template-columns:1fr; }
+    .bar-row{ grid-template-columns:110px 1fr 30px; }
+    table{ font-size:12.5px; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="eyebrow">Sales Call Intelligence · Sundial Analytics</div>
+    <h1>Call Analysis Rollup — 15 Calls, March–August 2026</h1>
+    <div class="meta-row">
+      <span>Calls analyzed: <b>15</b></span>
+      <span>Segments: <b>Bank/lender + Brokerage</b></span>
+      <span>Prepared: <b>September 2026</b></span>
+      <span>Method: <b><a href="./skill.md">sales-call-analysis skill.md</a>, run per call, then aggregated</b></span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-value">15</div><div class="kpi-label">Calls analyzed</div></div>
+    <div class="kpi"><div class="kpi-value">10</div><div class="kpi-label">Calls naming a specific competitor</div></div>
+    <div class="kpi"><div class="kpi-value">6</div><div class="kpi-label">New findings worth escalating</div></div>
+    <div class="kpi"><div class="kpi-value">5</div><div class="kpi-label">Strong buying signals</div></div>
+    <div class="kpi"><div class="kpi-value">1</div><div class="kpi-label">Hard blocker confirmed live (on-prem)</div></div>
+  </div>
+
+  <div class="grid2">
+    <section class="panel">
+      <h2>Buying signal distribution</h2>
+      <div class="sub">Across all 15 calls, by rep-assessed strength</div>
+      <div class="signal-strip">
+        <div class="signal-seg" style="width:33.3%; background:var(--sig-strong);">5 Strong</div>
+        <div class="signal-seg" style="width:33.3%; background:var(--sig-medium);">5 Medium</div>
+        <div class="signal-seg" style="width:26.7%; background:var(--sig-weak);">4 Weak/Nurture</div>
+        <div class="signal-seg" style="width:6.7%; background:var(--sig-risk);">1</div>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:var(--sig-strong)"></span>Strong (5)</span>
+        <span><span class="dot" style="background:var(--sig-medium)"></span>Medium, contingent (5)</span>
+        <span><span class="dot" style="background:var(--sig-weak)"></span>Weak / nurture (4)</span>
+        <span><span class="dot" style="background:var(--sig-risk)"></span>At-risk, hard blocker (1)</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Competitor mentions</h2>
+      <div class="sub">Calls where a specific competitor was named and discussed</div>
+      <div class="bar-row"><div class="bar-label">ValuAI</div><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--c-valuai)"></div></div><div class="bar-count">4</div></div>
+      <div class="bar-row"><div class="bar-label">Bricklane Data</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--c-bricklane)"></div></div><div class="bar-count">3</div></div>
+      <div class="bar-row"><div class="bar-label">Estemate</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--c-estemate)"></div></div><div class="bar-count">3</div></div>
+      <div class="bar-row"><div class="bar-label">PropIQ</div><div class="bar-track"><div class="bar-fill" style="width:50%; background:var(--c-propiq)"></div></div><div class="bar-count">2</div></div>
+      <div class="bar-row"><div class="bar-label">None named</div><div class="bar-track"><div class="bar-fill" style="width:125%; max-width:100%; background:var(--c-none)"></div></div><div class="bar-count">5</div></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2>Objection &amp; theme frequency</h2>
+    <div class="sub">Themes that shaped the conversation, not just passing mentions — a call can carry more than one</div>
+    <div class="bar-row"><div class="bar-label">Price / cost comparison</div><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--accent)"></div></div><div class="bar-count">4</div></div>
+    <div class="bar-row"><div class="bar-label">Vendor stability / size</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--accent)"></div></div><div class="bar-count">3</div></div>
+    <div class="bar-row"><div class="bar-label">Implementation timeline</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--accent)"></div></div><div class="bar-count">3</div></div>
+    <div class="bar-row"><div class="bar-label">Adoption / retention risk</div><div class="bar-track"><div class="bar-fill" style="width:50%; background:var(--accent)"></div></div><div class="bar-count">2</div></div>
+    <div class="bar-row"><div class="bar-label">Data/feature coverage gap</div><div class="bar-track"><div class="bar-fill" style="width:50%; background:var(--accent)"></div></div><div class="bar-count">2</div></div>
+    <div class="bar-row"><div class="bar-label">On-prem / data residency</div><div class="bar-track"><div class="bar-fill" style="width:25%; background:var(--accent)"></div></div><div class="bar-count">1</div></div>
+    <div class="bar-row"><div class="bar-label">Regulatory certification gap</div><div class="bar-track"><div class="bar-fill" style="width:25%; background:var(--accent)"></div></div><div class="bar-count">1</div></div>
+    <div class="bar-row"><div class="bar-label">Internal procurement delay</div><div class="bar-track"><div class="bar-fill" style="width:25%; background:var(--accent)"></div></div><div class="bar-count">1</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>New findings worth escalating</h2>
+    <div class="sub">Things that surfaced from real calls and aren't yet reflected in <code>competitive-landscape.md</code> or elsewhere — this is the actual point of running this rollup, not just counting mentions</div>
+    <div class="findings">
+
+      <div class="finding">
+        <div class="finding-tag tag-compliance">Compliance</div>
+        <div>
+          <div class="finding-head">On-prem deployment gap confirmed as a live, hard deal-blocker</div>
+          <div class="finding-body">Previously a documented but somewhat abstract known gap. Now confirmed as an actual, board-level, non-negotiable requirement at a real Tier 2 account, tied to a specific data-residency regulation. Worth prioritizing a real roadmap conversation rather than continuing to treat it as deprioritized.</div>
+          <div class="finding-source">Source: <a href="./call-10-solvane-lending-group.md">call-10-solvane-lending-group.md</a></div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-tag tag-compliance">Compliance</div>
+        <div>
+          <div class="finding-head">New named regulatory certification requirement, not previously tracked</div>
+          <div class="finding-body">A specific national AVM certification came up as a requirement, with "in progress, credible timeline" acceptable to the prospect's board — not a hard no if we can commit to a roadmap. Needs a real answer from compliance regardless of this deal's outcome, since it may recur in the same market.</div>
+          <div class="finding-source">Source: <a href="./call-11-crestview-capital-bank.md">call-11-crestview-capital-bank.md</a></div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-tag tag-data">Data</div>
+        <div>
+          <div class="finding-head">Unconfirmed data coverage gap in smaller regional markets</div>
+          <div class="finding-body">A prospect flagged that ~15% of their book sits in two smaller regional markets where our comparable-density may be thinner than the long-tenured incumbent's. Not yet confirmed either way — a real answer from the data team is a hard blocker for this specific deal and worth checking proactively before it recurs.</div>
+          <div class="finding-source">Source: <a href="./call-05-baltic-home-finance.md">call-05-baltic-home-finance.md</a></div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-tag tag-product">Product</div>
+        <div>
+          <div class="finding-head">Mobile experience isn't yet strong enough for true field use</div>
+          <div class="finding-body">Honestly disclosed rather than oversold in a brokerage call — the desktop/tablet experience covers pre-appointment prep well, but not "standing in a driveway" live use. Worth tracking whether this recurs before treating it as a roadmap priority.</div>
+          <div class="finding-source">Source: <a href="./call-04-riverton-brokers.md">call-04-riverton-brokers.md</a></div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-tag tag-cs">Customer Success</div>
+        <div>
+          <div class="finding-head">No confirmed simplified onboarding path for less tech-comfortable users</div>
+          <div class="finding-body">A brokerage buyer's real blocker wasn't price — it was uncertainty about adoption across a team with mixed tech comfort. Worth confirming whether a lighter onboarding track exists, since this may be suppressing brokerage-segment deal size or close rate more broadly than this one account.</div>
+          <div class="finding-source">Source: <a href="./call-08-fenwick-oak-realty.md">call-08-fenwick-oak-realty.md</a></div>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-tag tag-battlecard">Battlecard</div>
+        <div>
+          <div class="finding-head">ValuAI's audit trail reportedly weaker on commercial/mixed-use than residential</div>
+          <div class="finding-body">More granular than anything currently in the ValuAI battlecard, which treats the post-GA gap as uniform. If this holds up across more calls, it's a sharper, more specific wedge than the current "unproven at scale" framing — worth feeding into <a href="../battlecard/valuai.html">battlecard/valuai.html</a> directly.</div>
+          <div class="finding-source">Source: <a href="./call-09-ironbridge-bank.md">call-09-ironbridge-bank.md</a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Recurring pattern: vendor stability at larger accounts</h2>
+    <div class="finding-body">Two separate Tier 1/Tier 2 accounts independently raised company size / vendor stability as the single remaining objection after product diligence was otherwise complete — not previously documented as a recurring pattern anywhere in the knowledge base. Both calls converged on the same effective response: offer concrete data-portability terms and a real comparable-customer count, rather than a general reassurance. Worth writing this up as a standing objection-handling entry rather than re-deriving it per deal.</div>
+    <div class="finding-source">Sources: <a href="./call-03-court-street-lending.md">call-03-court-street-lending.md</a>, <a href="./call-06-alpine-credit-union.md">call-06-alpine-credit-union.md</a></div>
+  </section>
+
+  <section class="panel">
+    <h2>Call index</h2>
+    <div class="sub">All 15 calls, in date order</div>
+    <div style="overflow-x:auto;">
+    <table>
+      <tr><th>Call</th><th>Segment</th><th>Competitor</th><th>Signal</th><th>Takeaway</th></tr>
+      <tr><td><a href="./call-01-nordkredit.md">Nordkredit</a></td><td>Bank/lender</td><td>Estemate (incumbent)</td><td><span class="sig-pill sig-strong">Strong</span></td><td>Real audit finding + dated board deadline; wants live audit-trail proof</td></tr>
+      <tr><td><a href="./call-02-meridian-savings.md">Meridian Savings</a></td><td>Bank/lender</td><td><span class="comp-swatch" style="background:var(--c-bricklane)"></span>Bricklane Data</td><td><span class="sig-pill sig-strong">Strong</span></td><td>Split buying committee; reframed price to risk cost</td></tr>
+      <tr><td><a href="./call-03-court-street-lending.md">Court Street Lending</a></td><td>Bank/lender</td><td><span class="comp-swatch" style="background:var(--c-valuai)"></span>ValuAI</td><td><span class="sig-pill sig-medium">Medium</span></td><td>Live demo mid-call; vendor-stability objection surfaced</td></tr>
+      <tr><td><a href="./call-04-riverton-brokers.md">Riverton Brokers</a></td><td>Brokerage</td><td><span class="comp-swatch" style="background:var(--c-propiq)"></span>PropIQ</td><td><span class="sig-pill sig-medium">Medium</span></td><td>Mobile gap disclosed honestly; small pilot proposed</td></tr>
+      <tr><td><a href="./call-05-baltic-home-finance.md">Baltic Home Finance</a></td><td>Bank/lender</td><td>Estemate (incumbent)</td><td><span class="sig-pill sig-medium">Medium</span></td><td>Blocked on unconfirmed data-coverage question</td></tr>
+      <tr><td><a href="./call-06-alpine-credit-union.md">Alpine Credit Union</a></td><td>Bank/lender</td><td>None</td><td><span class="sig-pill sig-strong">Strong</span></td><td>Product cleared; vendor-stability is the last open question</td></tr>
+      <tr><td><a href="./call-07-delta-mortgage-partners.md">Delta Mortgage Partners</a></td><td>Bank/lender</td><td><span class="comp-swatch" style="background:var(--c-bricklane)"></span>Bricklane Data</td><td><span class="sig-pill sig-weak">Weak</span></td><td>Stalled on internal bandwidth, not lost</td></tr>
+      <tr><td><a href="./call-08-fenwick-oak-realty.md">Fenwick &amp; Oak Realty</a></td><td>Brokerage</td><td>None</td><td><span class="sig-pill sig-medium">Medium</span></td><td>Adoption confidence matters more than price here</td></tr>
+      <tr><td><a href="./call-09-ironbridge-bank.md">Ironbridge Bank</a></td><td>Bank/lender</td><td><span class="comp-swatch" style="background:var(--c-valuai)"></span>ValuAI</td><td><span class="sig-pill sig-weak">Weak</span></td><td>Mid-contract elsewhere; long-term nurture only</td></tr>
+      <tr><td><a href="./call-10-solvane-lending-group.md">Solvane Lending Group</a></td><td>Bank/lender</td><td>Estemate (incumbent)</td><td><span class="sig-pill sig-risk">At-risk</span></td><td>Hard on-prem blocker confirmed live</td></tr>
+      <tr><td><a href="./call-11-crestview-capital-bank.md">Crestview Capital Bank</a></td><td>Bank/lender</td><td>None</td><td><span class="sig-pill sig-medium">Medium</span></td><td>Blocked on unconfirmed regulatory certification</td></tr>
+      <tr><td><a href="./call-12-harborlight-brokerages.md">Harborlight Brokerages</a></td><td>Brokerage</td><td><span class="comp-swatch" style="background:var(--c-propiq)"></span>PropIQ</td><td><span class="sig-pill sig-weak">Weak</span></td><td>Low real urgency, correctly not pursued</td></tr>
+      <tr><td><a href="./call-13-meadowbrook-financial.md">Meadowbrook Financial</a></td><td>Bank/lender</td><td><span class="comp-swatch" style="background:var(--c-bricklane)"></span>Bricklane + <span class="comp-swatch" style="background:var(--c-valuai)"></span>ValuAI</td><td><span class="sig-pill sig-strong">Strong</span></td><td>Formal 3-way rubric evaluation; shaped their scoring criteria</td></tr>
+      <tr><td><a href="./call-14-thornfield-mutual.md">Thornfield Mutual</a></td><td>Bank/lender</td><td>None</td><td><span class="sig-pill sig-medium">Medium</span></td><td>Product approved; in internal compliance review queue</td></tr>
+      <tr><td><a href="./call-15-copperfield-estates.md">Copperfield Estates</a></td><td>Brokerage</td><td>None</td><td><span class="sig-pill sig-strong">Strong</span></td><td>Warm referral, fast-moving, no objections</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Open commitments tracker</h2>
+    <div class="sub">Every rep follow-up promised across these 15 calls — an unmet one here is a credibility risk, not just an admin miss</div>
+    <div class="commitments">
+      <div class="commitment"><div class="commitment-who">Nordkredit</div><div>Pricing tier confirmation, in writing</div></div>
+      <div class="commitment"><div class="commitment-who">Meridian Savings</div><div>ROI / cost-of-indefensible-decision framework by Thursday</div></div>
+      <div class="commitment"><div class="commitment-who">Riverton Brokers</div><div>Real answer on mobile roadmap timing</div></div>
+      <div class="commitment"><div class="commitment-who">Baltic Home Finance</div><div>Data coverage answer for two named markets — blocking</div></div>
+      <div class="commitment"><div class="commitment-who">Alpine Credit Union</div><div>Comparable-customer count + data portability terms, in writing</div></div>
+      <div class="commitment"><div class="commitment-who">Delta Mortgage Partners</div><div>Week-by-week implementation plan (for future reference)</div></div>
+      <div class="commitment"><div class="commitment-who">Fenwick &amp; Oak Realty</div><div>Pricing tier + onboarding path for less tech-comfortable users</div></div>
+      <div class="commitment"><div class="commitment-who">Solvane Lending Group</div><div>Schedule compliance/infrastructure technical call</div></div>
+      <div class="commitment"><div class="commitment-who">Crestview Capital Bank</div><div>Certification status — hold/pursuing/not planned — within two weeks</div></div>
+      <div class="commitment"><div class="commitment-who">Meadowbrook Financial</div><div>Data portability terms + comparable-customer count, in writing</div></div>
+      <div class="commitment"><div class="commitment-who">Thornfield Mutual</div><div>Security/compliance documentation packet, this week</div></div>
+      <div class="commitment"><div class="commitment-who">Copperfield Estates</div><div>Pricing confirmation + implementation plan, same day</div></div>
+    </div>
+  </section>
+
+  <footer>Generated from 15 call transcripts in this folder, per <code>skill.md</code>'s aggregate mode · Sundial Analytics</footer>
+
+</div>
