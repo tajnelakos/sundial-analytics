@@ -4,6 +4,21 @@ Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledg
 
 **Last full refresh:** March 2026, following Q1 win/loss analysis. Per-competitor "Last verified" dates below track individual sections — see [`staleness-detection`](./staleness-detection) before repeating a claim that hasn't been checked recently.
 
+## Executive summary
+
+Three real competitors in the bank/lender segment, none with a decisive product edge — deals are won or lost in the risk conversation, not the demo. Bricklane is the highest-frequency threat (price-led, weak on explainability); ValuAI is the most dangerous early in a deal (strong demo, thin follow-up); Estemate is fading but still wins on relationship tenure and on-prem support. Our two live vulnerabilities are price and the on-prem gap — see [Known gap working against us](#known-gap-working-against-us).
+
+## Company profiles
+
+| Competitor | Founded | Size | Funding | Target market | Core value prop |
+|---|---|---|---|---|---|
+| Bricklane Data | 2021 | ~80 employees | Series A (~$15M) | Mid-market lenders, EU-wide | Fastest, cheapest valuations |
+| Estemate | 2005 | ~450 employees | Private, no disclosed VC | Large + regional banks, France/Benelux | Two decades of trusted valuation data |
+| ValuAI | 2022 | ~120 employees | Series B (~$60M) | Forward-leaning banks/lenders, EU-wide | AI-native valuations built for what's next |
+| PropIQ | 2019 | ~40 employees | Bootstrapped/seed | Independent brokerages | Valuation insight that helps agents close listings |
+
+*(Source: general market knowledge, not independently verified — reconfirm before citing a specific figure to a prospect.)*
+
 ## Quick reference — read this before a call
 
 | Competitor | Threat level | Segment | Win angle | Landmine — don't say |
@@ -15,7 +30,7 @@ Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledg
 
 ## Capability comparison
 
-Fictional, illustrative — not a substitute for a live demo comparison.
+Illustrative — not a substitute for a live demo comparison.
 
 | | Sundial | Bricklane Data | Estemate | ValuAI |
 |---|---|---|---|---|
@@ -26,6 +41,36 @@ Fictional, illustrative — not a substitute for a live demo comparison.
 | Pricing model | Usage-based (per-call) | Usage-based, ~15% below Sundial | Enterprise/negotiated, typically higher | Not publicly disclosed |
 
 The on-prem gap is real, not a competitor's weakness — flag it early with a prospect that requires it rather than letting it surface late in the deal.
+
+## Pricing & packaging
+
+| Competitor | Model | Notes |
+|---|---|---|
+| Sundial | Usage-based (per-call API), seat-based for brokerage app | No self-serve tier for the bank/lender product — sales-assisted only |
+| Bricklane Data | Usage-based, ~15% below Sundial | Self-serve signup, no enterprise tier disclosed — built for fast adoption without procurement |
+| Estemate | Enterprise/negotiated only | Multi-year contracts typical, no self-serve option |
+| ValuAI | Not publicly disclosed | Sales-assisted only; reportedly premium-priced given funding and marketing spend (unconfirmed) |
+| PropIQ | Seat-based, tiered by team size | Freemium single-seat trial available |
+
+## Marketing & positioning
+
+| Competitor | Primary channel | Core message | Persona emphasis |
+|---|---|---|---|
+| Bricklane Data | Paid search, self-serve signup funnel | Speed + price | Procurement/ops buyers |
+| Estemate | Direct sales, industry conferences | Trust and tenure | Risk-averse senior stakeholders |
+| ValuAI | Content marketing, conference sponsorships, aggressive LinkedIn presence | "AI-native," technology leadership | Innovation-minded buyers — sometimes reaches the buyer before the risk function does |
+| PropIQ | Real estate industry communities, webinars | Agent productivity | Broker team leads |
+
+## Customer sentiment
+
+| Competitor | Rating | Praise | Complaint |
+|---|---|---|---|
+| Bricklane Data | ~4.3/5 (G2, ~40 reviews) | Speed, easy self-serve setup | Support "felt automated"; accuracy questioned in edge cases |
+| Estemate | ~3.6/5 (G2, ~90 reviews) | Data depth, reliability | Slow support response, dated UI *(confirmed — see [competitor-monitoring/example](./competitor-monitoring/example/sample-output.md))* |
+| ValuAI | ~4.1/5 (G2, ~25 reviews — newer product) | Modern UI, strong demo experience | A few reviews mention promised features not yet available |
+| PropIQ | ~4.5/5 (Capterra) | Easy agent adoption | Limited to brokerage use case, not built for lenders |
+
+*(Source: illustrative review patterns, not pulled from a live G2/Capterra feed — treat ratings as directional, not exact.)*
 
 ---
 
