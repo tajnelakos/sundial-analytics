@@ -1,6 +1,6 @@
 # Competitive Landscape — Sundial Analytics
 
-Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledge-base.md) is the quick version; this is what [`competitor-monitoring`](./competitor-monitoring), [`battle-card-generator`](./battle-card-generator), and [`win-loss-analysis`](./win-loss-analysis) draw on for deeper context.
+Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledge-base.md) is the quick version; this is what [`competitor-monitoring`](./competitor-monitoring), [`battlecard`](./battlecard), and [`win-loss-analysis`](./win-loss-analysis) draw on for deeper context.
 
 **Last full refresh:** March 2026, following Q1 win/loss analysis. Per-competitor "Last verified" dates below track individual sections — see [`staleness-detection`](./staleness-detection) before repeating a claim that hasn't been checked recently.
 
@@ -126,7 +126,7 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 **Strengths:** Strong initial sales narrative, modern-feeling product demo, aggressive marketing presence. *(Source: market observation)*
 
-**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up. *(Source: 1 sales call transcript reference, plus lost-deal pattern — see [battle-card-generator's update example](./battle-card-generator/example.md) for how this claim has already been revised once and may move again)*
+**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up. *(Source: 1 sales call transcript reference, plus lost-deal pattern — see [battlecard's update example](./battlecard/example.md) for how this claim has already been revised once and may move again)*
 
 **How we win:** This is our clearest differentiation lane — let the buyer's own follow-up questions expose the gap rather than attacking ValuAI directly; offer to show our audit trail live on their own data as the resolution.
 

@@ -32,7 +32,7 @@ These files at repo root hold the reference material every use case below draws 
 | Use case | What it does | Formats |
 |---|---|---|
 | [`competitor-monitoring/`](./competitor-monitoring) | Turns scattered competitor signals into a structured weekly brief, plus a sourced [bi-monthly deep-dive](./competitor-monitoring/bi-monthly-report-skill.md) ([live report ↗](https://tajnelakos.github.io/sundial-analytics/competitor-monitoring/bi-monthly-report-2026-07-08.html)) | Claude Skill, Custom GPT |
-| [`battle-card-generator/`](./battle-card-generator) | Synthesizes raw competitive research into a full battlecard section | Claude Skill |
+| [`battlecard/`](./battlecard) | A designed, rep-facing HTML battlecard per tracked competitor, generated from `competitive-landscape.md` | Claude Skill |
 | [`win-loss-analysis/`](./win-loss-analysis) | Extracts patterns from closed-won/closed-lost deals and renders them as an exec-readable infographic | Claude Skill, Custom GPT |
 | [`sales-call-analysis/`](./sales-call-analysis) | Analyzes a call transcript for objections, competitor mentions, and buying signals | Claude Skill, Custom GPT |
 | [`brand-voice-guidelines/`](./brand-voice-guidelines) | Rewrites drafts to match a documented brand voice, with before/after examples | Claude Skill |

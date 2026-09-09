@@ -1,0 +1,177 @@
+<title>Battlecard: PropIQ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F3F5F4; --surface:#FFFFFF; --surface-2:#F7F8F7;
+    --ink:#111827; --ink-soft:#4B5563; --ink-faint:#9CA3AF; --line:#E1E4E2;
+    --accent:#5B6470; --accent-deep:#454C56; --accent-bg:#EEF0F2;
+    --win:#1F7A4D; --win-bg:#EAF5EE;
+    --caution:#B33A2E; --caution-bg:#FBEAE8;
+    --land:#C17F1A; --land-bg:#FCF3E3;
+    --font-display:'Archivo', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#14171A; --surface:#1B1F23; --surface-2:#20252A;
+      --ink:#ECEFF2; --ink-soft:#AEB6BD; --ink-faint:#6B7480; --line:#2C3238;
+      --accent:#8A93A0; --accent-deep:#A5ADB8; --accent-bg:#22262B;
+      --win:#4CAF7D; --win-bg:#16261D;
+      --caution:#E0796C; --caution-bg:#2A1917;
+      --land:#E0A94A; --land-bg:#2A2015;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#14171A; --surface:#1B1F23; --surface-2:#20252A;
+    --ink:#ECEFF2; --ink-soft:#AEB6BD; --ink-faint:#6B7480; --line:#2C3238;
+    --accent:#8A93A0; --accent-deep:#A5ADB8; --accent-bg:#22262B;
+    --win:#4CAF7D; --win-bg:#16261D;
+    --caution:#E0796C; --caution-bg:#2A1917;
+    --land:#E0A94A; --land-bg:#2A2015;
+  }
+
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-body); margin:0; padding:44px 20px 90px; -webkit-font-smoothing:antialiased; }
+  .card{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:28px; }
+  h1,h2,h3{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+
+  .head{ background:var(--accent); color:#fff; padding:24px 28px; display:flex; flex-direction:column; gap:14px; }
+  .vs-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .vs-name{ font-family:var(--font-display); font-weight:800; font-size:clamp(22px,4vw,30px); letter-spacing:-.01em; }
+  .vs-sep{ font-family:var(--font-mono); font-size:14px; opacity:.75; letter-spacing:.08em; }
+  .threat-pill{ font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; background:rgba(255,255,255,.16); padding:5px 11px; border-radius:20px; white-space:nowrap; }
+  .meta-row{ display:flex; gap:22px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12.5px; opacity:.85; }
+  .meta-row b{ font-weight:500; opacity:1; }
+
+  .note{ font-size:13px; color:var(--ink-faint); font-style:italic; }
+
+  section{ display:flex; flex-direction:column; gap:14px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); }
+  .lede{ font-size:16px; line-height:1.6; color:var(--ink-soft); }
+
+  .framework{ display:flex; flex-direction:column; gap:2px; }
+  .fw-step{ display:grid; grid-template-columns:110px 1fr; gap:16px; padding:16px 18px; align-items:start; }
+  .fw-step + .fw-step{ border-top:1px solid var(--line); }
+  .fw-tag{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; padding-top:2px; }
+  .fw-they{ background:var(--surface-2); }
+  .fw-they .fw-tag{ color:var(--ink-faint); }
+  .fw-reality{ background:var(--land-bg); }
+  .fw-reality .fw-tag{ color:var(--land); }
+  .fw-win{ background:var(--win-bg); }
+  .fw-win .fw-tag{ color:var(--win); }
+  .fw-text{ font-size:15px; line-height:1.55; }
+
+  .pillars{ display:flex; flex-direction:column; gap:10px; }
+  .pillar{ display:grid; grid-template-columns:34px 1fr; gap:14px; background:var(--win-bg); padding:14px 16px; align-items:start; }
+  .pillar-num{ font-family:var(--font-display); font-weight:800; font-size:19px; color:var(--win); }
+  .pillar-head{ font-weight:600; font-size:15px; margin-bottom:3px; }
+  .pillar-proof{ font-size:13.5px; color:var(--ink-soft); }
+
+  .questions{ display:flex; flex-direction:column; gap:0; border:1px solid var(--line); }
+  .q{ padding:14px 18px; font-size:15px; line-height:1.5; }
+  .q::before{ content:"“"; color:var(--accent-deep); font-family:var(--font-display); font-weight:800; margin-right:2px; }
+  .q::after{ content:"”"; color:var(--accent-deep); font-family:var(--font-display); font-weight:800; margin-left:2px; }
+
+  .objections{ display:flex; flex-direction:column; gap:14px; }
+  .objection{ display:flex; flex-direction:column; gap:6px; }
+  .obj-said{ font-size:13.5px; color:var(--ink-faint); font-style:italic; }
+  .obj-said::before{ content:"OBJECTION — "; font-style:normal; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; }
+  .obj-resp{ background:var(--accent-bg); padding:13px 16px; font-size:15px; line-height:1.55; border-left:3px solid var(--accent); }
+
+  .donotsay{ background:var(--caution-bg); border:1px solid var(--caution); padding:18px 20px; display:flex; flex-direction:column; gap:10px; }
+  .donotsay h2{ color:var(--caution); font-size:17px; }
+  .donotsay ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .donotsay li{ font-size:14.5px; line-height:1.5; padding-left:20px; position:relative; }
+  .donotsay li::before{ content:"✕"; position:absolute; left:0; color:var(--caution); font-weight:600; font-size:12px; top:3px; }
+
+  footer{ border-top:1px solid var(--line); padding-top:16px; font-size:12px; color:var(--ink-faint); font-family:var(--font-mono); }
+
+  @media (max-width:520px){ .fw-step{ grid-template-columns:1fr; gap:4px; } .pillar{ grid-template-columns:26px 1fr; } }
+</style>
+
+<div class="card">
+
+  <div class="head">
+    <div class="vs-row">
+      <span class="vs-name">Sundial</span>
+      <span class="vs-sep">VS</span>
+      <span class="vs-name">PropIQ</span>
+      <span class="threat-pill">⚪ Low threat</span>
+    </div>
+    <div class="meta-row">
+      <span>Last updated: <b>September 2026</b></span>
+      <span>Owner: <b>Product Marketing — Competitive Intelligence</b></span>
+      <span>Source: <b>competitive-landscape.md</b></span>
+    </div>
+  </div>
+
+  <div class="note">Kept intentionally brief — PropIQ is brokerage-focused and rarely a genuine competitor in our bank/lender segment. See <code>competitive-landscape.md</code>'s note on priority before investing more here.</div>
+
+  <section>
+    <div class="eyebrow">Company Overview &amp; Strategy</div>
+    <div class="lede">PropIQ serves independent real estate brokerages, not banks or lenders. It comes up almost exclusively when a bank prospect's separate brokerage arm is evaluating tools of its own — not as a head-to-head competitor for the core deal.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Positioning Framework</div>
+    <div class="framework">
+      <div class="fw-step fw-they">
+        <div class="fw-tag">They say</div>
+        <div class="fw-text">"Valuation insight that helps agents close listings."</div>
+      </div>
+      <div class="fw-step fw-reality">
+        <div class="fw-tag">Reality</div>
+        <div class="fw-text">Not built for lenders or banks — no compliance or audit capability, and not designed for our buying committee at all.</div>
+      </div>
+      <div class="fw-step fw-win">
+        <div class="fw-tag">We win because</div>
+        <div class="fw-text">For a bank whose brokerage arm also needs valuation tooling, one vendor covering both lending and brokerage needs is simpler than managing two.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Value Pillars &amp; Differentiators</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div><div class="pillar-head">One platform for both segments</div><div class="pillar-proof">A bank with a brokerage arm doesn't need a second vendor relationship.</div></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div><div class="pillar-head">Compliance and audit capability by default</div><div class="pillar-proof">Present even where it isn't PropIQ's focus at all.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Discovery Question</div>
+    <div class="questions">
+      <div class="q">Does your brokerage arm use a separate valuation tool from your lending side — and if so, is that by design or by accident?</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Objection Handler</div>
+    <div class="objections">
+      <div class="objection">
+        <div class="obj-said">"We already use PropIQ for our brokerage team."</div>
+        <div class="obj-resp">That's a different problem than the one we solve — no need to replace it if it's working for your agents. Worth asking whether your lending team should be on the same platform, or a different one entirely.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="donotsay">
+    <h2>Do-Not-Say List</h2>
+    <ul>
+      <li>Don't disparage PropIQ's core brokerage product — we don't compete there, and doing so reads as reaching for a fight that isn't ours.</li>
+    </ul>
+  </div>
+
+  <footer>Generated from competitive-landscape.md · battlecard/skill.md · Sundial Analytics</footer>
+
+</div>

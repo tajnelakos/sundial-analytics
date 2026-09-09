@@ -1,0 +1,264 @@
+<title>Battlecard: Bricklane Data</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F3F5F4;
+    --surface:#FFFFFF;
+    --surface-2:#F7F8F7;
+    --ink:#111827;
+    --ink-soft:#4B5563;
+    --ink-faint:#9CA3AF;
+    --line:#E1E4E2;
+    --accent:#2451A8;
+    --accent-deep:#1B3B80;
+    --accent-bg:#EAF0FA;
+    --win:#1F7A4D;
+    --win-bg:#EAF5EE;
+    --caution:#B33A2E;
+    --caution-bg:#FBEAE8;
+    --land:#C17F1A;
+    --land-bg:#FCF3E3;
+    --threat-high:#B33A2E;
+    --font-display:'Archivo', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#14171A;
+      --surface:#1B1F23;
+      --surface-2:#20252A;
+      --ink:#ECEFF2;
+      --ink-soft:#AEB6BD;
+      --ink-faint:#6B7480;
+      --line:#2C3238;
+      --accent:#6E9EE8;
+      --accent-deep:#8FB3EE;
+      --accent-bg:#1B2536;
+      --win:#4CAF7D;
+      --win-bg:#16261D;
+      --caution:#E0796C;
+      --caution-bg:#2A1917;
+      --land:#E0A94A;
+      --land-bg:#2A2015;
+      --threat-high:#E0796C;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#14171A;
+    --surface:#1B1F23;
+    --surface-2:#20252A;
+    --ink:#ECEFF2;
+    --ink-soft:#AEB6BD;
+    --ink-faint:#6B7480;
+    --line:#2C3238;
+    --accent:#6E9EE8;
+    --accent-deep:#8FB3EE;
+    --accent-bg:#1B2536;
+    --win:#4CAF7D;
+    --win-bg:#16261D;
+    --caution:#E0796C;
+    --caution-bg:#2A1917;
+    --land:#E0A94A;
+    --land-bg:#2A2015;
+    --threat-high:#E0796C;
+  }
+
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-body); margin:0; padding:44px 20px 90px; -webkit-font-smoothing:antialiased; }
+  .card{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:32px; }
+  h1,h2,h3{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+  code{ font-family:var(--font-mono); background:var(--surface-2); padding:1px 6px; border-radius:3px; font-size:.9em; }
+
+  /* Header */
+  .head{ background:var(--accent); color:#fff; padding:28px 30px; display:flex; flex-direction:column; gap:16px; }
+  .vs-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .vs-name{ font-family:var(--font-display); font-weight:800; font-size:clamp(24px,4.4vw,34px); letter-spacing:-.01em; }
+  .vs-sep{ font-family:var(--font-mono); font-size:14px; opacity:.75; letter-spacing:.08em; }
+  .threat-pill{
+    font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em;
+    background:rgba(255,255,255,.16); padding:5px 11px; border-radius:20px; white-space:nowrap;
+  }
+  .meta-row{ display:flex; gap:22px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12.5px; opacity:.85; }
+  .meta-row b{ font-weight:500; opacity:1; }
+
+  /* Generic section */
+  section{ display:flex; flex-direction:column; gap:14px; }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint);
+  }
+  .lede{ font-size:16px; line-height:1.6; color:var(--ink-soft); }
+
+  /* Positioning framework */
+  .framework{ display:flex; flex-direction:column; gap:2px; }
+  .fw-step{ display:grid; grid-template-columns:110px 1fr; gap:16px; padding:16px 18px; align-items:start; }
+  .fw-step + .fw-step{ border-top:1px solid var(--line); }
+  .fw-tag{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; padding-top:2px; }
+  .fw-they{ background:var(--surface-2); }
+  .fw-they .fw-tag{ color:var(--ink-faint); }
+  .fw-reality{ background:var(--land-bg); }
+  .fw-reality .fw-tag{ color:var(--land); }
+  .fw-win{ background:var(--win-bg); }
+  .fw-win .fw-tag{ color:var(--win); }
+  .fw-text{ font-size:15px; line-height:1.55; }
+  .fw-text i{ color:var(--ink-faint); font-style:italic; }
+
+  /* Value pillars */
+  .pillars{ display:flex; flex-direction:column; gap:10px; }
+  .pillar{ display:grid; grid-template-columns:34px 1fr; gap:14px; background:var(--win-bg); padding:14px 16px; align-items:start; }
+  .pillar-num{ font-family:var(--font-display); font-weight:800; font-size:19px; color:var(--win); }
+  .pillar-head{ font-weight:600; font-size:15px; margin-bottom:3px; }
+  .pillar-proof{ font-size:13.5px; color:var(--ink-soft); }
+
+  /* Discovery questions */
+  .questions{ display:flex; flex-direction:column; gap:0; border:1px solid var(--line); }
+  .q{ padding:14px 18px; font-size:15px; line-height:1.5; }
+  .q + .q{ border-top:1px solid var(--line); }
+  .q::before{ content:"“"; color:var(--accent); font-family:var(--font-display); font-weight:800; margin-right:2px; }
+  .q::after{ content:"”"; color:var(--accent); font-family:var(--font-display); font-weight:800; margin-left:2px; }
+
+  /* Objection handlers */
+  .objections{ display:flex; flex-direction:column; gap:14px; }
+  .objection{ display:flex; flex-direction:column; gap:6px; }
+  .obj-said{ font-size:13.5px; color:var(--ink-faint); font-style:italic; }
+  .obj-said::before{ content:"OBJECTION — "; font-style:normal; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; }
+  .obj-resp{ background:var(--accent-bg); padding:13px 16px; font-size:15px; line-height:1.55; border-left:3px solid var(--accent); }
+
+  /* Do-not-say */
+  .donotsay{ background:var(--caution-bg); border:1px solid var(--caution); padding:18px 20px; display:flex; flex-direction:column; gap:10px; }
+  .donotsay h2{ color:var(--caution); font-size:17px; }
+  .donotsay ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .donotsay li{ font-size:14.5px; line-height:1.5; padding-left:20px; position:relative; }
+  .donotsay li::before{ content:"✕"; position:absolute; left:0; color:var(--caution); font-weight:600; font-size:12px; top:3px; }
+
+  /* Feature matrix */
+  table{ width:100%; border-collapse:collapse; font-size:14px; }
+  th,td{ text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+  th{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); font-weight:500; }
+  td.win{ color:var(--win); font-weight:600; }
+  td.lose{ color:var(--caution); }
+
+  footer{ border-top:1px solid var(--line); padding-top:16px; font-size:12px; color:var(--ink-faint); font-family:var(--font-mono); }
+
+  @media (max-width:520px){
+    .fw-step{ grid-template-columns:1fr; gap:4px; }
+    .pillar{ grid-template-columns:26px 1fr; }
+  }
+</style>
+
+<div class="card">
+
+  <div class="head">
+    <div class="vs-row">
+      <span class="vs-name">Sundial</span>
+      <span class="vs-sep">VS</span>
+      <span class="vs-name">Bricklane Data</span>
+      <span class="threat-pill">🔴 High threat</span>
+    </div>
+    <div class="meta-row">
+      <span>Last updated: <b>September 2026</b></span>
+      <span>Owner: <b>Product Marketing — Competitive Intelligence</b></span>
+      <span>Source: <b>competitive-landscape.md</b></span>
+    </div>
+  </div>
+
+  <section>
+    <div class="eyebrow">Company Overview &amp; Strategy</div>
+    <div class="lede">Bricklane Data is a fast-growing, price-led challenger targeting mid-market banks and lenders across Europe with self-serve, API-first valuations. They position against us on speed and cost, framing explainability as a nice-to-have rather than a requirement — a frame that holds only until a risk or compliance stakeholder enters the deal.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Positioning Framework</div>
+    <div class="framework">
+      <div class="fw-step fw-they">
+        <div class="fw-tag">They say</div>
+        <div class="fw-text">"The fastest, cheapest valuations in the market — get started in minutes, no sales call required."</div>
+      </div>
+      <div class="fw-step fw-reality">
+        <div class="fw-tag">Reality</div>
+        <div class="fw-text">Fast and cheap, yes — but the audit trail behind it is a confidence score with no comparable-level breakdown, and there's no dedicated compliance/audit-log feature. <i>(Source: product comparison, unconfirmed independently — worth a live demo comparison before repeating as certain.)</i></div>
+      </div>
+      <div class="fw-step fw-win">
+        <div class="fw-tag">We win because</div>
+        <div class="fw-text">We give you a valuation you can defend to an auditor, not just receive — comparable-level detail on every decision, not just a number.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Value Pillars &amp; Differentiators</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div><div class="pillar-head">Comparable-level audit trail</div><div class="pillar-proof">Every valuation shows the specific comparables used and their weighting, not just a confidence score.</div></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div><div class="pillar-head">Disclosed accuracy methodology</div><div class="pillar-proof">Our benchmarking approach is documented and open to technical evaluators. Bricklane's is not published.</div></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div><div class="pillar-head">Built for regulated lending from day one</div><div class="pillar-proof">Audit-log format and integration points were designed around lending compliance, not adapted from a generic product.</div></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div><div class="pillar-head">Proven with real institutions</div><div class="pillar-proof">42% win rate in Q1 among banks and lenders, including deals where Bricklane was the primary competitor.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Discovery / Landmine Questions</div>
+    <div class="questions">
+      <div class="q">How do you currently explain a specific valuation decision if an auditor asks how you got that number?</div>
+      <div class="q">Has your team seen Bricklane's audit trail on a real valuation, or only in a sales demo?</div>
+      <div class="q">What does your current vendor's compliance or audit-log feature actually include?</div>
+      <div class="q">If Bricklane's come up, what's driving the interest — price, speed, or something else?</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Objection Handlers</div>
+    <div class="objections">
+      <div class="objection">
+        <div class="obj-said">"Bricklane is 15% cheaper."</div>
+        <div class="obj-resp">That's fair, and worth factoring in — but ask what happens the first time an examiner questions a valuation. A cheaper number you can't explain ends up costing more in rework than it saved. Happy to show you the actual audit trail on one of your own properties so you can judge for yourself.</div>
+      </div>
+      <div class="objection">
+        <div class="obj-said">"They're faster to get started — self-serve, no sales call."</div>
+        <div class="obj-resp">Speed to start is real, and we're not going to pretend otherwise. The question is speed to a defensible decision, not just speed to a number — that's where the audit trail earns its keep.</div>
+      </div>
+      <div class="objection">
+        <div class="obj-said">"Bricklane says their accuracy is comparable."</div>
+        <div class="obj-resp">It might be — we won't claim otherwise without proof. What we can show you is exactly how we validate our accuracy, methodology and all. Ask Bricklane for the same, and compare.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="donotsay">
+    <h2>Do-Not-Say List</h2>
+    <ul>
+      <li>Don't call Bricklane's valuations "inaccurate" — there's no evidence for that, and it's an easy claim to get caught overstating.</li>
+      <li>Don't claim Bricklane has "no compliance features" in absolute terms — say specifically that their audit trail lacks comparable-level detail, which is verifiable.</li>
+      <li>Don't price-match or imply we'll come down to their price point — reframe to cost-of-an-indefensible-decision instead.</li>
+    </ul>
+  </div>
+
+  <section>
+    <div class="eyebrow">Feature Matrix — Critical Gaps Only</div>
+    <table>
+      <tr><th></th><th>Sundial</th><th>Bricklane Data</th></tr>
+      <tr><td>Audit trail</td><td class="win">Comparable-level</td><td class="lose">Confidence score only</td></tr>
+      <tr><td>Accuracy methodology</td><td class="win">Disclosed</td><td class="lose">Not published</td></tr>
+      <tr><td>On-prem deployment</td><td class="lose">No</td><td class="lose">No</td></tr>
+      <tr><td>Implementation</td><td>Weeks</td><td>Fastest — self-serve</td></tr>
+      <tr><td>Pricing model</td><td>Usage-based (per-call)</td><td>Usage-based, ~15% lower</td></tr>
+    </table>
+  </section>
+
+  <footer>Generated from competitive-landscape.md · battlecard/skill.md · Sundial Analytics</footer>
+
+</div>
