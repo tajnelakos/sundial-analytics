@@ -1,6 +1,6 @@
 # Call Transcript — Riverton Brokers
 
-**Date:** April 2026 · **Duration:** ~16 minutes · **Call type:** First discovery call
+**Date:** July 2026 · **Duration:** ~16 minutes · **Call type:** First discovery call
 **Rep:** Marcus Webb (Sundial Analytics) · **Prospect:** Tomas Reyes, Broker Team Lead, Riverton Brokers (independent brokerage, ~40 agents)
 
 ---

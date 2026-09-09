@@ -1,6 +1,6 @@
 # Call Transcript — Delta Mortgage Partners
 
-**Date:** June 2026 · **Duration:** ~15 minutes · **Call type:** Follow-up after a quiet stretch
+**Date:** August 2026 · **Duration:** ~15 minutes · **Call type:** Follow-up after a quiet stretch
 **Rep:** Anna Kowalski (Sundial Analytics) · **Prospect:** Sophie Larsen, VP of Mortgage Lending, Delta Mortgage Partners (national lender)
 
 ---

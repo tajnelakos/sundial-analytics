@@ -1,6 +1,6 @@
 # Call Transcript — Meridian Savings
 
-**Date:** March 2026 · **Duration:** ~20 minutes · **Call type:** Second call, post-demo
+**Date:** July 2026 · **Duration:** ~20 minutes · **Call type:** Second call, post-demo
 **Rep:** Marcus Webb (Sundial Analytics) · **Prospect:** Julia Hoffmann, VP of Mortgage Lending, Meridian Savings (regional bank, DACH)
 
 ---

@@ -1,6 +1,6 @@
 # Call Transcript — Baltic Home Finance
 
-**Date:** May 2026 · **Duration:** ~17 minutes · **Call type:** First discovery call
+**Date:** July 2026 · **Duration:** ~17 minutes · **Call type:** First discovery call
 **Rep:** Anna Kowalski (Sundial Analytics) · **Prospect:** Rasa Petraityte, VP of Mortgage Lending, Baltic Home Finance (regional lender)
 
 ---

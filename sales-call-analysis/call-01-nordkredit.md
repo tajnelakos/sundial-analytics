@@ -1,13 +1,13 @@
 # Call Transcript — Nordkredit
 
-**Date:** March 2026 · **Duration:** ~18 minutes · **Call type:** First discovery call, following outbound
+**Date:** July 2026 · **Duration:** ~18 minutes · **Call type:** First discovery call, following outbound
 **Rep:** Anna Kowalski (Sundial Analytics) · **Prospect:** Lena Virtanen, Head of Credit Risk, Nordkredit (regional lender, Nordics, ~€600M annual origination)
 
 *Context: Lena responded to an outbound email referencing her recent hire and Nordkredit's tooling migration (see [`personalized-outbound`](../personalized-outbound/example.md)).*
 
 ---
 
-**Anna:** Lena, thanks for making time — I know you're three weeks into the role, so I appreciate it. I'll keep this loose: I'd rather understand what you're actually dealing with than run you through slides. Sound okay?
+**Anna:** Lena, thanks for making time — I know you're still fairly new in the role, so I appreciate it. I'll keep this loose: I'd rather understand what you're actually dealing with than run you through slides. Sound okay?
 
 **Lena:** That works. Honestly your email was the first one this month that didn't try to sell me something before asking a question, so — here we are.
 
@@ -39,7 +39,7 @@
 
 **Lena:** Second week of September, tentatively.
 
-**Anna:** Okay. Typical implementation for a bank your size is a few weeks, not months, assuming we're not waiting on your side for data access approvals — that's usually the longest pole. If we started in, say, June, you'd have real runway before September, with buffer. I don't want to promise a date I can't back up, so let me confirm exact weeks with our implementation team rather than guess on this call.
+**Anna:** Okay. Typical implementation for a bank your size is a few weeks, not months, assuming we're not waiting on your side for data access approvals — that's usually the longest pole. If we started in, say, early August, you'd have real runway before September, with buffer. I don't want to promise a date I can't back up, so let me confirm exact weeks with our implementation team rather than guess on this call.
 
 **Lena:** Appreciate you not just saying "sure, no problem." One more thing — pricing. Your website says "custom," which usually means "we'll figure out how much you can pay."
 

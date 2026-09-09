@@ -21,7 +21,7 @@ A skill that takes a single call transcript and extracts four things, every time
 
 ## Files — aggregate rollup across many calls
 
-Fifteen call transcripts (March–August 2026, a deliberate mix of bank/lender and brokerage deals, competitors named and unnamed, strong signals and stalled ones) with a designed HTML rollup that surfaces the patterns a single-call analysis can't: which objections recur, which competitors actually come up, and — the part that matters most — specific new findings that aren't yet reflected anywhere else in this repo's knowledge base.
+Fifteen call transcripts (July–August 2026, a deliberate mix of bank/lender and brokerage deals, competitors named and unnamed, strong signals and stalled ones) with a designed HTML rollup that surfaces the patterns a single-call analysis can't: which objections recur, which competitors actually come up, and — the part that matters most — specific new findings that aren't yet reflected anywhere else in this repo's knowledge base.
 
 - [`call-01-nordkredit.md`](./call-01-nordkredit.md) through [`call-15-copperfield-estates.md`](./call-15-copperfield-estates.md) — the 15 transcripts
 - [`call-analysis-summary.html`](./call-analysis-summary.html) — the aggregate rollup ([view live ↗](https://tajnelakos.github.io/sundial-analytics/sales-call-analysis/call-analysis-summary.html))

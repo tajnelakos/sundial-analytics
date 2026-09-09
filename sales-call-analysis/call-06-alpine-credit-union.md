@@ -1,6 +1,6 @@
 # Call Transcript — Alpine Credit Union
 
-**Date:** May 2026 · **Duration:** ~20 minutes · **Call type:** Third call, late-stage
+**Date:** July 2026 · **Duration:** ~20 minutes · **Call type:** Third call, late-stage
 **Rep:** Marcus Webb (Sundial Analytics) · **Prospect:** Heinrich Bauer, Head of Credit Risk, Alpine Credit Union (regional bank, DACH)
 
 ---
