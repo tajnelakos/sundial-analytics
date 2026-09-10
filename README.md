@@ -12,39 +12,47 @@ Product marketing runs on recurring problems, not one-off projects: tracking com
 
 ## About the company
 
-Everything here is built around **[Sundial Analytics](./knowledge-base.md)**, which sells automated property valuation and real estate market intelligence to banks, mortgage lenders, and real estate brokerages across Europe. `knowledge-base.md` and the other root-level reference files describe the company, its market, and its customers in full.
+Everything here is built around **[Sundial Analytics](./knowledge-base/knowledge-base.md)**, which sells automated property valuation and real estate market intelligence to banks, mortgage lenders, and real estate brokerages across Europe. [`knowledge-base/`](./knowledge-base) describes the company, its market, and its customers in full.
 
-## Shared knowledge base
+## Three kinds of folder
 
-These files at repo root hold the reference material every use case below draws on, so each skill reasons from shared, consistent truth instead of re-explaining the customer each time:
+- **[`knowledge-base/`](./knowledge-base)** — accumulated understanding: the core reference docs (company, ICP, personas, positioning, voice, competitive landscape), plus the analysis work that builds and maintains that understanding (call analysis, win/loss analysis, staleness detection).
+- **[`sales-tools/`](./sales-tools)** — what a rep or sales-facing process actually uses: competitor monitoring, battlecards, account briefs, buying-signal monitoring, deck building.
+- **[`marketing-assets/`](./marketing-assets)** — content marketing produces and ships: outbound messages, nurture sequences, the pre-publish compliance check.
+
+### `knowledge-base/`
 
 | File | Contents |
 |---|---|
-| [`knowledge-base.md`](./knowledge-base.md) | Master summary — company, competitors, personas at a glance |
-| [`icp.md`](./icp.md) | Firmographics, tiering, buying committee, in-market signals |
-| [`personas.md`](./personas.md) | Per-persona buying psychology, objections, content preferences |
-| [`positioning.md`](./positioning.md) | Strategic narrative, differentiators, value props by segment |
-| [`voice-guide.md`](./voice-guide.md) | Tone, style rules, anti-patterns, prohibited terms |
-| [`competitive-landscape.md`](./competitive-landscape.md) | Full battlecards and positioning gaps |
+| [`knowledge-base.md`](./knowledge-base/knowledge-base.md) | Master summary — company, competitors, personas at a glance |
+| [`icp.md`](./knowledge-base/icp.md) | Firmographics, tiering, buying committee, in-market signals |
+| [`personas.md`](./knowledge-base/personas.md) | Per-persona buying psychology, objections, content preferences |
+| [`positioning.md`](./knowledge-base/positioning.md) | Strategic narrative, differentiators, value props by segment |
+| [`voice-guide.md`](./knowledge-base/voice-guide.md) | Tone, style rules, anti-patterns, prohibited terms |
+| [`competitive-landscape.md`](./knowledge-base/competitive-landscape.md) | Full battlecards and positioning gaps |
+| [`sales-call-analysis/`](./knowledge-base/sales-call-analysis) | 15 call transcripts plus a [designed rollup](https://tajnelakos.github.io/sundial-analytics/knowledge-base/sales-call-analysis/call-analysis-summary.html) of objections, competitors, and new findings across them |
+| [`win-loss-analysis/`](./knowledge-base/win-loss-analysis) | Patterns from closed-won/closed-lost deals, rendered as an exec-readable infographic |
+| [`staleness-detection/`](./knowledge-base/staleness-detection) | Flags specific knowledge-base claims that newer evidence contradicts |
 
-## What's inside
+### `sales-tools/`
 
-| Use case | What it does | Formats |
+| Folder | What it does | Formats |
 |---|---|---|
-| [`competitor-monitoring/`](./competitor-monitoring) | Turns scattered competitor signals into a structured weekly brief, plus a sourced [bi-monthly deep-dive](./competitor-monitoring/bi-monthly-report-skill.md) ([live report ↗](https://tajnelakos.github.io/sundial-analytics/competitor-monitoring/bi-monthly-report-2026-07-08.html)) | Claude Skill, Custom GPT |
-| [`battlecard/`](./battlecard) | A designed, rep-facing HTML battlecard per tracked competitor, generated from `competitive-landscape.md` | Claude Skill |
-| [`win-loss-analysis/`](./win-loss-analysis) | Extracts patterns from closed-won/closed-lost deals and renders them as an exec-readable infographic | Claude Skill, Custom GPT |
-| [`sales-call-analysis/`](./sales-call-analysis) | Analyzes a call transcript for objections, competitor mentions, and buying signals, plus a [15-call aggregate rollup](./sales-call-analysis/call-analysis-summary.html) | Claude Skill, Custom GPT |
-| [`brand-voice-guidelines/`](./brand-voice-guidelines) | Rewrites drafts to match a documented brand voice, with before/after examples | Claude Skill |
-| [`positioning-compliance/`](./positioning-compliance) | Pre-publish pass/fail check against voice and positioning rules — flags, never rewrites | Claude Skill |
-| [`sales-deck-builder/`](./sales-deck-builder) | Turns a one-line deal context into a structured sales deck outline tailored to buyer persona | Claude Skill, Custom GPT |
-| [`icp-buying-signal-monitor/`](./icp-buying-signal-monitor) | Scores raw account signals against ICP criteria into a prioritized watch list | Claude Skill |
-| [`abm-account-brief/`](./abm-account-brief) | Synthesizes the whole knowledge base into a one-page brief for a named target account | Claude Skill, Custom GPT |
-| [`personalized-outbound/`](./personalized-outbound) | Drafts a genuinely account-specific 1:1 outreach message from an account brief | Claude Skill, Custom GPT |
-| [`persona-email-sequence/`](./persona-email-sequence) | Builds a persona-specific nurture sequence where each email advances a different decision criterion | Claude Skill |
-| [`staleness-detection/`](./staleness-detection) | Flags specific knowledge-base claims that newer evidence contradicts | Claude Skill |
+| [`competitor-monitoring/`](./sales-tools/competitor-monitoring) | A structured weekly brief, plus a sourced [bi-monthly deep-dive](https://tajnelakos.github.io/sundial-analytics/sales-tools/competitor-monitoring/bi-monthly-report-2026-07-08.html) | Claude Skill, Custom GPT |
+| [`battlecard/`](./sales-tools/battlecard) | A designed, rep-facing HTML battlecard per tracked competitor | Claude Skill |
+| [`abm-account-brief/`](./sales-tools/abm-account-brief) | Synthesizes the whole knowledge base into a one-page brief for a named target account | Claude Skill, Custom GPT |
+| [`icp-buying-signal-monitor/`](./sales-tools/icp-buying-signal-monitor) | Scores raw account signals against ICP criteria into a prioritized watch list | Claude Skill |
+| [`sales-deck-builder/`](./sales-tools/sales-deck-builder) | Turns a one-line deal context into a structured sales deck outline tailored to buyer persona | Claude Skill, Custom GPT |
 
-Each folder contains a `README.md` explaining the problem it solves, the actual prompt/skill definition, and a sample output. Three of them — [`icp-buying-signal-monitor`](./icp-buying-signal-monitor) → [`abm-account-brief`](./abm-account-brief) → [`personalized-outbound`](./personalized-outbound) — are shown working as a pipeline against one target account, Nordkredit, rather than as three disconnected tools.
+### `marketing-assets/`
+
+| Folder | What it does | Formats |
+|---|---|---|
+| [`personalized-outbound/`](./marketing-assets/personalized-outbound) | Drafts a genuinely account-specific 1:1 outreach message from an account brief | Claude Skill, Custom GPT |
+| [`persona-email-sequence/`](./marketing-assets/persona-email-sequence) | Builds a persona-specific nurture sequence where each email advances a different decision criterion | Claude Skill |
+| [`positioning-compliance/`](./marketing-assets/positioning-compliance) | Pre-publish pass/fail check against voice and positioning rules — flags, never rewrites | Claude Skill |
+
+Each folder contains a `README.md` explaining the problem it solves, the actual prompt/skill definition, and a sample output. Three of them — [`icp-buying-signal-monitor`](./sales-tools/icp-buying-signal-monitor) → [`abm-account-brief`](./sales-tools/abm-account-brief) → [`personalized-outbound`](./marketing-assets/personalized-outbound) — are shown working as a pipeline against one target account, Nordkredit, rather than as three disconnected tools.
 
 ## About the formats
 
