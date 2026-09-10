@@ -36,7 +36,7 @@ This doc is the quick summary. Everything below expands one section of it into t
 - [`icp.md`](./icp.md) — firmographics, tiering, buying committee, in-market signals
 - [`personas.md`](./personas.md) — per-persona psychology, objections, content preferences
 - [`positioning.md`](./positioning.md) — narrative, differentiators, value props by segment
-- [`voice-guide.md`](./voice-guide.md) — tone, style rules, anti-patterns, prohibited terms
+- [`branding-guideline/skill.md`](./branding-guideline/skill.md) — tone, style rules, anti-patterns, prohibited terms (and the rewrite skill that applies them)
 - [`competitive-landscape.md`](./competitive-landscape.md) — full battlecards and positioning gaps
 
 Use this file and the ones above as the reference for names, roles, and competitive angles across every skill in this repo.

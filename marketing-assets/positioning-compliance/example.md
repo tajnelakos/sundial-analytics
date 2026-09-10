@@ -16,11 +16,11 @@ Same draft used as the "before" in [`branding-guideline`](../../knowledge-base/b
 **Result:** FAIL
 
 ### Hard fails (block publish)
-- "cutting-edge AI algorithms" — violates: voice-guide.md prohibited terms list ("cutting-edge," and this phrasing matches the explicitly banned "powered by advanced AI" / "powered by cutting-edge algorithms" pattern)
-- "significantly faster" — violates: voice-guide.md style rule (numbers over adjectives) — no figure or comparison is given to support this, and none is traceable to positioning.md
+- "cutting-edge AI algorithms" — violates: branding-guideline prohibited terms list ("cutting-edge," and this phrasing matches the explicitly banned "powered by advanced AI" / "powered by cutting-edge algorithms" pattern)
+- "significantly faster" — violates: branding-guideline style rule (numbers over adjectives) — no figure or comparison is given to support this, and none is traceable to positioning.md
 - "helping users eliminate lending risk" — violates: positioning.md — this is a stronger claim than our positioning supports; the doc explicitly notes we reduce manual review time and provide a documented basis, not that we eliminate lending risk
 - "industry-leading accuracy" — violates: positioning.md "what this is not" — positioning deliberately avoids an unqualified accuracy superiority claim; this is exactly the claim it warns against
 
 ### Soft flags (reviewer's call)
-- "In today's fast-changing real estate lending landscape..." — drifts from: voice-guide.md style guidance to lead with the claim, not a scene-setting opener. Not a banned phrase outright, but reads as filler.
+- "In today's fast-changing real estate lending landscape..." — drifts from: branding-guideline style guidance to lead with the claim, not a scene-setting opener. Not a banned phrase outright, but reads as filler.
 ```

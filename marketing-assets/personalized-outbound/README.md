@@ -6,7 +6,7 @@
 
 ## The approach
 
-A skill that takes an account brief (like the one [`abm-account-brief`](../../sales-tools/abm-account-brief) produces) and drafts one outbound message — email or LinkedIn — that references the actual trigger signal specifically, uses the positioning angle already selected for that account, and follows [`voice-guide.md`](../../knowledge-base/voice-guide.md). This deliberately does not generate outbound from scratch off a generic template; it requires the upstream brief as input, because the whole point is to not sound like outbound that could have been sent to any account.
+A skill that takes an account brief (like the one [`abm-account-brief`](../../sales-tools/abm-account-brief) produces) and drafts one outbound message — email or LinkedIn — that references the actual trigger signal specifically, uses the positioning angle already selected for that account, and follows [`branding-guideline`](../../knowledge-base/branding-guideline/skill.md)'s voice rules. This deliberately does not generate outbound from scratch off a generic template; it requires the upstream brief as input, because the whole point is to not sound like outbound that could have been sent to any account.
 
 Closes the loop on the pipeline demonstrated across three use cases: [`icp-buying-signal-monitor`](../../sales-tools/icp-buying-signal-monitor) flags Nordkredit → [`abm-account-brief`](../../sales-tools/abm-account-brief) builds the account picture → this drafts the actual message.
 

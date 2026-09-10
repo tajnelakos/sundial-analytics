@@ -6,7 +6,7 @@
 
 ## The approach
 
-A skill that checks a draft against [`voice-guide.md`](../../knowledge-base/voice-guide.md) (prohibited terms, anti-patterns) and [`positioning.md`](../../knowledge-base/positioning.md) (claims that overstate or contradict our actual positioning) and returns a pass/fail with specific citations — never a rewrite. The distinction from the brand-voice skill is deliberate: a compliance check that also rewrites invites skipping the review, since the "fixed" version just gets shipped without anyone looking at why it was flagged.
+A skill that checks a draft against [`branding-guideline`](../../knowledge-base/branding-guideline/skill.md)'s voice rules (prohibited terms, anti-patterns) and [`positioning.md`](../../knowledge-base/positioning.md) (claims that overstate or contradict our actual positioning) and returns a pass/fail with specific citations — never a rewrite. The distinction from the brand-voice skill is deliberate: a compliance check that also rewrites invites skipping the review, since the "fixed" version just gets shipped without anyone looking at why it was flagged.
 
 ## Files
 

@@ -16,7 +16,7 @@ Produce a sequence that reads as if it understands how this specific persona act
 3. **Email 1** picks up directly from the trigger context (what they downloaded/did) — no generic "thanks for your interest" opener.
 4. **Each subsequent email must add new information relevant to a different decision criterion** — never just a softer rephrase of the previous email's point. If there isn't a genuinely new angle for a third email, write two and say why a third would be padding.
 5. **Match objection-handling to the persona's actual stated objections** (from `personas.md`) — don't invent generic objections to pre-empt.
-6. **Follow `voice-guide.md`** throughout — this especially rules out escalating urgency language in later emails ("last chance," "don't miss out") that would clash with a skeptical, risk-focused persona.
+6. **Follow [`branding-guideline`](../../knowledge-base/branding-guideline/skill.md)'s voice rules** throughout — this especially rules out escalating urgency language in later emails ("last chance," "don't miss out") that would clash with a skeptical, risk-focused persona.
 7. **Each email keeps a single, low-friction next step** — don't stack multiple asks in one email.
 
 ## What to avoid
