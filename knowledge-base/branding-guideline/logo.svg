@@ -1,0 +1,11 @@
+<svg viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg" font-family="Archivo, system-ui, sans-serif">
+  <!-- Mark: gnomon triangle + shadow arc + sun point -->
+  <g>
+    <path d="M 20 105 A 40 40 0 0 1 100 105" fill="none" stroke="#C1892E" stroke-width="5" stroke-linecap="round"/>
+    <polygon points="60,25 32,105 88,105" fill="#1A3A5C"/>
+    <circle cx="60" cy="18" r="6" fill="#C1892E"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="130" y="78" font-size="52" font-weight="700" fill="#1A3A5C" letter-spacing="-0.5">Sundial</text>
+  <text x="130" y="118" font-size="26" font-weight="500" fill="#5B6470" letter-spacing="1.5">ANALYTICS</text>
+</svg>
