@@ -31,7 +31,7 @@ Everything here is built around **[Sundial Analytics](./knowledge-base/knowledge
 | [`branding-guideline/`](./knowledge-base/branding-guideline) | Full brand system — mission, values, tone-by-channel, logo files, color palette, typography, naming conventions — plus the rewrite skill that applies the voice rules |
 | [`competitive-landscape.md`](./knowledge-base/competitive-landscape.md) | Full battlecards and positioning gaps |
 | [`sales-call-analysis/`](./knowledge-base/sales-call-analysis) | 15 call transcripts plus a [designed rollup](https://tajnelakos.github.io/sundial-analytics/knowledge-base/sales-call-analysis/call-analysis-summary.html) of objections, competitors, and new findings across them |
-| [`win-loss-analysis/`](./knowledge-base/win-loss-analysis) | Patterns from closed-won/closed-lost deals, rendered as an exec-readable infographic |
+| [`win-loss-analysis/`](./knowledge-base/win-loss-analysis) | Patterns from closed-won/closed-lost deals — a quarterly infographic, plus a [100-record CRM deep dive](https://tajnelakos.github.io/sundial-analytics/knowledge-base/win-loss-analysis/win-loss-detailed-analysis.html) |
 | [`staleness-detection/`](./knowledge-base/staleness-detection) | Flags specific knowledge-base claims that newer evidence contradicts |
 
 ### `sales-tools/`

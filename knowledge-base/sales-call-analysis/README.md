@@ -26,7 +26,9 @@ Fifteen call transcripts (July–August 2026, a deliberate mix of bank/lender an
 - [`call-01-nordkredit.md`](./call-01-nordkredit.md) through [`call-15-copperfield-estates.md`](./call-15-copperfield-estates.md) — the 15 transcripts
 - [`call-analysis-summary.html`](./call-analysis-summary.html) — the aggregate rollup ([view live ↗](https://tajnelakos.github.io/sundial-analytics/knowledge-base/sales-call-analysis/call-analysis-summary.html))
 
-Three of the fifteen deliberately connect to prospects already established elsewhere in this repo — Nordkredit (the account [`icp-buying-signal-monitor`](../../sales-tools/icp-buying-signal-monitor) → [`abm-account-brief`](../../sales-tools/abm-account-brief) → [`personalized-outbound`](../../marketing-assets/personalized-outbound) flagged and reached out to), Meridian Savings and Court Street Lending (both referenced in [`win-loss-analysis`](../win-loss-analysis) and [`icp-buying-signal-monitor`](../../sales-tools/icp-buying-signal-monitor)) — so the calls read as one continuous account history rather than fifteen disconnected demos.
+Three of the fifteen deliberately connect to prospects already established elsewhere in this repo — Nordkredit (the account [`icp-buying-signal-monitor`](../../sales-tools/icp-buying-signal-monitor) → [`abm-account-brief`](../../sales-tools/abm-account-brief) → [`personalized-outbound`](../../marketing-assets/personalized-outbound) flagged and reached out to), Meridian Savings and Court Street Lending (both referenced in [`icp-buying-signal-monitor`](../../sales-tools/icp-buying-signal-monitor)) — so the calls read as one continuous account history rather than fifteen disconnected demos.
+
+All fifteen also appear as closed opportunities in [`win-loss-analysis`](../win-loss-analysis)'s [CRM export](../win-loss-analysis/win-loss-crm-export.csv) and [deep-dive analysis](https://tajnelakos.github.io/sundial-analytics/knowledge-base/win-loss-analysis/win-loss-detailed-analysis.html) — the qualitative "how the call went" here and the quantitative "what closed" there describe the same deals, not two unrelated data sets.
 
 ## Current limitations
 
