@@ -11,7 +11,6 @@ Two things live here, deliberately not merged: a **skill** that applies the voic
 ## Files — the rewrite skill
 
 - [`skill.md`](./skill.md) — the Claude Skill definition, including the voice rules it applies (tone, style standards, anti-patterns, prohibited terms, substitutions)
-- [`before-after.md`](./before-after.md) — a sample rewrite for [Sundial Analytics](../knowledge-base.md), with the reasoning shown
 
 ## Files — the full brand system
 

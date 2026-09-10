@@ -1,6 +1,6 @@
 # Sample output
 
-Same draft used as the "before" in [`branding-guideline`](../../knowledge-base/branding-guideline/before-after.md) — shown here going through the compliance checker instead, which flags rather than fixes.
+A fictional draft going through the compliance checker — flags rather than fixes.
 
 ---
 
