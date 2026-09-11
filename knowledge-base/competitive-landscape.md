@@ -2,11 +2,11 @@
 
 Full battlecard reference. The summary table in [`knowledge-base.md`](./knowledge-base.md) is the quick version; this is what [`competitor-monitoring`](../sales-tools/competitor-monitoring), [`battlecard`](../sales-tools/battlecard), and [`win-loss-analysis`](./win-loss-analysis) draw on for deeper context.
 
-**Last full refresh:** March 2026, following Q1 win/loss analysis. Per-competitor "Last verified" dates below track individual sections — see [`staleness-detection`](./staleness-detection) before repeating a claim that hasn't been checked recently.
+**Last full refresh:** September 2026, following a [`staleness-detection`](./staleness-detection) sweep against the July–August bi-monthly competitor report and the trailing-12-month win-loss deep dive — see [`sweep-2026-09.md`](./staleness-detection/sweep-2026-09.md) for exactly what changed and why. Per-competitor "Last verified" dates below track individual sections.
 
 ## Executive summary
 
-Three real competitors in the bank/lender segment, none with a decisive product edge — deals are won or lost in the risk conversation, not the demo. Bricklane is the highest-frequency threat (price-led, weak on explainability); ValuAI is the most dangerous early in a deal (strong demo, thin follow-up); Estemate is fading but still wins on relationship tenure and on-prem support. Our two live vulnerabilities are price and the on-prem gap — see [Known gap working against us](#known-gap-working-against-us).
+Three real competitors in the bank/lender segment, none with a decisive product edge — deals are won or lost in the risk conversation, not the demo. Bricklane is the highest-frequency threat (price-led, weak on explainability); ValuAI is the fastest-moving one — its audit trail shipped in July 2026 and it's now competing on price too, though we're 8-for-8 against it this period (small sample, closing gap, not a reason for confidence); Estemate is fading but still wins on relationship tenure and on-prem support — and still beats us more often than any other named competitor (72.7% win rate for them when faced, per the [win-loss deep dive](./win-loss-analysis/win-loss-detailed-analysis.html)), which is worth remembering before assuming the flashier competitor is the bigger threat. Our two live vulnerabilities are price and the on-prem gap — see [Known gap working against us](#known-gap-working-against-us).
 
 ## Company profiles
 
@@ -24,8 +24,8 @@ Three real competitors in the bank/lender segment, none with a decisive product 
 | Competitor | Threat level | Segment | Win angle | Landmine — don't say |
 |---|---|---|---|---|
 | [Bricklane Data](#bricklane-data) | 🔴 High — most frequent competitor in losses (13 of 35 lost deals, Q1) | Bank/lender | Reframe price → cost of an indefensible decision | Don't price-match — it concedes the frame that this is a commodity |
-| [ValuAI](#valuai) | 🟠 Medium-High — well-funded, wins the early-stage demo | Bank/lender | Let their own audit-trail claim collapse under the buyer's follow-up questions | Don't attack ValuAI directly — invite direct comparison instead |
-| [Estemate](#estemate) | 🟡 Medium — entrenched but visibly aging | Bank/lender (Benelux-heavy) | Modern UX + faster implementation, once a frustrated stakeholder is in the room | Don't attack the relationship tenure — it's their strongest card |
+| [ValuAI](#valuai) | 🟠 Medium-High — GA'd their audit trail in Jul 2026; 0-for-8 against us since, but that's a small sample and the gap is closing, not a reason for confidence | Bank/lender | Ask for proof at scale (named reference, live test on their data) — existence of the feature is no longer the wedge | Don't call it "still in beta" — it shipped; don't assume our current win rate against them will hold |
+| [Estemate](#estemate) | 🟠 Medium-High — revised up: wins 72.7% of deals it contests (n=11), despite the least exciting product story of the three | Bank/lender (Benelux-heavy) | Modern UX + faster implementation, once a frustrated stakeholder is in the room | Don't attack the relationship tenure — it's their strongest card, and it's working better than this document previously credited |
 | [PropIQ](#propiq) | ⚪ Low — different segment | Brokerage | N/A — rarely a head-to-head bank/lender deal | N/A |
 
 ## Capability comparison
@@ -34,11 +34,11 @@ Illustrative — not a substitute for a live demo comparison.
 
 | | Sundial | Bricklane Data | Estemate | ValuAI |
 |---|---|---|---|---|
-| Comparable-level audit trail | ✅ Yes | ❌ Confidence score only | ⚠️ Partial, dated format | ⚠️ Claimed, not verified GA (see [call example](./sales-call-analysis/example.md)) |
+| Comparable-level audit trail | ✅ Yes | ❌ Confidence score only | ⚠️ Partial, dated format | ⚠️ GA since Jul 2026, but reportedly weaker on commercial/mixed-use than residential (see [`call-09-ironbridge-bank.md`](./sales-call-analysis/call-09-ironbridge-bank.md)) |
 | Accuracy methodology disclosed | ✅ Yes | ❌ Not published | ✅ Yes, established track record | ❌ Claimed, not disclosed |
 | On-prem deployment | ❌ No — current gap, see [win-loss data](./win-loss-analysis/win-loss-infographic.svg) | ❌ Cloud only | ✅ Yes (legacy architecture) | ❌ Cloud only |
 | Implementation timeline | Weeks | Fastest — self-serve | Slowest — legacy integration | Medium |
-| Pricing model | Usage-based (per-call) | Usage-based, ~15% below Sundial | Enterprise/negotiated, typically higher | Not publicly disclosed |
+| Pricing model | Usage-based (per-call) | Usage-based, ~15% below Sundial | Enterprise/negotiated, typically higher | Not publicly disclosed; averaged ~9% below our deal size in Q3 head-to-heads (n=8, see [win-loss deep dive](./win-loss-analysis/win-loss-detailed-analysis.html)) |
 
 The on-prem gap is real, not a competitor's weakness — flag it early with a prospect that requires it rather than letting it surface late in the deal.
 
@@ -49,7 +49,7 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 | Sundial | Usage-based (per-call API), seat-based for brokerage app | No self-serve tier for the bank/lender product — sales-assisted only |
 | Bricklane Data | Usage-based, ~15% below Sundial | Self-serve signup, no enterprise tier disclosed — built for fast adoption without procurement |
 | Estemate | Enterprise/negotiated only | Multi-year contracts typical, no self-serve option |
-| ValuAI | Not publicly disclosed | Sales-assisted only; reportedly premium-priced given funding and marketing spend (unconfirmed) |
+| ValuAI | Not publicly disclosed | Sales-assisted only. The "premium-priced" assumption didn't hold up in Q3 head-to-heads — their average quote came in below our average deal size (see [win-loss deep dive](./win-loss-analysis/win-loss-detailed-analysis.html)); price is now part of their play, not just capability |
 | PropIQ | Seat-based, tiered by team size | Freemium single-seat trial available |
 
 ## Marketing & positioning
@@ -98,7 +98,9 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 ## Estemate
 
-**Quick facts:** Threat level 🟡 Medium · Bank/lender segment, Benelux-heavy · Last verified: March 2026 (per [competitor-monitoring](../sales-tools/competitor-monitoring/weekly-brief-example.md))
+**Quick facts:** Threat level 🟠 **Medium-High (revised up from Medium)** · Bank/lender segment, Benelux-heavy · Last verified: September 2026, via [`staleness-detection`](./staleness-detection) sweep (see [`sweep-2026-09.md`](./staleness-detection/sweep-2026-09.md))
+
+**Why the threat level moved:** Win-loss data shows a 27.3% win rate *for us* when Estemate is the named competitor (n=11) — meaning Estemate wins nearly three-quarters of the deals it contests, the worst of any named competitor in this book, despite being the one with the least exciting product story. See the [win-loss deep dive](./win-loss-analysis/win-loss-detailed-analysis.html). The lesson isn't that Estemate got stronger this period — it's that this document was previously rating threat by how compelling a competitor's pitch sounds, not by how often they actually win.
 
 **Positioning:** Legacy incumbent, especially entrenched in France/Benelux. Sells on relationship tenure and breadth of historical data.
 
@@ -120,23 +122,23 @@ The on-prem gap is real, not a competitor's weakness — flag it early with a pr
 
 ## ValuAI
 
-**Quick facts:** Threat level 🟠 Medium-High · Bank/lender segment · Last verified: March 2026 (per [sales-call-analysis](./sales-call-analysis/example.md)) — **check** [`staleness-detection`](./staleness-detection) **before citing the "audit trail not GA" weakness; this claim has moved before**
+**Quick facts:** Threat level 🟠 Medium-High · Bank/lender segment · Last verified: **September 2026**, via [`staleness-detection`](./staleness-detection) sweep (see [`sweep-2026-09.md`](./staleness-detection/sweep-2026-09.md)) — next recheck due October 2026, since this is still the fastest-moving section in this document.
 
-**Positioning:** "AI-native" challenger, well-funded, leads with technology-forward messaging.
+**Positioning:** "AI-native" challenger, well-funded, leads with technology-forward messaging — as of this period, also reaching for "regulatory-ready" language (see [`competitor-monitoring`](../sales-tools/competitor-monitoring)'s bi-monthly report).
 
-**Strengths:** Strong initial sales narrative, modern-feeling product demo, aggressive marketing presence. *(Source: market observation)*
+**Strengths:** Strong initial sales narrative, modern-feeling product demo, aggressive marketing presence, and — as of July 2026 — a shipped, GA audit-trail feature. *(Source: market observation; [bi-monthly-report-2026-07-08.md](../sales-tools/competitor-monitoring/bi-monthly-report-2026-07-08.md))*
 
-**Weaknesses:** Explainability claims reportedly don't hold up under technical follow-up. *(Source: 1 sales call transcript reference, plus lost-deal pattern — see [battlecard's update example](../sales-tools/battlecard/example.md) for how this claim has already been revised once and may move again)*
+**Weaknesses:** No longer "the feature doesn't exist" — it shipped. The current, more precise weakness: adoption evidence is thin (one named enterprise reference customer, no independent validation at scale) and it reportedly performs worse on commercial/mixed-use properties than residential. *(Source: [`call-09-ironbridge-bank.md`](./sales-call-analysis/call-09-ironbridge-bank.md); see [`battlecard/valuai.html`](../sales-tools/battlecard/valuai.html) for the fully updated talk track)*
 
-**How we win:** This is our clearest differentiation lane — let the buyer's own follow-up questions expose the gap rather than attacking ValuAI directly; offer to show our audit trail live on their own data as the resolution.
+**How we win:** Our clearest differentiation lane has moved from *existence* to *proof at scale* — offer a live audit trail on the buyer's own data, and ask ValuAI to do the same. This is working: **0 of 8 head-to-head deals against ValuAI were won by them this period** (see [win-loss deep dive](./win-loss-analysis/win-loss-detailed-analysis.html)). Don't read that as settled, though — 8 deals is a small sample, and their capability gap is closing, not widening.
 
-**How we lose:** Early-stage deals where the buyer hasn't yet pressure-tested ValuAI's claims and is still impressed by the demo.
+**How we lose:** Early-stage deals where the buyer hasn't yet pressure-tested ValuAI's claims and is still impressed by the demo — and, newly, deals where their now-lower quoted price is the deciding factor rather than capability at all.
 
-**Objection handling:** "ValuAI says they're explainable too" → don't dispute it in the abstract; invite direct comparison ("ask them to show the actual comparable-level audit trail on a real valuation, then ask us the same").
+**Objection handling:** "ValuAI says they're explainable too" → don't dispute it, it's true now. Invite direct comparison instead ("ask them to show the actual comparable-level audit trail on a real valuation, then ask us the same") and, if the property type is commercial or mixed-use, that comparison favors us more specifically than it used to.
 
-**Landmines — don't say:** Don't assert the audit-trail feature is "still in beta" as a fixed fact — this is the single most volatile claim in this battlecard (see the staleness note above). Confirm current status before a call where it matters, don't repeat it from memory.
+**Landmines — don't say:** Don't say the audit-trail feature "doesn't exist" or is "still in beta" — it shipped in July 2026, and repeating the old claim is exactly the kind of thing that gets fact-checked and costs credibility. Don't over-rely on the current 0-for-8 win-loss record either — it's real, but it's recent and small, not a permanent advantage.
 
-**Trigger signals it's in the deal:** Buyer uses the word "AI-native" or references a recent, polished ValuAI demo.
+**Trigger signals it's in the deal:** Buyer uses the word "AI-native," references a recent ValuAI demo, or brings up their audit trail feature by name — worth asking directly whether they've seen it live on their own data or only in a demo.
 
 ---
 

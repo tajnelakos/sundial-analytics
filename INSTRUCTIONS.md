@@ -52,7 +52,7 @@ This is here so an AI assistant (or a reader unfamiliar with the role) can see w
 - Refresh a battlecard with the past month's accumulated competitive intel → [`battlecard`](./sales-tools/battlecard)
 - Every other month: the deeper, sourced competitive report → [`competitor-monitoring/bi-monthly-report-skill.md`](./sales-tools/competitor-monitoring/bi-monthly-report-skill.md)
 - Build or refresh a nurture sequence tied to a new piece of content → [`persona-email-sequence`](./marketing-assets/persona-email-sequence)
-- Spot-check whether the knowledge-base files themselves have drifted → [`staleness-detection`](./knowledge-base/staleness-detection)
+- Spot-check whether the knowledge-base files themselves have drifted → [`staleness-detection`](./knowledge-base/staleness-detection) — this one runs on an actual monthly schedule rather than waiting to be remembered; see [`sweep-2026-09.md`](./knowledge-base/staleness-detection/sweep-2026-09.md) for the first real pass
 
 **Quarterly**
 - Full win/loss analysis and infographic for the exec team → [`win-loss-analysis`](./knowledge-base/win-loss-analysis)
