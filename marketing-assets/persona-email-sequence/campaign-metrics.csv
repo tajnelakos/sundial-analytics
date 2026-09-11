@@ -1,0 +1,21 @@
+campaign,email_number,send_date,subject_variant,subject_line,sent,delivered,opened,clicked,replied,meetings_booked,unsubscribed
+head-of-credit-risk,1,2026-07-06,A,"The part most 'explainable AI' claims skip",120,118,68,16,3,1,1
+head-of-credit-risk,1,2026-07-06,B,"What your auditor will actually ask",120,119,79,25,7,3,0
+head-of-credit-risk,2,2026-07-10,A,"How we validate accuracy (and how to check our work)",118,117,61,14,2,1,1
+head-of-credit-risk,2,2026-07-10,B,"Show me your math: our accuracy methodology",117,116,66,19,5,2,1
+head-of-credit-risk,3,2026-07-15,A,"What changes (and what doesn't) if you switch",116,115,55,11,2,1,0
+head-of-credit-risk,3,2026-07-15,B,"The migration conversation, without the sales spin",114,113,60,16,4,2,0
+head-of-credit-risk,4,2026-07-21,A,"A community bank's examiner asked the same question you're asking",115,114,58,15,4,2,0
+head-of-credit-risk,4,2026-07-21,B,"What a similarly-regulated peer told their examiner",112,111,64,20,6,3,0
+head-of-credit-risk,5,2026-07-28,A,"Worth 15 minutes on your own data?",113,112,49,13,5,3,0
+head-of-credit-risk,5,2026-07-28,B,"An offer other vendors won't make you",109,108,52,17,7,4,0
+vp-mortgage-lending,1,2026-08-03,A,"The cycle-time number lenders like you actually hit",130,128,86,29,9,4,1
+vp-mortgage-lending,1,2026-08-03,B,"How many days are you losing in the valuation step?",130,129,74,20,5,2,1
+vp-mortgage-lending,2,2026-08-06,A,"Where this actually plugs into your loan officers' day",125,123,79,24,6,3,1
+vp-mortgage-lending,2,2026-08-06,B,"No new steps for your loan officers (really)",127,125,68,17,4,2,1
+vp-mortgage-lending,3,2026-08-10,A,"What borrowers notice when the wait disappears",121,120,71,21,5,3,0
+vp-mortgage-lending,3,2026-08-10,B,"The abandonment number nobody tracks until it's too late",124,122,60,14,3,1,1
+vp-mortgage-lending,4,2026-08-15,A,"A real rollout timeline, not a 'go-live in a day' claim",118,117,68,26,8,5,0
+vp-mortgage-lending,4,2026-08-15,B,"What week one, four, and twelve actually look like",122,120,57,16,4,2,0
+vp-mortgage-lending,5,2026-08-21,A,"You don't have to sell this to your risk team",113,112,58,19,7,4,0
+vp-mortgage-lending,5,2026-08-21,B,"The one slide that gets Risk and Ops on the same page",120,119,49,13,3,2,0

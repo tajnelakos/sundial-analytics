@@ -39,3 +39,17 @@ Decision criterion this advances: ...
 
 (etc.)
 ```
+
+## Deep-dive campaign mode
+
+The quick mode above produces sequence content only. Deep-dive mode is for when the user wants a full, run-ready campaign for a persona: more emails, A/B-tested subject lines, and the tracking/analysis/ops material a real send needs — see [`campaign-head-of-credit-risk.md`](./campaign-head-of-credit-risk.md) and [`campaign-vp-mortgage-lending.md`](./campaign-vp-mortgage-lending.md) for two full worked examples.
+
+Use deep-dive mode when the user asks to actually build out / launch / track a sequence for a persona, rather than just draft the email copy.
+
+1. **Extend to 5 emails**, one per decision criterion (most personas in `personas.md` have 3-4 ranked criteria) plus one email built specifically around that persona's named **trust trigger** (a peer reference, a live demo offer, a real implementation timeline) — this is the email most likely to reverse the sequence's natural engagement decay; see the Email 4 pattern in both campaign files.
+2. **A/B test subject lines only, not body copy**, across the whole sequence — varying both at once makes it impossible to attribute a performance difference to either one. Frame the two variants as genuinely different techniques (e.g. declarative claim vs. a question naming the buyer's specific fear), not minor word swaps.
+3. **Don't assume a winning subject-line style transfers across personas.** [`campaign-performance-analysis.html`](./campaign-performance-analysis.html) found the opposite winner for two different personas from the same two techniques — treat each persona's A/B result as local to that persona.
+4. **Produce tracking data** in the shape of [`campaign-metrics.csv`](./campaign-metrics.csv) (per email, per variant: sent, delivered, opened, clicked, replied, meetings booked, unsubscribed) — real or, for a worked example, fictional-but-internally-consistent numbers a reader could recompute the rates from.
+5. **Produce an analysis** in the shape of [`campaign-performance-analysis.html`](./campaign-performance-analysis.html) — computed rates and a "what this means for the next sequence" section, not just a repeat of the raw numbers in prose.
+6. **Produce reply-handling guidance** in the shape of [`reply-handling-playbook.md`](./reply-handling-playbook.md) — reply types mapped to persona-specific response guidance, grounded in that persona's actual objections and trust triggers/breakers from `personas.md`.
+7. **Check deliverability** against [`deliverability-checklist.md`](./deliverability-checklist.md) before treating a new sequence as ready to send — this is generic across personas and only needs to be produced once per repo, not once per campaign.

@@ -30,6 +30,7 @@ Every folder inside these three holds a flat set of files — `README.md`, `skil
 | "Give me the full picture on [named target account]" | [`abm-account-brief`](./sales-tools/abm-account-brief) |
 | "Draft an outbound message to [specific account]" | [`personalized-outbound`](./marketing-assets/personalized-outbound) |
 | "Build a nurture sequence for [persona]" | [`persona-email-sequence`](./marketing-assets/persona-email-sequence) |
+| "Build the full, run-ready campaign for [persona], with tracking/A-B tests" | [`persona-email-sequence/skill.md`](./marketing-assets/persona-email-sequence/skill.md)'s deep-dive campaign mode |
 | "Is [strategy doc] still accurate?" | [`staleness-detection`](./knowledge-base/staleness-detection) |
 
 If a request doesn't map cleanly to one row, say so rather than forcing it into the nearest folder — some requests (e.g. "write me a blog post") are intentionally out of scope for this repo; see the note on generic copywriting in [`README.md`](./README.md).

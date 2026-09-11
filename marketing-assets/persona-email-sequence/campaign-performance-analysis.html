@@ -1,0 +1,248 @@
+<title>Persona Campaign Performance</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F0F3F2; --surface:#FFFFFF; --surface-2:#F5F7F6;
+    --ink:#10201D; --ink-soft:#4A5C58; --ink-faint:#93A19D; --line:#DCE3E1;
+    --accent:#0F6E64; --accent-deep:#0B4F48; --accent-bg:#E3F1EE;
+    --a:#2F6FB0; --a-bg:#E9F1F9;
+    --b:#B3651F; --b-bg:#FBF0E4;
+    --font-display:'Archivo', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#12181A; --surface:#1A2124; --surface-2:#1F2729;
+      --ink:#E7EEEC; --ink-soft:#A9B6B2; --ink-faint:#697875; --line:#2B3436;
+      --accent:#4BB3A4; --accent-deep:#6FC9BB; --accent-bg:#182927;
+      --a:#6FA8DC; --a-bg:#182430;
+      --b:#E0A05C; --b-bg:#2A2015;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#12181A; --surface:#1A2124; --surface-2:#1F2729;
+    --ink:#E7EEEC; --ink-soft:#A9B6B2; --ink-faint:#697875; --line:#2B3436;
+    --accent:#4BB3A4; --accent-deep:#6FC9BB; --accent-bg:#182927;
+    --a:#6FA8DC; --a-bg:#182430;
+    --b:#E0A05C; --b-bg:#2A2015;
+  }
+
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-body); margin:0; padding:44px 20px 90px; -webkit-font-smoothing:antialiased; }
+  .page{ max-width:1000px; margin:0 auto; display:flex; flex-direction:column; gap:36px; }
+  h1,h2,h3{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+  a{ color:inherit; }
+  code{ font-family:var(--font-mono); background:var(--surface-2); padding:1px 6px; border-radius:3px; font-size:.9em; }
+
+  .masthead{ display:flex; flex-direction:column; gap:12px; border-bottom:2px solid var(--ink); padding-bottom:20px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.12em; color:var(--accent-deep); }
+  .masthead h1{ font-size:clamp(24px,4vw,34px); font-weight:800; }
+  .meta-row{ display:flex; gap:22px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); }
+  .meta-row b{ color:var(--ink); font-weight:500; }
+
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .kpi{ background:var(--surface); padding:16px 14px; display:flex; flex-direction:column; gap:5px; }
+  .kpi-value{ font-family:var(--font-mono); font-size:23px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .kpi-label{ font-size:11px; color:var(--ink-soft); line-height:1.3; }
+
+  section.panel{ background:var(--surface); border:1px solid var(--line); padding:22px 24px; display:flex; flex-direction:column; gap:16px; }
+  .panel h2{ font-size:19px; font-weight:700; }
+  .panel .sub{ font-size:12.5px; color:var(--ink-faint); margin-top:-10px; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th,td{ text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); font-weight:500; }
+  td.num{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; text-align:right; }
+
+  .variant-box{ background:var(--surface-2); padding:14px 16px; display:flex; flex-direction:column; gap:8px; }
+  .variant-box.a{ border-left:3px solid var(--a); }
+  .variant-box.b{ border-left:3px solid var(--b); }
+  .variant-label{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); }
+  .variant-metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .vm-value{ font-family:var(--font-mono); font-size:18px; font-weight:600; }
+  .vm-label{ font-size:10.5px; color:var(--ink-soft); }
+  .winner-tag{ display:inline-block; font-family:var(--font-mono); font-size:10.5px; background:var(--accent); color:#fff; padding:2px 7px; border-radius:3px; margin-left:6px; }
+
+  .bar-row{ display:grid; grid-template-columns:60px 1fr 46px; gap:10px; align-items:center; margin-bottom:6px; }
+  .bar-label{ font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); }
+  .bar-track{ background:var(--surface-2); height:13px; border-radius:6px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:6px; }
+  .bar-count{ font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); text-align:right; font-variant-numeric:tabular-nums; }
+
+  .findings{ display:flex; flex-direction:column; gap:0; }
+  .finding{ padding:14px 0; border-top:1px solid var(--line); }
+  .findings .finding:first-child{ border-top:none; }
+  .finding-head{ font-weight:600; font-size:14.5px; margin-bottom:4px; }
+  .finding-body{ font-size:13.5px; line-height:1.55; color:var(--ink-soft); }
+
+  .panel-highlight{ background:var(--accent-bg); border:1px solid var(--accent); border-top:3px solid var(--accent); }
+  .panel-highlight h2{ color:var(--accent-deep); }
+
+  footer{ border-top:1px solid var(--line); padding-top:18px; font-size:12.5px; color:var(--ink-faint); font-family:var(--font-mono); }
+
+  @media (max-width:760px){
+    .kpis{ grid-template-columns:repeat(2,1fr); }
+    .grid2{ grid-template-columns:1fr; }
+    .variant-metrics{ grid-template-columns:repeat(2,1fr); }
+    table{ font-size:12px; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="eyebrow">Persona Email Sequence · Sundial Analytics</div>
+    <h1>Campaign Performance — Two Persona Sequences, A/B Tested</h1>
+    <div class="meta-row">
+      <span>Campaigns: <b>Head of Credit Risk</b>, <b>VP of Mortgage Lending</b></span>
+      <span>Period: <b>Jul – Aug 2026</b></span>
+      <span>Contacts: <b>500</b> (240 + 260)</span>
+      <span>Source: <b><a href="./campaign-metrics.csv">campaign-metrics.csv</a></b></span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-value">1,143 / 1,215</div><div class="kpi-label">Emails delivered, HoCR / VP</div></div>
+    <div class="kpi"><div class="kpi-value">53.5% / 55.1%</div><div class="kpi-label">Overall open rate, HoCR / VP</div></div>
+    <div class="kpi"><div class="kpi-value">22 / 28</div><div class="kpi-label">Meetings booked, HoCR / VP</div></div>
+    <div class="kpi"><div class="kpi-value">1.92% / 2.30%</div><div class="kpi-label">Meeting rate (of delivered)</div></div>
+  </div>
+
+  <div class="panel panel-highlight">
+    <div class="eyebrow">Read this first</div>
+    <h2>Key findings</h2>
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-head">The winning subject-line style flipped between the two personas — same technique, opposite result</div>
+        <div class="finding-body">For Head of Credit Risk, Variant B (naming their specific fear as a direct question — "What your auditor will actually ask") beat Variant A (stating the same fact declaratively) on every metric: open rate 56.6% vs 50.5%, reply rate 5.1% vs 2.8%, meetings booked 14 vs 8. For VP of Mortgage Lending, it's the mirror image: Variant A (a concrete number, stated directly — "The cycle-time number lenders like you actually hit") beat Variant B (the question framing) on every metric: open rate 60.3% vs 50.1%, reply rate 5.8% vs 3.1%, meetings booked 19 vs 9. The lesson isn't "questions win" or "declarative wins" — it's that <em>specificity</em> wins, and what counts as specific differs by persona: for a skeptical risk buyer, specificity means naming their actual fear precisely; for a speed-and-numbers buyer, specificity means the number itself.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">Reply and meeting rates tick up at Email 4 in both sequences — the email built around each persona's own named trust trigger</div>
+        <div class="finding-body">Both sequences show a steady decline in engagement from Email 1 through Email 3, then a reply/meeting uptick at Email 4 before resuming the decline at Email 5. Email 4 is not a repeat of an earlier angle in either sequence — for Head of Credit Risk it's the peer-reference email (<code>personas.md</code> names "peer references from similarly-regulated institutions" as a specific trust trigger for this persona); for VP of Mortgage Lending it's the real week-by-week rollout timeline (<code>personas.md</code> names "a rep who separates 'the tool goes live' from 'my team actually adopts it'" as this persona's trust trigger). Replies at Email 4: HoCR 6 (vs. 4 at Email 3), VP 8 (vs. 5 at Email 3). This reads as evidence that the trust-trigger mapping in the sequence design is doing real work, not just decoration.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">VP of Mortgage Lending converts at a higher overall rate, consistent with the persona's psychology, not just better copy</div>
+        <div class="finding-body">VP's 2.30% meeting rate against HoCR's 1.92% tracks with what <code>personas.md</code> already says about the two: Head of Credit Risk is risk-averse by function and has "usually been burned once already" by explainability claims, so this persona's skepticism is expected to suppress conversion somewhat regardless of copy quality — the sequence's job is to be one of the few that survives that skepticism, not to eliminate it.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">Neither sequence's final email spiked unsubscribes — the no-urgency close appears not to cost reach</div>
+        <div class="finding-body">Email 5 in both campaigns carries zero unsubscribes across both variants, despite being the sequence-ending email. Combined with <code>branding-guideline</code>'s ban on manufactured urgency, this is a small piece of evidence that ending on a genuine, low-pressure offer (a live demo on the buyer's own data; a joint walkthrough with their risk team) doesn't cost list health the way a "last chance" close might have.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>Head of Credit Risk — variant comparison</h2>
+    <div class="sub">Combined across all 5 emails · 120 contacts per variant</div>
+    <div class="grid2">
+      <div class="variant-box a">
+        <div class="variant-label">Variant A — declarative</div>
+        <div class="variant-metrics">
+          <div><div class="vm-value">50.5%</div><div class="vm-label">Open rate</div></div>
+          <div><div class="vm-value">12.0%</div><div class="vm-label">Click rate</div></div>
+          <div><div class="vm-value">2.8%</div><div class="vm-label">Reply rate</div></div>
+          <div><div class="vm-value">8</div><div class="vm-label">Meetings booked</div></div>
+        </div>
+      </div>
+      <div class="variant-box b">
+        <div class="variant-label">Variant B — named fear, as a question <span class="winner-tag">Winner</span></div>
+        <div class="variant-metrics">
+          <div><div class="vm-value">56.6%</div><div class="vm-label">Open rate</div></div>
+          <div><div class="vm-value">17.1%</div><div class="vm-label">Click rate</div></div>
+          <div><div class="vm-value">5.1%</div><div class="vm-label">Reply rate</div></div>
+          <div><div class="vm-value">14</div><div class="vm-label">Meetings booked</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>VP of Mortgage Lending — variant comparison</h2>
+    <div class="sub">Combined across all 5 emails · 130 contacts per variant</div>
+    <div class="grid2">
+      <div class="variant-box a">
+        <div class="variant-label">Variant A — declarative number <span class="winner-tag">Winner</span></div>
+        <div class="variant-metrics">
+          <div><div class="vm-value">60.3%</div><div class="vm-label">Open rate</div></div>
+          <div><div class="vm-value">19.8%</div><div class="vm-label">Click rate</div></div>
+          <div><div class="vm-value">5.8%</div><div class="vm-label">Reply rate</div></div>
+          <div><div class="vm-value">19</div><div class="vm-label">Meetings booked</div></div>
+        </div>
+      </div>
+      <div class="variant-box b">
+        <div class="variant-label">Variant B — cost-of-inaction question</div>
+        <div class="variant-metrics">
+          <div><div class="vm-value">50.1%</div><div class="vm-label">Open rate</div></div>
+          <div><div class="vm-value">13.0%</div><div class="vm-label">Click rate</div></div>
+          <div><div class="vm-value">3.1%</div><div class="vm-label">Reply rate</div></div>
+          <div><div class="vm-value">9</div><div class="vm-label">Meetings booked</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Engagement decay across the sequence — winning variant only</h2>
+    <div class="sub">Open rate (% of delivered), Email 1 → 5 — note the Email 4 uptick in reply/meeting terms in both campaigns, described above</div>
+    <div class="grid2">
+      <div>
+        <div class="variant-label" style="margin-bottom:10px">Head of Credit Risk — Variant B</div>
+        <div class="bar-row"><div class="bar-label">Email 1</div><div class="bar-track"><div class="bar-fill" style="width:66.4%;background:var(--b)"></div></div><div class="bar-count">66.4%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 2</div><div class="bar-track"><div class="bar-fill" style="width:56.9%;background:var(--b)"></div></div><div class="bar-count">56.9%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 3</div><div class="bar-track"><div class="bar-fill" style="width:53.1%;background:var(--b)"></div></div><div class="bar-count">53.1%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 4</div><div class="bar-track"><div class="bar-fill" style="width:57.7%;background:var(--b)"></div></div><div class="bar-count">57.7%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 5</div><div class="bar-track"><div class="bar-fill" style="width:48.1%;background:var(--b)"></div></div><div class="bar-count">48.1%</div></div>
+      </div>
+      <div>
+        <div class="variant-label" style="margin-bottom:10px">VP of Mortgage Lending — Variant A</div>
+        <div class="bar-row"><div class="bar-label">Email 1</div><div class="bar-track"><div class="bar-fill" style="width:67.2%;background:var(--a)"></div></div><div class="bar-count">67.2%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 2</div><div class="bar-track"><div class="bar-fill" style="width:64.2%;background:var(--a)"></div></div><div class="bar-count">64.2%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 3</div><div class="bar-track"><div class="bar-fill" style="width:59.2%;background:var(--a)"></div></div><div class="bar-count">59.2%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 4</div><div class="bar-track"><div class="bar-fill" style="width:58.1%;background:var(--a)"></div></div><div class="bar-count">58.1%</div></div>
+        <div class="bar-row"><div class="bar-label">Email 5</div><div class="bar-track"><div class="bar-fill" style="width:51.8%;background:var(--a)"></div></div><div class="bar-count">51.8%</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Full email-by-email data</h2>
+    <div class="sub">Winning variant per campaign — see <a href="./campaign-metrics.csv">campaign-metrics.csv</a> for both variants, all fields</div>
+    <table>
+      <thead><tr><th>Campaign</th><th>Email</th><th>Subject</th><th class="num">Delivered</th><th class="num">Opened</th><th class="num">Replied</th><th class="num">Meetings</th></tr></thead>
+      <tbody>
+        <tr><td>Head of Credit Risk</td><td>1</td><td>What your auditor will actually ask</td><td class="num">119</td><td class="num">79</td><td class="num">7</td><td class="num">3</td></tr>
+        <tr><td>Head of Credit Risk</td><td>2</td><td>Show me your math: our accuracy methodology</td><td class="num">116</td><td class="num">66</td><td class="num">5</td><td class="num">2</td></tr>
+        <tr><td>Head of Credit Risk</td><td>3</td><td>The migration conversation, without the sales spin</td><td class="num">113</td><td class="num">60</td><td class="num">4</td><td class="num">2</td></tr>
+        <tr><td>Head of Credit Risk</td><td>4</td><td>What a similarly-regulated peer told their examiner</td><td class="num">111</td><td class="num">64</td><td class="num">6</td><td class="num">3</td></tr>
+        <tr><td>Head of Credit Risk</td><td>5</td><td>An offer other vendors won't make you</td><td class="num">108</td><td class="num">52</td><td class="num">7</td><td class="num">4</td></tr>
+        <tr><td>VP of Mortgage Lending</td><td>1</td><td>The cycle-time number lenders like you actually hit</td><td class="num">128</td><td class="num">86</td><td class="num">9</td><td class="num">4</td></tr>
+        <tr><td>VP of Mortgage Lending</td><td>2</td><td>Where this actually plugs into your loan officers' day</td><td class="num">123</td><td class="num">79</td><td class="num">6</td><td class="num">3</td></tr>
+        <tr><td>VP of Mortgage Lending</td><td>3</td><td>What borrowers notice when the wait disappears</td><td class="num">120</td><td class="num">71</td><td class="num">5</td><td class="num">3</td></tr>
+        <tr><td>VP of Mortgage Lending</td><td>4</td><td>A real rollout timeline, not a 'go-live in a day' claim</td><td class="num">117</td><td class="num">68</td><td class="num">8</td><td class="num">5</td></tr>
+        <tr><td>VP of Mortgage Lending</td><td>5</td><td>You don't have to sell this to your risk team</td><td class="num">112</td><td class="num">58</td><td class="num">7</td><td class="num">4</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>What this means for the next sequence</h2>
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-head">Keep persona-specific subject-line testing — don't standardize on one winning style repo-wide</div>
+        <div class="finding-body">Applying VP's winning declarative style to the Head of Credit Risk campaign, or vice versa, would likely have cost both campaigns performance based on this data. Any future persona campaign (Broker Team Lead, Credit Risk Analyst / Data Lead) should run its own A/B test rather than inherit either winner by default.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">Consider moving the Email 4 trust-trigger content earlier</div>
+        <div class="finding-body">If the trust-trigger email is reliably the one that reverses engagement decay, testing it at Email 2 or 3 instead of Email 4 in the next iteration of either sequence would show whether the lift is about <em>content</em> (moves with the email) or <em>position</em> (a natural rebound partway through any sequence) — this data set can't distinguish the two on its own.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>campaign-performance-analysis.html · built from campaign-metrics.csv · Sundial Analytics persona-email-sequence · fictional data, for illustration</footer>
+
+</div>
