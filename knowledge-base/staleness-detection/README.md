@@ -16,8 +16,10 @@ Two modes: a **repo-wide sweep** that checks every knowledge-base doc and releva
 
 ## How it actually runs
 
-This skill has no scheduler of its own — nothing in a markdown file can trigger anything. It runs when a person (or an automation someone builds outside this repo) invokes it. In this repo, that invocation is a monthly scheduled task — see the note in `INSTRUCTIONS.md`'s cadence section — that hands Claude this skill plus the repo's latest artifacts each month.
+A skill file has no scheduler of its own — nothing in markdown can trigger anything by itself. This one is invoked by an actual scheduled cloud routine, live as of September 2026: **"Sundial Analytics – Monthly Staleness Sweep,"** firing on the 1st of every month. It clones this repo fresh, reads `skill.md`'s repo-wide sweep mode, checks the knowledge base against whatever's newest, and — only if it actually finds something to fix — commits its changes to a new branch and opens a pull request for review. It never pushes straight to `main`; a monthly automated content change to a public portfolio gets a human look first.
+
+If a given month's evidence hasn't changed since the last sweep (nothing new in `competitor-monitoring`, `win-loss-analysis`, or `sales-call-analysis`), the routine says so plainly and opens no PR at all, rather than manufacturing a finding to look useful — confirmed in its first test run, which correctly found nothing new (the manual [`sweep-2026-09.md`](./sweep-2026-09.md) pass had happened minutes earlier) and exited cleanly with no duplicate report and no PR.
 
 ## Current limitations
 
-The repo-wide sweep still requires someone (or a scheduled run) to point it at the current state of the repo each time — it doesn't yet diff against its own prior sweep report to know what changed since last time versus what's simply unconfirmed again. Building that comparison (this sweep vs. last sweep, not just this sweep vs. the underlying docs) is the natural next step.
+The monthly routine handles invocation now, but the sweep itself still re-derives "what's new since last time" by checking file modification history each run, rather than reading a structured diff against its own prior report. That's worked correctly so far, but it's inference, not a guarantee — a more explicit this-sweep-vs-last-sweep comparison is the natural next step.
