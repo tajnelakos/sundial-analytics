@@ -1,0 +1,101 @@
+<title>Sundial Analytics — One-Pager (Head of Credit Risk)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --navy:#1A3A5C; --gold:#C1892E; --ink:#1C1C1A; --slate:#8A8782; --paper:#F4F3EF;
+    --line:#E1E0D9;
+    --font-display:'Archivo', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    background:#DCDAD2; color:var(--ink); font-family:var(--font-body); margin:0; padding:28px 16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+    padding:44px 48px 36px; display:flex; flex-direction:column; gap:26px;
+  }
+  h1,h2{ font-family:var(--font-display); margin:0; text-wrap:balance; }
+  a{ color:inherit; }
+
+  .masthead{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid var(--navy); padding-bottom:16px; }
+  .wordmark{ font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:.01em; color:var(--navy); }
+  .wordmark span{ color:var(--gold); }
+  .audience-tag{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--slate); text-align:right; line-height:1.5; }
+
+  .headline{ font-size:32px; font-weight:800; color:var(--navy); line-height:1.15; }
+  .subhead{ font-size:15.5px; line-height:1.6; color:#3A3A36; max-width:62ch; }
+
+  .proof-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .proof-card{ background:var(--paper); padding:18px 16px; display:flex; flex-direction:column; gap:10px; }
+  .proof-icon{ width:26px; height:26px; }
+  .proof-title{ font-family:var(--font-display); font-weight:700; font-size:14px; }
+  .proof-body{ font-size:12.5px; line-height:1.5; color:#3A3A36; }
+
+  .proof-strip{ border:1px solid var(--gold); border-left:4px solid var(--gold); background:#FBF4E8; padding:16px 18px; display:flex; flex-direction:column; gap:6px; }
+  .proof-strip-label{ font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); }
+  .proof-strip-body{ font-size:13.5px; line-height:1.55; }
+  .proof-strip-cite{ font-family:var(--font-mono); font-size:10.5px; color:var(--slate); }
+
+  .cta-row{ display:flex; align-items:center; justify-content:space-between; gap:20px; border-top:1px solid var(--line); padding-top:20px; }
+  .cta-text{ font-size:13.5px; max-width:44ch; line-height:1.5; }
+  .cta-button{ font-family:var(--font-body); font-weight:600; font-size:13.5px; background:var(--navy); color:#fff; border:none; padding:11px 20px; border-radius:3px; white-space:nowrap; }
+
+  footer{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:10px; color:var(--slate); }
+
+  @media (max-width:640px){
+    .sheet{ padding:28px 22px; }
+    .masthead{ flex-direction:column; gap:10px; }
+    .audience-tag{ text-align:left; }
+    .proof-grid{ grid-template-columns:1fr; }
+    .cta-row{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="wordmark">SUNDIAL<span>·</span>ANALYTICS</div>
+    <div class="audience-tag">For Heads of Credit Risk<br>Bank &amp; Lender segment · Tier 1</div>
+  </div>
+
+  <div class="headline">A valuation you can defend, not just receive.</div>
+  <div class="subhead">Most valuation tools give you a number and a confidence score. If an examiner asks how that number was reached, "the model said so" isn't an answer — and increasingly, regulators are asking.</div>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="#1A3A5C" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      <div class="proof-title">Per-valuation audit trail</div>
+      <div class="proof-body">Every output includes the specific comparables used and their weighting — inspectable, not just a confidence score.</div>
+    </div>
+    <div class="proof-card">
+      <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="#1A3A5C" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg>
+      <div class="proof-title">Disclosed accuracy methodology</div>
+      <div class="proof-body">Benchmarking approach is documented and available for technical evaluators to scrutinize — not a headline number.</div>
+    </div>
+    <div class="proof-card">
+      <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="#1A3A5C" stroke-width="1.6"><rect x="3.5" y="7" width="17" height="13" rx="1"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+      <div class="proof-title">Built for regulated lending</div>
+      <div class="proof-body">Audit-log format and integration points were designed around lending compliance from inception, not adapted from a general product later.</div>
+    </div>
+  </div>
+
+  <div class="proof-strip">
+    <div class="proof-strip-label">From a recent deal</div>
+    <div class="proof-strip-body">A Nordics regional bank replaced its incumbent valuation vendor specifically over this gap — the logged decision driver was "explainability / audit trail," not price.</div>
+    <div class="proof-strip-cite">Sourced from win-loss-analysis (OPP-1001) · full named case study pending customer sign-off — ask your Sundial contact</div>
+  </div>
+
+  <div class="cta-row">
+    <div class="cta-text">See a live audit trail on one of your own past valuations — real data, no prepared demo, about 15 minutes.</div>
+    <div class="cta-button">Request a live walkthrough</div>
+  </div>
+
+  <footer>
+    <span>sundialanalytics.example · fictional company, for portfolio illustration</span>
+    <span>One-pager · Head of Credit Risk · Tier 1 Bank/Lender</span>
+  </footer>
+
+</div>

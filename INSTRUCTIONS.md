@@ -31,9 +31,13 @@ Every folder inside these three holds a flat set of files — `README.md`, `skil
 | "Draft an outbound message to [specific account]" | [`personalized-outbound`](./marketing-assets/personalized-outbound) |
 | "Build a nurture sequence for [persona]" | [`persona-email-sequence`](./marketing-assets/persona-email-sequence) |
 | "Build the full, run-ready campaign for [persona], with tracking/A-B tests" | [`persona-email-sequence/skill.md`](./marketing-assets/persona-email-sequence/skill.md)'s deep-dive campaign mode |
+| "Build a case study for [closed-won account]" | [`case-study-builder`](./marketing-assets/case-study-builder) |
+| "Build a one-pager for [persona/segment]" | [`one-pager-builder`](./marketing-assets/one-pager-builder) |
+| "Write a blog post about [topic/argument]" | [`blog-post-builder`](./marketing-assets/blog-post-builder) |
+| "Write a LinkedIn/social post about [finding]" | [`social-media-post-builder`](./marketing-assets/social-media-post-builder) |
 | "Is [strategy doc] still accurate?" | [`staleness-detection`](./knowledge-base/staleness-detection) |
 
-If a request doesn't map cleanly to one row, say so rather than forcing it into the nearest folder — some requests (e.g. "write me a blog post") are intentionally out of scope for this repo; see the note on generic copywriting in [`README.md`](./README.md).
+If a request doesn't map cleanly to one row, say so rather than forcing it into the nearest folder. Note that `blog-post-builder` and `social-media-post-builder` still require a real, specific seed (a `positioning.md` point of view, a sourced finding) — "write me a blog post" with no argument behind it is a prompt to ask a clarifying question, not to route to a generic template.
 
 ## Typical day/week/month for a growth or product marketer, mapped to this repo
 
@@ -48,11 +52,14 @@ This is here so an AI assistant (or a reader unfamiliar with the role) can see w
 - Competitive brief for the sales team → [`competitor-monitoring`](./sales-tools/competitor-monitoring)
 - Review which target accounts newly show buying signals → [`icp-buying-signal-monitor`](./sales-tools/icp-buying-signal-monitor)
 - Build a deck for an upcoming key meeting → [`sales-deck-builder`](./sales-tools/sales-deck-builder)
+- A blog post or social post tied to a real finding (a new call pattern, a win-loss stat, a POV from `positioning.md`) → [`blog-post-builder`](./marketing-assets/blog-post-builder) or [`social-media-post-builder`](./marketing-assets/social-media-post-builder)
 
 **Monthly**
 - Refresh a battlecard with the past month's accumulated competitive intel → [`battlecard`](./sales-tools/battlecard)
 - Every other month: the deeper, sourced competitive report → [`competitor-monitoring/bi-monthly-report-skill.md`](./sales-tools/competitor-monitoring/bi-monthly-report-skill.md)
 - Build or refresh a nurture sequence tied to a new piece of content → [`persona-email-sequence`](./marketing-assets/persona-email-sequence)
+- Build or refresh a one-pager for a persona/segment → [`one-pager-builder`](./marketing-assets/one-pager-builder)
+- A deal just closed won and is worth turning into collateral → [`case-study-builder`](./marketing-assets/case-study-builder)
 - Spot-check whether the knowledge-base files themselves have drifted → [`staleness-detection`](./knowledge-base/staleness-detection) — this one runs on an actual monthly schedule rather than waiting to be remembered; see [`sweep-2026-09.md`](./knowledge-base/staleness-detection/sweep-2026-09.md) for the first real pass
 
 **Quarterly**

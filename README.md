@@ -18,7 +18,7 @@ Everything here is built around **[Sundial Analytics](./knowledge-base/knowledge
 
 - **[`knowledge-base/`](./knowledge-base)** — accumulated understanding: the core reference docs (company, ICP, personas, positioning, voice, competitive landscape), plus the analysis work that builds and maintains that understanding (call analysis, win/loss analysis, staleness detection).
 - **[`sales-tools/`](./sales-tools)** — what a rep or sales-facing process actually uses: competitor monitoring, battlecards, account briefs, buying-signal monitoring, deck building.
-- **[`marketing-assets/`](./marketing-assets)** — content marketing produces and ships: outbound messages, nurture sequences, the pre-publish compliance check.
+- **[`marketing-assets/`](./marketing-assets)** — content marketing produces and ships: outbound messages, nurture sequences, case studies, one-pagers, blog posts, social posts, and the pre-publish compliance check.
 
 ### `knowledge-base/`
 
@@ -50,9 +50,13 @@ Everything here is built around **[Sundial Analytics](./knowledge-base/knowledge
 |---|---|---|
 | [`personalized-outbound/`](./marketing-assets/personalized-outbound) | Drafts a genuinely account-specific 1:1 outreach message from an account brief | Claude Skill, Custom GPT |
 | [`persona-email-sequence/`](./marketing-assets/persona-email-sequence) | Builds a persona-specific nurture sequence where each email advances a different decision criterion | Claude Skill |
+| [`case-study-builder/`](./marketing-assets/case-study-builder) | Builds a Challenge/Solution/Results case study from a real closed-won deal's CRM record and call transcript — never an invented result or quote | Claude Skill |
+| [`one-pager-builder/`](./marketing-assets/one-pager-builder) | Builds a single-page, persona-specific leave-behind — one angle, sourced proof points, an actual designed HTML page | Claude Skill |
+| [`blog-post-builder/`](./marketing-assets/blog-post-builder) | Drafts a blog post built around one real, sourced point of view or finding, not a generic SEO topic | Claude Skill |
+| [`social-media-post-builder/`](./marketing-assets/social-media-post-builder) | Drafts a social post built around one real, cited proof point, platform mechanics applied after | Claude Skill |
 | [`positioning-compliance/`](./marketing-assets/positioning-compliance) | Pre-publish pass/fail check against voice and positioning rules — flags, never rewrites | Claude Skill |
 
-Each folder contains a `README.md` explaining the problem it solves, the actual prompt/skill definition, and a sample output. Three of them — [`icp-buying-signal-monitor`](./sales-tools/icp-buying-signal-monitor) → [`abm-account-brief`](./sales-tools/abm-account-brief) → [`personalized-outbound`](./marketing-assets/personalized-outbound) — are shown working as a pipeline against one target account, Nordkredit, rather than as three disconnected tools.
+Each folder contains a `README.md` explaining the problem it solves, the actual prompt/skill definition, and a sample output. Three of them — [`icp-buying-signal-monitor`](./sales-tools/icp-buying-signal-monitor) → [`abm-account-brief`](./sales-tools/abm-account-brief) → [`personalized-outbound`](./marketing-assets/personalized-outbound) — are shown working as a pipeline against one target account, Nordkredit, rather than as three disconnected tools; [`case-study-builder`](./marketing-assets/case-study-builder) picks that same account back up as the pipeline's actual closed-won ending.
 
 ## About the formats
 
