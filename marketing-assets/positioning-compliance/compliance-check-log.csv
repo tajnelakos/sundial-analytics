@@ -1,0 +1,21 @@
+date,content_type,channel,result,hard_fails,soft_flags,top_violation_category
+2026-07-02,website-copy,Website,FAIL,2,1,prohibited-term
+2026-07-08,one-pager,Sales enablement,FAIL,1,0,unverifiable-claim
+2026-07-15,paid-ad,LinkedIn Ads,PASS,0,1,none
+2026-07-21,battlecard-update,Sales enablement,FAIL,1,0,stale-competitive-claim
+2026-07-29,social-post,LinkedIn,PASS,0,0,none
+2026-08-04,whitepaper-excerpt,Content marketing,FAIL,2,2,positioning-overclaim
+2026-08-06,sales-deck-slide,Sales enablement,FAIL,1,0,stale-competitive-claim
+2026-08-11,email-nurture,Email,FAIL,1,1,prohibited-term
+2026-08-13,website-copy,Website,FAIL,1,0,stale-competitive-claim
+2026-08-18,one-pager,Sales enablement,FAIL,2,0,stale-competitive-claim
+2026-08-20,paid-ad,LinkedIn Ads,PASS,0,2,none
+2026-08-25,social-post,LinkedIn,FAIL,1,0,unverifiable-claim
+2026-08-27,battlecard-update,Sales enablement,FAIL,1,0,stale-competitive-claim
+2026-09-01,sales-deck-slide,Sales enablement,PASS,0,1,none
+2026-09-03,website-copy,Website,PASS,0,0,none
+2026-09-05,whitepaper-excerpt,Content marketing,FAIL,1,1,positioning-overclaim
+2026-09-08,email-nurture,Email,PASS,0,1,none
+2026-09-09,one-pager,Sales enablement,PASS,0,0,none
+2026-09-10,paid-ad,LinkedIn Ads,FAIL,1,0,prohibited-term
+2026-09-12,social-post,LinkedIn,PASS,0,0,none

@@ -1,0 +1,209 @@
+<title>Compliance Check Trends</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F0F3F2; --surface:#FFFFFF; --surface-2:#F5F7F6;
+    --ink:#10201D; --ink-soft:#4A5C58; --ink-faint:#93A19D; --line:#DCE3E1;
+    --accent:#0F6E64; --accent-deep:#0B4F48; --accent-bg:#E3F1EE;
+    --win:#1F7A4D; --win-bg:#E9F5EE;
+    --lose:#B33A2E; --lose-bg:#FBEAE8;
+    --font-display:'Archivo', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#12181A; --surface:#1A2124; --surface-2:#1F2729;
+      --ink:#E7EEEC; --ink-soft:#A9B6B2; --ink-faint:#697875; --line:#2B3436;
+      --accent:#4BB3A4; --accent-deep:#6FC9BB; --accent-bg:#182927;
+      --win:#4CAF7D; --win-bg:#14261C;
+      --lose:#E0796C; --lose-bg:#2A1917;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#12181A; --surface:#1A2124; --surface-2:#1F2729;
+    --ink:#E7EEEC; --ink-soft:#A9B6B2; --ink-faint:#697875; --line:#2B3436;
+    --accent:#4BB3A4; --accent-deep:#6FC9BB; --accent-bg:#182927;
+    --win:#4CAF7D; --win-bg:#14261C;
+    --lose:#E0796C; --lose-bg:#2A1917;
+  }
+
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-body); margin:0; padding:44px 20px 90px; -webkit-font-smoothing:antialiased; }
+  .page{ max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:36px; }
+  h1,h2,h3{ font-family:var(--font-display); text-wrap:balance; margin:0; }
+  a{ color:inherit; }
+  code{ font-family:var(--font-mono); background:var(--surface-2); padding:1px 6px; border-radius:3px; font-size:.9em; }
+
+  .masthead{ display:flex; flex-direction:column; gap:12px; border-bottom:2px solid var(--ink); padding-bottom:20px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.12em; color:var(--accent-deep); }
+  .masthead h1{ font-size:clamp(24px,4vw,34px); font-weight:800; }
+  .meta-row{ display:flex; gap:22px; flex-wrap:wrap; font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); }
+  .meta-row b{ color:var(--ink); font-weight:500; }
+
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .kpi{ background:var(--surface); padding:16px 14px; display:flex; flex-direction:column; gap:5px; }
+  .kpi-value{ font-family:var(--font-mono); font-size:23px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .kpi-label{ font-size:11px; color:var(--ink-soft); line-height:1.3; }
+
+  section.panel{ background:var(--surface); border:1px solid var(--line); padding:22px 24px; display:flex; flex-direction:column; gap:16px; }
+  .panel h2{ font-size:19px; font-weight:700; }
+  .panel .sub{ font-size:12.5px; color:var(--ink-faint); margin-top:-10px; }
+
+  .bar-row{ display:grid; grid-template-columns:110px 1fr 76px; gap:10px; align-items:center; margin-bottom:8px; }
+  .bar-label{ font-size:13px; }
+  .bar-track{ background:var(--surface-2); height:15px; border-radius:7px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:7px; }
+  .bar-count{ font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); text-align:right; font-variant-numeric:tabular-nums; }
+
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th,td{ text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); font-weight:500; }
+  td.num{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; text-align:right; }
+
+  .findings{ display:flex; flex-direction:column; gap:0; }
+  .finding{ padding:14px 0; border-top:1px solid var(--line); }
+  .findings .finding:first-child{ border-top:none; }
+  .finding-head{ font-weight:600; font-size:14.5px; margin-bottom:4px; }
+  .finding-body{ font-size:13.5px; line-height:1.55; color:var(--ink-soft); }
+
+  .panel-highlight{ background:var(--accent-bg); border:1px solid var(--accent); border-top:3px solid var(--accent); }
+  .panel-highlight h2{ color:var(--accent-deep); }
+
+  .timeline{ display:flex; flex-direction:column; gap:0; }
+  .tl-item{ display:grid; grid-template-columns:90px 1fr; gap:14px; padding:10px 0; border-top:1px solid var(--line); }
+  .timeline .tl-item:first-child{ border-top:none; }
+  .tl-date{ font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); }
+  .tl-body{ font-size:13.5px; }
+  .tl-tag{ display:inline-block; font-family:var(--font-mono); font-size:10px; padding:1px 6px; border-radius:3px; margin-right:6px; }
+  .tl-tag.fix{ background:var(--win-bg); color:var(--win); }
+  .tl-tag.problem{ background:var(--lose-bg); color:var(--lose); }
+
+  footer{ border-top:1px solid var(--line); padding-top:18px; font-size:12.5px; color:var(--ink-faint); font-family:var(--font-mono); }
+
+  @media (max-width:760px){
+    .kpis{ grid-template-columns:repeat(2,1fr); }
+    .bar-row{ grid-template-columns:88px 1fr 60px; }
+    table{ font-size:12px; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="masthead">
+    <div class="eyebrow">Positioning Compliance · Sundial Analytics</div>
+    <h1>Compliance Check Trends — Q3 2026</h1>
+    <div class="meta-row">
+      <span>Period: <b>Jul 2 – Sep 12, 2026</b></span>
+      <span>Checks logged: <b>20</b></span>
+      <span>Source: <b><a href="./compliance-check-log.csv">compliance-check-log.csv</a></b></span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-value">40%</div><div class="kpi-label">Overall pass rate (20 checks)</div></div>
+    <div class="kpi"><div class="kpi-value">5</div><div class="kpi-label">Stale-competitive-claim hard fails</div></div>
+    <div class="kpi"><div class="kpi-value">12.5% → 71.4%</div><div class="kpi-label">Pass rate, Aug → Sep</div></div>
+    <div class="kpi"><div class="kpi-value">0%</div><div class="kpi-label">Pass rate, battlecard-update &amp; whitepaper-excerpt (n=2 each)</div></div>
+  </div>
+
+  <section class="panel panel-highlight">
+    <div class="eyebrow">Read this first</div>
+    <h2>Key findings</h2>
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-head">The most common hard-fail category isn't a banned word — it's a stale competitive claim</div>
+        <div class="finding-body">Stale-competitive-claim (5 instances) outnumbers prohibited-term (3) and beats unverifiable-claim and positioning-overclaim (2 each) individually. Every single instance happened in July or August — zero in September. This is a real reason to weight <code>compliance-rules-reference.md</code>'s category 4 (competitive accuracy) as heavily in writer training as the more familiar prohibited-terms list.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">Pass rate collapsed after ValuAI's July 2026 GA launch, then recovered sharply after the September staleness sweep</div>
+        <div class="finding-body">July pass rate: 40% (2/5). August — the month after ValuAI's audit trail feature went GA, before <code>competitive-landscape.md</code> or the battlecards were updated — pass rate dropped to 12.5% (1/8), driven almost entirely by writers still using the pre-GA "we're the only one with an audit trail" framing. September, after the <a href="../../knowledge-base/staleness-detection/sweep-2026-09.md">staleness-detection sweep</a> corrected the source docs, pass rate recovered to 71.4% (5/7) — and the stale-competitive-claim category dropped to zero. See the timeline below.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">Battlecards and whitepaper excerpts are the riskiest content types — for different, specific reasons</div>
+        <div class="finding-body">Both sit at a 0% pass rate (n=2 each — a small sample, worth re-checking as more data comes in). Battlecard updates failed specifically on stale-competitive-claim — unsurprising, since a battlecard's entire job is naming what a competitor does or doesn't have. Whitepaper excerpts failed on positioning-overclaim — they're the content type most likely to make a quantitative or methodology claim that needs to trace back to something real. Different content types fail this check for different, predictable reasons, not the same generic mistake.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-head">Recommendation: make this check a required step whenever a battlecard is refreshed, not just for outward-facing marketing copy</div>
+        <div class="finding-body">Battlecards are internal sales enablement, not public marketing — but this data shows they're exactly as exposed to stale-competitive-claim risk as public content, and arguably more, since they're written to make competitive comparisons by design. <a href="../../sales-tools/battlecard">battlecard</a>'s own refresh cycle already pulls from <code>competitive-landscape.md</code>; running this check as part of that refresh would catch what this log shows slipping through in July–August.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Pass rate by month</h2>
+    <div class="sub">The August dip and September recovery, month over month</div>
+    <div class="bar-row"><div class="bar-label">Jul 2026</div><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--accent)"></div></div><div class="bar-count">40% (2/5)</div></div>
+    <div class="bar-row"><div class="bar-label">Aug 2026</div><div class="bar-track"><div class="bar-fill" style="width:12.5%;background:var(--lose)"></div></div><div class="bar-count">12.5% (1/8)</div></div>
+    <div class="bar-row"><div class="bar-label">Sep 2026</div><div class="bar-track"><div class="bar-fill" style="width:71.4%;background:var(--win)"></div></div><div class="bar-count">71.4% (5/7)</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Hard-fail category breakdown</h2>
+    <div class="sub">Across all 20 checks (8 passed clean, 12 failed)</div>
+    <div class="bar-row"><div class="bar-label">Stale competitive</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--lose)"></div></div><div class="bar-count">5</div></div>
+    <div class="bar-row"><div class="bar-label">Prohibited term</div><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--lose)"></div></div><div class="bar-count">3</div></div>
+    <div class="bar-row"><div class="bar-label">Unverifiable claim</div><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--lose)"></div></div><div class="bar-count">2</div></div>
+    <div class="bar-row"><div class="bar-label">Positioning overclaim</div><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--lose)"></div></div><div class="bar-count">2</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Pass rate by content type</h2>
+    <div class="sub">Sorted lowest to highest — small samples (n=2-3 per type), read as direction not precision</div>
+    <div class="bar-row"><div class="bar-label">Battlecard</div><div class="bar-track"><div class="bar-fill" style="width:1%;background:var(--lose)"></div></div><div class="bar-count">0% (0/2)</div></div>
+    <div class="bar-row"><div class="bar-label">Whitepaper</div><div class="bar-track"><div class="bar-fill" style="width:1%;background:var(--lose)"></div></div><div class="bar-count">0% (0/2)</div></div>
+    <div class="bar-row"><div class="bar-label">Website copy</div><div class="bar-track"><div class="bar-fill" style="width:33.3%;background:var(--lose)"></div></div><div class="bar-count">33.3% (1/3)</div></div>
+    <div class="bar-row"><div class="bar-label">One-pager</div><div class="bar-track"><div class="bar-fill" style="width:33.3%;background:var(--lose)"></div></div><div class="bar-count">33.3% (1/3)</div></div>
+    <div class="bar-row"><div class="bar-label">Sales deck</div><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--accent)"></div></div><div class="bar-count">50% (1/2)</div></div>
+    <div class="bar-row"><div class="bar-label">Email nurture</div><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--accent)"></div></div><div class="bar-count">50% (1/2)</div></div>
+    <div class="bar-row"><div class="bar-label">Paid ad</div><div class="bar-track"><div class="bar-fill" style="width:66.7%;background:var(--win)"></div></div><div class="bar-count">66.7% (2/3)</div></div>
+    <div class="bar-row"><div class="bar-label">Social post</div><div class="bar-track"><div class="bar-fill" style="width:66.7%;background:var(--win)"></div></div><div class="bar-count">66.7% (2/3)</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Timeline — how the August dip actually resolved</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">Jul 2026</div><div class="tl-body">ValuAI's audit trail feature goes GA (per <a href="../../knowledge-base/competitive-landscape.md">competitive-landscape.md</a>). The "we're the only real audit trail" claim, accurate until this point, silently becomes false.</div></div>
+      <div class="tl-item"><div class="tl-date">Jul 21</div><div class="tl-body"><span class="tl-tag problem">Caught</span>First stale-competitive-claim hard fail, in a battlecard update — the check catches it even though the source docs hadn't been corrected yet.</div></div>
+      <div class="tl-item"><div class="tl-date">Aug 6 – 27</div><div class="tl-body"><span class="tl-tag problem">Recurring</span>Four more stale-competitive-claim hard fails across a sales deck, website copy, and another battlecard update — the same uncorrected claim keeps getting reused because the underlying reference doc still said the old thing.</div></div>
+      <div class="tl-item"><div class="tl-date">Sep (early)</div><div class="tl-body"><span class="tl-tag fix">Fixed</span>The <a href="../../knowledge-base/staleness-detection/sweep-2026-09.md">staleness-detection sweep</a> rewrites competitive-landscape.md's ValuAI section and the valuai.html battlecard with the corrected, current framing.</div></div>
+      <div class="tl-item"><div class="tl-date">Sep 1 – 12</div><div class="tl-body"><span class="tl-tag fix">Recovered</span>Zero stale-competitive-claim hard fails across 7 checks; overall pass rate climbs to 71.4%. Writers pulling from the now-corrected source docs stop reproducing the outdated claim.</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Full log</h2>
+    <div class="sub">See <a href="./compliance-check-log.csv">compliance-check-log.csv</a> for the raw data</div>
+    <table>
+      <thead><tr><th>Date</th><th>Content type</th><th>Channel</th><th>Result</th><th class="num">Hard fails</th><th class="num">Soft flags</th><th>Top violation</th></tr></thead>
+      <tbody>
+        <tr><td>2026-07-02</td><td>Website copy</td><td>Website</td><td>FAIL</td><td class="num">2</td><td class="num">1</td><td>Prohibited term</td></tr>
+        <tr><td>2026-07-08</td><td>One-pager</td><td>Sales enablement</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Unverifiable claim</td></tr>
+        <tr><td>2026-07-15</td><td>Paid ad</td><td>LinkedIn Ads</td><td>PASS</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td>2026-07-21</td><td>Battlecard update</td><td>Sales enablement</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Stale competitive claim</td></tr>
+        <tr><td>2026-07-29</td><td>Social post</td><td>LinkedIn</td><td>PASS</td><td class="num">0</td><td class="num">0</td><td>—</td></tr>
+        <tr><td>2026-08-04</td><td>Whitepaper excerpt</td><td>Content marketing</td><td>FAIL</td><td class="num">2</td><td class="num">2</td><td>Positioning overclaim</td></tr>
+        <tr><td>2026-08-06</td><td>Sales deck slide</td><td>Sales enablement</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Stale competitive claim</td></tr>
+        <tr><td>2026-08-11</td><td>Email nurture</td><td>Email</td><td>FAIL</td><td class="num">1</td><td class="num">1</td><td>Prohibited term</td></tr>
+        <tr><td>2026-08-13</td><td>Website copy</td><td>Website</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Stale competitive claim</td></tr>
+        <tr><td>2026-08-18</td><td>One-pager</td><td>Sales enablement</td><td>FAIL</td><td class="num">2</td><td class="num">0</td><td>Stale competitive claim</td></tr>
+        <tr><td>2026-08-20</td><td>Paid ad</td><td>LinkedIn Ads</td><td>PASS</td><td class="num">0</td><td class="num">2</td><td>—</td></tr>
+        <tr><td>2026-08-25</td><td>Social post</td><td>LinkedIn</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Unverifiable claim</td></tr>
+        <tr><td>2026-08-27</td><td>Battlecard update</td><td>Sales enablement</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Stale competitive claim</td></tr>
+        <tr><td>2026-09-01</td><td>Sales deck slide</td><td>Sales enablement</td><td>PASS</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td>2026-09-03</td><td>Website copy</td><td>Website</td><td>PASS</td><td class="num">0</td><td class="num">0</td><td>—</td></tr>
+        <tr><td>2026-09-05</td><td>Whitepaper excerpt</td><td>Content marketing</td><td>FAIL</td><td class="num">1</td><td class="num">1</td><td>Positioning overclaim</td></tr>
+        <tr><td>2026-09-08</td><td>Email nurture</td><td>Email</td><td>PASS</td><td class="num">0</td><td class="num">1</td><td>—</td></tr>
+        <tr><td>2026-09-09</td><td>One-pager</td><td>Sales enablement</td><td>PASS</td><td class="num">0</td><td class="num">0</td><td>—</td></tr>
+        <tr><td>2026-09-10</td><td>Paid ad</td><td>LinkedIn Ads</td><td>FAIL</td><td class="num">1</td><td class="num">0</td><td>Prohibited term</td></tr>
+        <tr><td>2026-09-12</td><td>Social post</td><td>LinkedIn</td><td>PASS</td><td class="num">0</td><td class="num">0</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>compliance-trends-analysis.html · built from compliance-check-log.csv · Sundial Analytics positioning-compliance · fictional data, for illustration</footer>
+
+</div>
